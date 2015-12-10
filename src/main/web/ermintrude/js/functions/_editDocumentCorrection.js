@@ -40,7 +40,7 @@ function editDocumentCorrection(collectionId, data, templateData, field, idField
       }
     });
   });
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 }
 
 function refreshCorrection(collectionId, data, templateData, field, idField) {
@@ -139,7 +139,7 @@ function initialiseCorrection(collectionId, data, templateData, field, idField) 
         if (result === true) {
           deleteUnpublishedVersion(collectionId, data[field][index].uri, function () {
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             data[field].splice(index, 1);
             templateData[field].splice(index, 1);
@@ -167,7 +167,7 @@ function initialiseCorrection(collectionId, data, templateData, field, idField) 
 function saveCorrection(collectionId, path, data, templateData, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshCorrection(collectionId, data, templateData, field, idField);
       refreshPreview(data.uri);
     },

@@ -16,7 +16,7 @@ function editDatasetVersion(collectionId, data, field, idField) {
     data[field] = [];
   }
   var uploadedNotSaved = {uploaded: false, saved: false, fileUrl: "", oldLabel: data.description.versionLabel};
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
   //Add
   if (data.type === 'timeseries_dataset') {
     downloadExtensions = /\.csdb$/;
@@ -50,7 +50,7 @@ function editDatasetVersion(collectionId, data, field, idField) {
 
   function addTheVersion() {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 200;
+    Ermintrude.globalVars.pagePos = position + 200;
 
     // todo: Move this HTML into a handlebars template.
     $('#' + idField + '-section').append(
@@ -275,7 +275,7 @@ function initialiseDatasetVersion(collectionId, data, templateData, field, idFie
           var uriToDelete = $(this).parent().children('#' + idField + '-edition_' + index).attr(idField + '-url');
           deleteUnpublishedVersion(collectionId, uriToDelete, function () {
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             // delete uploaded file
             deleteContent(collectionId, fileToDelete, function () {
@@ -307,7 +307,7 @@ function initialiseDatasetVersion(collectionId, data, templateData, field, idFie
 function saveDatasetVersion(collectionId, path, data, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshDatasetVersion(collectionId, data, field, idField);
       refreshPreview(path);
     },

@@ -14,10 +14,10 @@ if (typeof module !== 'undefined') {
 
 
 // The florence object is used for storing application state.
-var Florence = Florence || {
+var Ermintrude = Ermintrude || {
     tredegarBaseUrl: window.location.origin,
     refreshAdminMenu: function () {
-      var mainNavHtml = templates.mainNav(Florence);
+      var mainNavHtml = templates.mainNav(Ermintrude);
       $('.admin-nav').html(mainNavHtml);
     },
     setActiveCollection: function (collection) {
@@ -27,42 +27,42 @@ var Florence = Florence || {
       } else {
         var formattedDate = StringUtils.formatIsoDateString(collection.publishDate);
       }
-      Florence.collection = {id: collection.id, name: collection.name, date: formattedDate, type: collection.type};
+      Ermintrude.collection = {id: collection.id, name: collection.name, date: formattedDate, type: collection.type};
     }
   };
 
-Florence.Editor = {
+Ermintrude.Editor = {
   isDirty: false,
   data: {}
 };
 
-Florence.CreateCollection = {
+Ermintrude.CreateCollection = {
   selectedRelease:""
 };
 
-Florence.collection = {};
+Ermintrude.collection = {};
 
-Florence.collectionToPublish = {};
+Ermintrude.collectionToPublish = {};
 
-Florence.globalVars = {pagePath: '', activeTab: false, pagePos: '', welsh: false};
+Ermintrude.globalVars = {pagePath: '', activeTab: false, pagePos: '', welsh: false};
 
-Florence.Authentication = {
+Ermintrude.Authentication = {
   accessToken: function () {
     return CookieUtils.getCookieValue("access_token");
   },
   isAuthenticated: function () {
-    return Florence.Authentication.accessToken() !== '';
+    return Ermintrude.Authentication.accessToken() !== '';
   },
   loggedInEmail: function () {
     return localStorage.getItem("loggedInAs")
   }
 };
 
-Florence.Handler = function (e) {
-  if (Florence.Editor.isDirty) {
+Ermintrude.Handler = function (e) {
+  if (Ermintrude.Editor.isDirty) {
     var result = confirm("You have unsaved changes. Are you sure you want to continue");
     if (result === true) {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       processPreviewClick(this);
       return true;
     } else {
@@ -77,9 +77,9 @@ Florence.Handler = function (e) {
     setTimeout(function () {
       checkForPageChanged(function (newUrl) {
         var safeUrl = checkPathSlashes(newUrl);
-        Florence.globalVars.pagePath = safeUrl;
+        Ermintrude.globalVars.pagePath = safeUrl;
         if ($('.workspace-edit').length) {
-          loadPageDataIntoEditor(safeUrl, Florence.collection.id, 'click');
+          loadPageDataIntoEditor(safeUrl, Ermintrude.collection.id, 'click');
         }
         else if ($('.workspace-browse').length) {
           treeNodeSelect(safeUrl);
@@ -91,7 +91,7 @@ Florence.Handler = function (e) {
 
 // if running in a node environment export this as a module.
 if (typeof module !== 'undefined') {
-  module.exports = Florence;
+  module.exports = Ermintrude;
 }
 
 
@@ -294,13 +294,13 @@ function viewReleaseSelector() {
     releaseList.find('tr').on('click', function () {
       var releaseTitle = $(this).attr('data-id');
       var releaseUri = $(this).attr('data-uri');
-      Florence.CreateCollection.selectedRelease = {uri: releaseUri, title: releaseTitle};
+      Ermintrude.CreateCollection.selectedRelease = {uri: releaseUri, title: releaseTitle};
 
       $('.selected-release').text(releaseTitle);
       $('.release-select').stop().fadeOut(200).remove();
     })
   }
-}setupFlorence();/**
+}setupErmintrude();/**
  * Keeps the accordion open in the tab specified
  * @param active - the active tab
  */
@@ -333,7 +333,7 @@ $('.section').bind('DOMSubtreeModified', function (){
 function autoSaveMetadata(collectionId, data) {
   putContent(collectionId, data.uri, JSON.stringify(data),
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
     },
     error = function (response) {
       if (response.status === 400) {
@@ -351,15 +351,15 @@ function autoSaveMetadata(collectionId, data) {
  * @param onChanged - function
  */
 function checkForPageChanged(onChanged) {
-  var iframeUrl = Florence.globalVars.pagePath;
+  var iframeUrl = Ermintrude.globalVars.pagePath;
   var nowUrl = $('#iframe')[0].contentWindow.document.location.pathname;
   if (iframeUrl !== nowUrl) {
-    Florence.globalVars.activeTab = false;
-    Florence.globalVars.pagePos = '';
+    Ermintrude.globalVars.activeTab = false;
+    Ermintrude.globalVars.pagePos = '';
     if (!onChanged) {
-      Florence.globalVars.pagePath = nowUrl;
+      Ermintrude.globalVars.pagePath = nowUrl;
     } else {
-      Florence.globalVars.pagePath = nowUrl;
+      Ermintrude.globalVars.pagePath = nowUrl;
       onChanged(nowUrl);
     }
   }
@@ -432,7 +432,7 @@ function checkRenameUri(collectionId, data, renameUri, onSave) {
           }
           moveContent(collectionId, data.uri, newUri,
             onSuccess = function () {
-              Florence.globalVars.pagePath = newUri;
+              Ermintrude.globalVars.pagePath = newUri;
               onSave(collectionId, newUri, JSON.stringify(data));
             }
           );
@@ -446,7 +446,7 @@ function checkRenameUri(collectionId, data, renameUri, onSave) {
           var newUri = tmpNewUri.join("/");
           moveContent(collectionId, data.uri, newUri,
             onSuccess = function () {
-              Florence.globalVars.pagePath = newUri;
+              Ermintrude.globalVars.pagePath = newUri;
               onSave(collectionId, newUri, JSON.stringify(data));
             }
           );
@@ -470,7 +470,7 @@ function checkRenameUri(collectionId, data, renameUri, onSave) {
           }
           moveContent(collectionId, data.uri, newUri,
             onSuccess = function () {
-              Florence.globalVars.pagePath = newUri;
+              Ermintrude.globalVars.pagePath = newUri;
               onSave(collectionId, newUri, JSON.stringify(data));
             }
           );
@@ -575,11 +575,11 @@ function createCollection() {
   }
 
   if (scheduleType === 'release' && publishType === 'scheduled') {
-    if(!Florence.CreateCollection.selectedRelease) {
+    if(!Ermintrude.CreateCollection.selectedRelease) {
       sweetAlert('Please select a release');
       return true;
     }
-    releaseUri  = Florence.CreateCollection.selectedRelease.uri;
+    releaseUri  = Ermintrude.CreateCollection.selectedRelease.uri;
   } else {
     releaseUri  = null;
   }
@@ -606,7 +606,7 @@ function createCollection() {
       type: 'POST',
       data: JSON.stringify({name: collectionId, type: publishType, publishDate: collectionDate, releaseUri: releaseUri, isEncrypted: true}),
       success: function (collection) {
-        Florence.setActiveCollection(collection);
+        Ermintrude.setActiveCollection(collection);
         createWorkspace('', collection.id, 'browse');
       },
       error: function (response) {
@@ -645,7 +645,7 @@ function createWorkspace(path, collectionId, menu, stopEventListener) {
       var browserLocation = document.getElementById('iframe').contentWindow.location.href;
       $('.browser-location').val(browserLocation);
       var iframeEvent = document.getElementById('iframe').contentWindow;
-      iframeEvent.removeEventListener('click', Florence.Handler, true);
+      iframeEvent.removeEventListener('click', Ermintrude.Handler, true);
     };
     return false;
   } else {
@@ -655,24 +655,24 @@ function createWorkspace(path, collectionId, menu, stopEventListener) {
       safePath = checkPathSlashes(currentPath);
     }
 
-    Florence.globalVars.pagePath = safePath;
-    if (Florence.globalVars.welsh !== true) {
+    Ermintrude.globalVars.pagePath = safePath;
+    if (Ermintrude.globalVars.welsh !== true) {
       document.cookie = "lang=" + "en;path=/";
     } else {
       document.cookie = "lang=" + "cy;path=/";
     }
-    Florence.refreshAdminMenu();
+    Ermintrude.refreshAdminMenu();
 
-    var workSpace = templates.workSpace(Florence.tredegarBaseUrl + safePath);
+    var workSpace = templates.workSpace(Ermintrude.tredegarBaseUrl + safePath);
     $('.section').html(workSpace);
 
     document.getElementById('iframe').onload = function () {
-      $('.browser-location').val(Florence.tredegarBaseUrl + Florence.globalVars.pagePath);
+      $('.browser-location').val(Ermintrude.tredegarBaseUrl + Ermintrude.globalVars.pagePath);
       var iframeEvent = document.getElementById('iframe').contentWindow;
-      iframeEvent.addEventListener('click', Florence.Handler, true);
+      iframeEvent.addEventListener('click', Ermintrude.Handler, true);
     };
 
-      if (Florence.globalVars.welsh !== true) {
+      if (Ermintrude.globalVars.welsh !== true) {
         $('#nav--workspace__welsh').empty().append('<a href="#">Language: English</a>');
       } else {
         $('#nav--workspace__welsh').empty().append('<a href="#">Language: Welsh</a>');
@@ -681,7 +681,7 @@ function createWorkspace(path, collectionId, menu, stopEventListener) {
       //click handlers
       $('.nav--workspace > li').click(function () {
         menu = '';
-        if (Florence.Editor.isDirty) {
+        if (Ermintrude.Editor.isDirty) {
           swal({
             title: "Warning",
             text: "You have unsaved changes. Are you sure you want to continue?",
@@ -691,7 +691,7 @@ function createWorkspace(path, collectionId, menu, stopEventListener) {
             cancelButtonText: "Cancel"
           }, function(result) {
             if (result === true) {
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
               processMenuClick(this);
             } else {
               return false;
@@ -711,19 +711,19 @@ function createWorkspace(path, collectionId, menu, stopEventListener) {
         if (menuItem.is('#browse')) {
           loadBrowseScreen(collectionId, 'click');
         } else if (menuItem.is('#create')) {
-          Florence.globalVars.pagePath = getPathName();
-          loadCreateScreen(Florence.globalVars.pagePath, collectionId);
+          Ermintrude.globalVars.pagePath = getPathName();
+          loadCreateScreen(Ermintrude.globalVars.pagePath, collectionId);
         } else if (menuItem.is('#edit')) {
-          Florence.globalVars.pagePath = getPathName();
-          loadPageDataIntoEditor(Florence.globalVars.pagePath, Florence.collection.id);
+          Ermintrude.globalVars.pagePath = getPathName();
+          loadPageDataIntoEditor(Ermintrude.globalVars.pagePath, Ermintrude.collection.id);
         } else {
           loadBrowseScreen(collectionId);
         }
       }
 
       $('#nav--workspace__welsh').on('click', function () {
-        Florence.globalVars.welsh = Florence.globalVars.welsh === false ? true : false;
-        createWorkspace(Florence.globalVars.pagePath, collectionId, 'browse');
+        Ermintrude.globalVars.welsh = Ermintrude.globalVars.welsh === false ? true : false;
+        createWorkspace(Ermintrude.globalVars.pagePath, collectionId, 'browse');
       });
 
       $('.workspace-menu').on('click', '.btn-browse-create', function () {
@@ -732,24 +732,24 @@ function createWorkspace(path, collectionId, menu, stopEventListener) {
         var typeClass = spanType[0].attributes[0].nodeValue;
         var typeGroup = typeClass.match(/--(\w*)$/);
         var type = typeGroup[1];
-        Florence.globalVars.pagePath = dest;
+        Ermintrude.globalVars.pagePath = dest;
         $('.nav--workspace li').removeClass('selected');
         $("#create").addClass('selected');
-        loadCreateScreen(Florence.globalVars.pagePath, collectionId, type);
+        loadCreateScreen(Ermintrude.globalVars.pagePath, collectionId, type);
       });
 
       $('.workspace-menu').on('click', '.btn-browse-edit', function () {
         var dest = $('.tree-nav-holder ul').find('.selected').attr('data-url');
-        Florence.globalVars.pagePath = dest;
+        Ermintrude.globalVars.pagePath = dest;
         $('.nav--workspace li').removeClass('selected');
         $("#edit").addClass('selected');
-        loadPageDataIntoEditor(Florence.globalVars.pagePath, collectionId);
+        loadPageDataIntoEditor(Ermintrude.globalVars.pagePath, collectionId);
       });
 
       if (menu === 'edit') {
         $('.nav--workspace li').removeClass('selected');
         $("#edit").addClass('selected');
-        loadPageDataIntoEditor(Florence.globalVars.pagePath, collectionId);
+        loadPageDataIntoEditor(Ermintrude.globalVars.pagePath, collectionId);
       } else if (menu === 'browse') {
         $('.nav--workspace li').removeClass('selected');
         $("#browse").addClass('selected');
@@ -855,7 +855,7 @@ function addDataset(collectionId, data, field, idField) {
     lastIndex = 0;
   }
   var uploadedNotSaved = {uploaded: false, saved: false, editionUri: ""};
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 
   //Add
   if (data.timeseries) {
@@ -868,7 +868,7 @@ function addDataset(collectionId, data, field, idField) {
 
   $('#add-' + idField).one('click', function () {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 200;
+    Ermintrude.globalVars.pagePos = position + 200;
     $('#sortable-' + idField).append(
       '<div id="' + lastIndex + '" class="edit-section__item">' +
       '  <form id="UploadForm">' +
@@ -889,7 +889,7 @@ function addDataset(collectionId, data, field, idField) {
       //Check files uploaded and delete them
       if (uploadedNotSaved.uploaded === true) {
         data[field].splice(-1, 1);
-        deleteContent(Florence.collection.id, uploadedNotSaved.editionUri,
+        deleteContent(Ermintrude.collection.id, uploadedNotSaved.editionUri,
           onSuccess = function () {
           },
           onError = function (error) {
@@ -1013,7 +1013,7 @@ function addFile(collectionId, data, field, idField) {
   $('#' + idField).replaceWith(html);
   var uriUpload;
 
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 
   //Edit saved from editor
 
@@ -1041,7 +1041,7 @@ function addFile(collectionId, data, field, idField) {
               timer: 2000
             });
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             $.ajax({
               url: "/zebedee/content/" + collectionId + "?uri=" + data[field][index].file,
@@ -1080,7 +1080,7 @@ function addFile(collectionId, data, field, idField) {
 
   $('#add-' + idField).one('click', function () {
       var position = $(".workspace-edit").scrollTop();
-      Florence.globalVars.pagePos = position + 200;
+      Ermintrude.globalVars.pagePos = position + 200;
       $('#sortable-' + idField).append(
         '<div id="' + lastIndex + '" class="edit-section__item">' +
         '  <form id="UploadForm">' +
@@ -1208,7 +1208,7 @@ function addFileWithDetails(collectionId, data, field, idField) {
   var uriUpload;
   var downloadExtensions;
 
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 
   // Edit
   if (!data[field] || data[field].length === 0) {
@@ -1234,7 +1234,7 @@ function addFileWithDetails(collectionId, data, field, idField) {
               timer: 2000
             });
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             $.ajax({
               url: "/zebedee/content/" + collectionId + "?uri=" + data.uri + data[field][index].file,
@@ -1279,7 +1279,7 @@ function addFileWithDetails(collectionId, data, field, idField) {
 
   $('#add-' + idField).one('click', function () {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 200;
+    Ermintrude.globalVars.pagePos = position + 200;
     $('#sortable-' + idField).append(
       '<div id="' + lastIndex + '" class="edit-section__item">' +
       '  <form id="UploadForm">' +
@@ -1412,7 +1412,7 @@ function editAlert(collectionId, data, templateData, field, idField) {
     templateData[field].push({markdown: "", date: tmpDate, type: "alert"});
     saveAlert(collectionId, data.uri, data, templateData, field, idField);
   });
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 }
 
 function refreshAlert(collectionId, data, templateData, field, idField) {
@@ -1484,7 +1484,7 @@ function initialiseAlert(collectionId, data, templateData, field, idField) {
             timer: 2000
           });
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position;
+          Ermintrude.globalVars.pagePos = position;
           $(this).parent().remove();
           data[field].splice(index, 1);
           templateData[field].splice(index, 1);
@@ -1510,7 +1510,7 @@ function initialiseAlert(collectionId, data, templateData, field, idField) {
 function saveAlert(collectionId, path, data, templateData, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshAlert(collectionId, data, templateData, field, idField);
       refreshPreview(data.uri);
     },
@@ -1596,7 +1596,7 @@ function editCollection (collection) {
         type: 'PUT',
         data: JSON.stringify(collection),
         success: function (updatedCollection) {
-          Florence.setActiveCollection(updatedCollection);
+          Ermintrude.setActiveCollection(updatedCollection);
           createWorkspace('', updatedCollection.id, 'browse');
         },
         error: function (response) {
@@ -1651,7 +1651,7 @@ function editDatasetVersion(collectionId, data, field, idField) {
     data[field] = [];
   }
   var uploadedNotSaved = {uploaded: false, saved: false, fileUrl: "", oldLabel: data.description.versionLabel};
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
   //Add
   if (data.type === 'timeseries_dataset') {
     downloadExtensions = /\.csdb$/;
@@ -1685,7 +1685,7 @@ function editDatasetVersion(collectionId, data, field, idField) {
 
   function addTheVersion() {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 200;
+    Ermintrude.globalVars.pagePos = position + 200;
 
     // todo: Move this HTML into a handlebars template.
     $('#' + idField + '-section').append(
@@ -1910,7 +1910,7 @@ function initialiseDatasetVersion(collectionId, data, templateData, field, idFie
           var uriToDelete = $(this).parent().children('#' + idField + '-edition_' + index).attr(idField + '-url');
           deleteUnpublishedVersion(collectionId, uriToDelete, function () {
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             // delete uploaded file
             deleteContent(collectionId, fileToDelete, function () {
@@ -1942,7 +1942,7 @@ function initialiseDatasetVersion(collectionId, data, templateData, field, idFie
 function saveDatasetVersion(collectionId, path, data, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshDatasetVersion(collectionId, data, field, idField);
       refreshPreview(path);
     },
@@ -2015,7 +2015,7 @@ function initialiseNoteMarkdown(collectionId, data, templateData, field, idField
 function saveNoteMarkdown(collectionId, path, data, templateData, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshNoteMarkdown(collectionId, data, templateData, field, idField);
       refreshPreview(data.uri);
     },
@@ -2045,7 +2045,7 @@ function editDocWithFilesCorrection(collectionId, data, field, idField) {
   }
   var oldFile = $.extend(true, {}, data);
   var uploadedNotSaved = {uploaded: false, saved: false, files: oldFile.downloads};
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
   //Add file types
   if (data.type === 'compendium_data'){
     downloadExtensions = /\.csv$|.xls$|.zip$/;
@@ -2155,7 +2155,7 @@ function editDocWithFilesCorrection(collectionId, data, field, idField) {
 
   function fileCorrection(index) {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 200;
+    Ermintrude.globalVars.pagePos = position + 200;
     $('#correction-filename_show_' + index).append(
       '<div id="file-added_' + index + '" class="edit-section__item">' +
       '  <form id="UploadForm">' +
@@ -2274,7 +2274,7 @@ function initialiseDocWithFilesCorrection(collectionId, data, field, idField) {
         var uriToDelete = $(this).parent().children('#' + idField + '-edition_' + index).attr(idField + '-url');
         deleteUnpublishedVersion(collectionId, uriToDelete, function () {
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position;
+          Ermintrude.globalVars.pagePos = position;
           $(this).parent().remove();
           //delete uploaded files in this directory
           _.each(filesToDelete, function (download) {
@@ -2305,7 +2305,7 @@ function initialiseDocWithFilesCorrection(collectionId, data, field, idField) {
 function saveDocWithFilesCorrection(collectionId, path, data, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshDocWithFilesCorrection(collectionId, data, field, idField);
       refreshPreview(path);
     },
@@ -2372,7 +2372,7 @@ function editDocumentCorrection(collectionId, data, templateData, field, idField
       }
     });
   });
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 }
 
 function refreshCorrection(collectionId, data, templateData, field, idField) {
@@ -2471,7 +2471,7 @@ function initialiseCorrection(collectionId, data, templateData, field, idField) 
         if (result === true) {
           deleteUnpublishedVersion(collectionId, data[field][index].uri, function () {
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             data[field].splice(index, 1);
             templateData[field].splice(index, 1);
@@ -2499,7 +2499,7 @@ function initialiseCorrection(collectionId, data, templateData, field, idField) 
 function saveCorrection(collectionId, path, data, templateData, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshCorrection(collectionId, data, templateData, field, idField);
       refreshPreview(data.uri);
     },
@@ -2560,7 +2560,7 @@ function editLink (collectionId, data, field, idField) {
       }, function(result) {
         if (result === true) {
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position + 300;
+          Ermintrude.globalVars.pagePos = position + 300;
           $(this).parent().remove();
           data[field].splice(index, 1);
           saveLink(collectionId, data.uri, data, field, idField);
@@ -2579,7 +2579,7 @@ function editLink (collectionId, data, field, idField) {
   //Add
   $('#add-' + idField).click(function () {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 300;
+    Ermintrude.globalVars.pagePos = position + 300;
 
       //TODO This function breaking when adding related link
       console.log(data);
@@ -2604,7 +2604,7 @@ function editLink (collectionId, data, field, idField) {
 function saveLink (collectionId, path, data, field, idField) {
     putContent(collectionId, path, JSON.stringify(data),
         success = function (response) {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             editLink (collectionId, data, field, idField);
         },
         error = function (response) {
@@ -2673,7 +2673,7 @@ function initialiseMarkdown(collectionId, data, field, idField) {
       }, function(result) {
         if (result === true) {
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position + 300;
+          Ermintrude.globalVars.pagePos = position + 300;
           $(this).parent().remove();
           data[field].splice(index, 1);
           saveMarkdown(collectionId, data.uri, data, field, idField);
@@ -2693,7 +2693,7 @@ function initialiseMarkdown(collectionId, data, field, idField) {
   //Add
   $('#add-' + idField).off().one('click', function () {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 300;
+    Ermintrude.globalVars.pagePos = position + 300;
     data[field].push({markdown:"", title:""});
     saveMarkdown(collectionId, data.uri, data, field, idField);
   });
@@ -2713,7 +2713,7 @@ function initialiseMarkdown(collectionId, data, field, idField) {
 function saveMarkdown (collectionId, path, data, field, idField) {
     putContent(collectionId, path, JSON.stringify(data),
         success = function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             refreshMarkdown (collectionId, data, field, idField);
             refreshChartList(collectionId, data);
             refreshTablesList(collectionId, data);
@@ -2790,7 +2790,7 @@ function editMarkdownOneObject (collectionId, data, field, title) {
 function saveMarkdownOne (collectionId, path, data, field) {
   putContent(collectionId, path, JSON.stringify(data),
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       editMarkdownOneObject (collectionId, data, field);
     },
     error = function (response) {
@@ -2866,7 +2866,7 @@ function editMarkdownWithNoTitle (collectionId, data, field, idField) {
 function saveMarkdownNoTitle (collectionId, path, data, field, idField) {
     putContent(collectionId, path, JSON.stringify(data),
         success = function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             editMarkdownWithNoTitle(collectionId, data, field, idField);
         },
         error = function (response) {
@@ -2896,7 +2896,7 @@ function editRelated(collectionId, data, templateData, field, idField) {
   $('#' + idField).replaceWith(html);
   initialiseRelated(collectionId, data, templateData, field, idField);
   resolveTitle(collectionId, data, templateData, field, idField);
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 }
 
 function refreshRelated(collectionId, data, templateData, field, idField) {
@@ -2954,13 +2954,13 @@ function initialiseRelated(collectionId, data, templateData, field, idField) {
               timer: 2000
             });
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             data[field].splice(index, 1);
             templateData[field].splice(index, 1);
             putContent(collectionId, data.uri, JSON.stringify(data),
               success = function () {
-                Florence.Editor.isDirty = false;
+                Ermintrude.Editor.isDirty = false;
                 refreshPreview(data.uri);
                 refreshRelated(collectionId, data, templateData, field, idField);
               },
@@ -2989,7 +2989,7 @@ function initialiseRelated(collectionId, data, templateData, field, idField) {
     hasLatest = {hasLatest : true};
   }
 
-    Florence.globalVars.pagePos = position;
+    Ermintrude.globalVars.pagePos = position;
     var modal = templates.relatedModal(hasLatest);
     $('.workspace-menu').append(modal);
 
@@ -3008,7 +3008,7 @@ function initialiseRelated(collectionId, data, templateData, field, idField) {
 
     $('.btn-uri-browse').off().one('click', function () {
       var iframeEvent = document.getElementById('iframe').contentWindow;
-      iframeEvent.removeEventListener('click', Florence.Handler, true);
+      iframeEvent.removeEventListener('click', Ermintrude.Handler, true);
       createWorkspace(data.uri, collectionId, '', true);
       $('.modal').remove();
 
@@ -3206,7 +3206,7 @@ function editTopics(collectionId, data, templateData, field, idField) {
   $('#' + idField).replaceWith(html);
   initialiseTopics(collectionId, data, templateData, field, idField);
   resolveTopicTitle(collectionId, data, templateData, field, idField);
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 }
 
 function refreshTopics(collectionId, data, templateData, field, idField) {
@@ -3244,13 +3244,13 @@ function initialiseTopics(collectionId, data, templateData, field, idField) {
               timer: 2000
             });
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             data[field].splice(index, 1);
             templateData[field].splice(index, 1);
             putContent(collectionId, data.uri, JSON.stringify(data),
               success = function () {
-                Florence.Editor.isDirty = false;
+                Ermintrude.Editor.isDirty = false;
                 refreshPreview(data.uri);
                 refreshTopics(collectionId, data, templateData, field, idField)
               },
@@ -3274,7 +3274,7 @@ function initialiseTopics(collectionId, data, templateData, field, idField) {
     var hasLatest; //Latest markup doesn't need to show in handlebars template
     var position = $(".workspace-edit").scrollTop();
 
-    Florence.globalVars.pagePos = position;
+    Ermintrude.globalVars.pagePos = position;
     var modal = templates.relatedModal(hasLatest);
     $('.workspace-menu').append(modal);
 
@@ -3292,7 +3292,7 @@ function initialiseTopics(collectionId, data, templateData, field, idField) {
 
     $('.btn-uri-browse').off().one('click', function () {
       var iframeEvent = document.getElementById('iframe').contentWindow;
-      iframeEvent.removeEventListener('click', Florence.Handler, true);
+      iframeEvent.removeEventListener('click', Ermintrude.Handler, true);
       createWorkspace(data.uri, collectionId, '', true);
       $('.modal').remove();
 
@@ -3399,11 +3399,11 @@ function saveTopics (collectionId, path, data, templateData, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     success = function (response) {
       console.log("Updating completed " + response);
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       resolveTopicTitle(collectionId, data, templateData, field, idField);
       refreshPreview(path);
       var iframeEvent = document.getElementById('iframe').contentWindow;
-      iframeEvent.addEventListener('click', Florence.Handler, true);
+      iframeEvent.addEventListener('click', Ermintrude.Handler, true);
     },
     error = function (response) {
       if (response.status === 400) {
@@ -3448,7 +3448,7 @@ function getCollectionDetails(collectionId, success, error) {
  */
 
 function getLastPosition () {
-  var position = Florence.globalVars.pagePos;
+  var position = Ermintrude.globalVars.pagePos;
   if (position > 0) {
     setTimeout(function() {
       $(".workspace-edit").scrollTop(position + 100);
@@ -3624,7 +3624,7 @@ function initialiseLastNoteMarkdown(collectionId, data, field, field2) {
     data[field][lastIndex][field2] = updatedContent;
     putContent(collectionId, data.uri, JSON.stringify(data),
       success = function () {
-        Florence.Editor.isDirty = false;
+        Ermintrude.Editor.isDirty = false;
         loadPageDataIntoEditor(data.uri, collectionId);
         refreshPreview(data.uri);
       },
@@ -3648,7 +3648,7 @@ function loadBrowseScreen(collectionId, click) {
     type: 'GET',
     success: function (response) {
       var browserContent = $('#iframe')[0].contentWindow;
-      var baseURL = Florence.tredegarBaseUrl;
+      var baseURL = Ermintrude.tredegarBaseUrl;
       var html = templates.workBrowse(response);
       $('.workspace-menu').html(html);
       $('.workspace-browse').css("overflow", "scroll");
@@ -3669,7 +3669,7 @@ function loadBrowseScreen(collectionId, click) {
 
           //change iframe location
           browserContent.location.href = newURL;
-          Florence.globalVars.pagePath = uri;
+          Ermintrude.globalVars.pagePath = uri;
           $('.browser-location').val(newURL);
         }
 
@@ -3769,7 +3769,7 @@ function loadChartBuilder(pageData, onSave, chart) {
 
     var jsonPath = chart.uri + ".json";
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + jsonPath,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + jsonPath,
       type: 'POST',
       data: JSON.stringify(chart),
       processData: false,
@@ -3861,7 +3861,7 @@ function loadChartBuilder(pageData, onSave, chart) {
     chart.title = $('#chart-title').val();
     chart.filename = chart.filename ? chart.filename : StringUtils.randomId(); //  chart.title.replace(/[^A-Z0-9]+/ig, "").toLowerCase();
 
-    if (Florence.globalVars.welsh) {
+    if (Ermintrude.globalVars.welsh) {
       if (pageUrl.match(/\/cy\/?$/)) {
         chart.uri = pageUrl + "/" + chart.filename;
       } else {
@@ -4194,7 +4194,7 @@ function loadChartBuilder(pageData, onSave, chart) {
 
     var pngUri = pageUrl + "/" + chart.filename + suffix + ".png";
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + pngUri,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + pngUri,
       type: 'POST',
       data: new Blob([array], {
         type: 'image/png'
@@ -4244,7 +4244,7 @@ function initialiseChartList(collectionId, data) {
 
             putContent(collectionId, basePath, JSON.stringify(data),
               success = function () {
-                Florence.Editor.isDirty = false;
+                Ermintrude.Editor.isDirty = false;
                 refreshPreview();
                 refreshChartList(collectionId, data);
               },
@@ -4276,7 +4276,7 @@ function initialiseChartList(collectionId, data) {
               deleteContent(collectionId, chartJson + '.json', onSuccess = function () {
               }, onError = function () {
               });
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
               swal({
                 title: "Deleted",
                 text: "This chart has been deleted",
@@ -4331,7 +4331,7 @@ function loadCreator (parentUrl, collectionId, type) {
     }
   );
 
-  //releaseDate = Florence.collection.date;             //to be added back to scheduled collections
+  //releaseDate = Ermintrude.collection.date;             //to be added back to scheduled collections
 
   if (type === 'bulletin' || type === 'article') {
     $('#pagetype').val(type).change();
@@ -4526,7 +4526,7 @@ function loadImageBuilder(pageData, onSave, image) {
         var toFile = pageUrl + '/' + file.filename.replace(previewImage.filename, image.filename);
         if (fromFile != toFile){
           console.log("moving... table file: " + fromFile + " to: " + toFile);
-          moveContent(Florence.collection.id, fromFile, toFile,
+          moveContent(Ermintrude.collection.id, fromFile, toFile,
             onSuccess = function () {
               console.log("Moved table file: " + fromFile + " to: " + toFile);
             });
@@ -4553,7 +4553,7 @@ function loadImageBuilder(pageData, onSave, image) {
       $(previewImage.files).each(function (index, file) {
 
         var fileToDelete = pageUrl + '/' + file.filename;
-        deleteContent(Florence.collection.id, fileToDelete,
+        deleteContent(Ermintrude.collection.id, fileToDelete,
           onSuccess = function () {
             console.log("deleted image file: " + fileToDelete);
           });
@@ -4578,7 +4578,7 @@ function loadImageBuilder(pageData, onSave, image) {
   }
 
   function renderImage(imageUri) {
-    var iframeMarkup = '<iframe id="preview-frame" frameBorder ="0" scrolling = "yes" src="' + '/zebedee/resource/' + Florence.collection.id + '?uri=' + imageUri + '"></iframe>';
+    var iframeMarkup = '<iframe id="preview-frame" frameBorder ="0" scrolling = "yes" src="' + '/zebedee/resource/' + Ermintrude.collection.id + '?uri=' + imageUri + '"></iframe>';
     $('#image').html(iframeMarkup);
     var iframe = document.getElementById('preview-frame');
     iframe.height = "500px";
@@ -4617,7 +4617,7 @@ function loadImageBuilder(pageData, onSave, image) {
 
   function uploadFile(path, formData, success) {
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + path,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + path,
       type: 'POST',
       data: formData,
       async: false,
@@ -4656,7 +4656,7 @@ function loadImageBuilder(pageData, onSave, image) {
     var imageJson = noExtension[1] + ".json";
 
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + imageJson,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + imageJson,
       type: 'POST',
       data: JSON.stringify(image),
       processData: false,
@@ -4744,7 +4744,7 @@ function initialiseImagesList(collectionId, data) {
       getPageResource(collectionId, imageJson,
         onSuccess = function (imageData) {
           loadImageBuilder(data, function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             //refreshPreview();
             refreshImagesList(collectionId, data);
           }, imageData);
@@ -4789,7 +4789,7 @@ function initialiseImagesList(collectionId, data) {
           // save the updated page json
           putContent(collectionId, basePath, JSON.stringify(data),
             success = function () {
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
 
               swal({
                 title: "Deleted",
@@ -4887,7 +4887,7 @@ function loadMarkdownEditor(content, onSave, pageData, notEmpty) {
 
   var onInsertSave = function(name, markdown) {
     insertAtCursor($('#wmd-input')[0], markdown);
-    Florence.Editor.markdownEditor.refreshPreview();
+    Ermintrude.Editor.markdownEditor.refreshPreview();
   };
 
   $(".btn-markdown-editor-chart").click(function(){
@@ -4901,7 +4901,7 @@ function loadMarkdownEditor(content, onSave, pageData, notEmpty) {
   $(".btn-markdown-editor-image").click(function(){
     loadImageBuilder(pageData, function(name, markdown, pageData) {
       onInsertSave(name, markdown);
-      refreshImagesList(Florence.collection.id, pageData)
+      refreshImagesList(Ermintrude.collection.id, pageData)
     });
   });
 
@@ -4991,7 +4991,7 @@ function markdownEditor() {
   });
 
   var editor = new Markdown.Editor(converter);
-  Florence.Editor.markdownEditor = editor;
+  Ermintrude.Editor.markdownEditor = editor;
 
   editor.hooks.chain("onPreviewRefresh", function () {
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
@@ -5020,7 +5020,7 @@ function autoSave (onSave) {
 
 function loadPageDataIntoEditor(path, collectionId, click) {
 
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     if (path === '/') {       //add whatever needed to read content in Welsh
       var pageUrlData = path + '&lang=cy';
       var toApproveUrlData = '/data_cy.json';
@@ -5056,7 +5056,7 @@ function loadPageDataIntoEditor(path, collectionId, click) {
     getCollection(collectionId,
       success = function (response) {
         var lastCompletedEvent = getLastCompletedEvent(response, toApproveUrlData);
-        isPageComplete = !(!lastCompletedEvent || lastCompletedEvent.email === Florence.Authentication.loggedInEmail());
+        isPageComplete = !(!lastCompletedEvent || lastCompletedEvent.email === Ermintrude.Authentication.loggedInEmail());
       },
       error = function (response) {
         handleApiError(response);
@@ -5094,7 +5094,7 @@ function loadParentLink(collectionId, data, parentUrl) {
   //Take user to parent edit screen on link click
   $('.child-page__link').click(function () {
     //If there are edits check whether user wants to continue
-    if (Florence.Editor.isDirty) {
+    if (Ermintrude.Editor.isDirty) {
       swal ({
         title: "Warning",
         text: "You have unsaved changes. Are you sure you want to continue?",
@@ -5104,7 +5104,7 @@ function loadParentLink(collectionId, data, parentUrl) {
         cancelButtonText: "Cancel"
       }, function (result) {
         if (result === true) {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           //Return to parent if user confirms it
           updateContent(collectionId, data.uri, JSON.stringify(data), parentUrl);
           return true;
@@ -5217,7 +5217,7 @@ function loadT16Creator(collectionId, releaseDate, pageType, parentUrl) {
         sweetAlert("This is not a valid file title");
         return true;
       } else {
-        Florence.globalVars.pagePath = safeNewUri;
+        Ermintrude.globalVars.pagePath = safeNewUri;
         saveContent(collectionId, safeNewUri, pageData);
       }
       e.preventDefault();
@@ -5271,7 +5271,7 @@ function loadT4Creator (collectionId, releaseDate, pageType, parentUrl) {
     dataType: 'json',
     crossDomain: true,
     success: function (checkData) {
-      if (checkData.type === 'product_page' && !Florence.globalVars.welsh) {
+      if (checkData.type === 'product_page' && !Ermintrude.globalVars.welsh) {
         var checkedUrl = checkPathSlashes(checkData.uri);
         submitFormHandler(checkedUrl);
         return true;
@@ -5533,7 +5533,7 @@ function loadT6Creator (collectionId, releaseDate, pageType, parentUrl, pageTitl
     crossDomain: true,
     success: function (checkData) {
       parentData = $.extend(true, {}, checkData);
-      if ((checkData.type === 'product_page' && pageType === 'compendium_landing_page' && !Florence.globalVars.welsh) ||
+      if ((checkData.type === 'product_page' && pageType === 'compendium_landing_page' && !Ermintrude.globalVars.welsh) ||
           (checkData.type === 'compendium_landing_page' && pageType === 'compendium_chapter') ||
           (checkData.type === 'compendium_landing_page' && pageType === 'compendium_data')) {
         parentUrl = checkData.uri;
@@ -5924,13 +5924,13 @@ function loadT7Creator(collectionId, releaseDate, pageType, parentUrl) {
       pageData.fileName = pageNameTrimmed;
       pageData.description.reference = isNumber;
       var adHocUrl = isNumber + pageNameTrimmed;
-      if (pageType === 'static_qmi' && !Florence.globalVars.welsh) {
+      if (pageType === 'static_qmi' && !Ermintrude.globalVars.welsh) {
         newUri = makeUrl(parentUrl, 'qmis', pageNameTrimmed);
-      } else if (pageType === 'static_adhoc' && !Florence.globalVars.welsh) {
+      } else if (pageType === 'static_adhoc' && !Ermintrude.globalVars.welsh) {
         newUri = makeUrl(parentUrl, 'adhocs', adHocUrl);
-      } else if ((pageType === 'static_methodology' || pageType === 'static_methodology_download') && !Florence.globalVars.welsh) {
+      } else if ((pageType === 'static_methodology' || pageType === 'static_methodology_download') && !Ermintrude.globalVars.welsh) {
         newUri = makeUrl(parentUrl, 'methodologies', pageNameTrimmed);
-      } else if (!Florence.globalVars.welsh) {
+      } else if (!Ermintrude.globalVars.welsh) {
         newUri = makeUrl(parentUrl, pageNameTrimmed);
       } else {
         sweetAlert('You can not perform that operation in Welsh.');
@@ -6309,7 +6309,7 @@ function loadT8Creator (collectionId, releaseDate, pageType, parentUrl, pageTitl
     dataType: 'json',
     crossDomain: true,
     success: function (checkData) {
-      if (checkData.type === 'product_page' && !Florence.globalVars.welsh) {
+      if (checkData.type === 'product_page' && !Ermintrude.globalVars.welsh) {
         submitFormHandler();
         return true;
       } else {
@@ -6428,7 +6428,7 @@ function loadTableBuilder(pageData, onSave, table) {
 
     // send xls file to zebedee
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + xlsPath,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + xlsPath,
       type: 'POST',
       data: formData,
       async: false,
@@ -6442,7 +6442,7 @@ function loadTableBuilder(pageData, onSave, table) {
 
     function createTableHtml(previewTable) {
       $.ajax({
-        url: "/zebedee/table/" + Florence.collection.id + "?uri=" + xlsPath,
+        url: "/zebedee/table/" + Ermintrude.collection.id + "?uri=" + xlsPath,
         type: 'POST',
         success: function (html) {
           saveTableJson(previewTable, success = function () {
@@ -6454,7 +6454,7 @@ function loadTableBuilder(pageData, onSave, table) {
 
     function saveTableHtml(data) {
       $.ajax({
-        url: "/zebedee/content/" + Florence.collection.id + "?uri=" + htmlPath,
+        url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + htmlPath,
         type: 'POST',
         data: data,
         processData: false,
@@ -6492,10 +6492,10 @@ function loadTableBuilder(pageData, onSave, table) {
 
     // delete the preview table
     if (previewTable) {
-      deleteContent(Florence.collection.id, previewTable.uri + ".json");
+      deleteContent(Ermintrude.collection.id, previewTable.uri + ".json");
       $(previewTable.files).each(function (index, file) {
         var fileToDelete = pageUrl + '/' + file.filename;
-        deleteContent(Florence.collection.id, fileToDelete,
+        deleteContent(Ermintrude.collection.id, fileToDelete,
           onSuccess = function () {
             console.log("deleted table file: " + fileToDelete);
           });
@@ -6509,7 +6509,7 @@ function loadTableBuilder(pageData, onSave, table) {
     var tableJson = table.uri + ".json";
 
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + tableJson,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + tableJson,
       type: 'POST',
       data: JSON.stringify(table),
       processData: false,
@@ -6553,12 +6553,12 @@ function loadTableBuilder(pageData, onSave, table) {
         var fromFile = pageUrl + '/' + file.filename;
         var toFile = pageUrl + '/' + file.filename.replace(previewTable.filename, table.filename);
         console.log("moving... table file: " + fromFile + " to: " + toFile);
-        moveContent(Florence.collection.id, fromFile, toFile,
+        moveContent(Ermintrude.collection.id, fromFile, toFile,
           onSuccess = function () {
             console.log("Moved table file: " + fromFile + " to: " + toFile);
           });
       });
-      deleteContent(Florence.collection.id, previewTable.uri + ".json", function(){}, function(){});
+      deleteContent(Ermintrude.collection.id, previewTable.uri + ".json", function(){}, function(){});
     } else { // just keep the preview files
       table = previewTable;
       addTableToPageJson(table);
@@ -6646,7 +6646,7 @@ function initialiseTablesList(collectionId, data) {
       getPageData(collectionId, tableJson,
         onSuccess = function (tableData) {
           loadTableBuilder(data, function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             refreshPreview();
             refreshTablesList(collectionId, data);
           }, tableData);
@@ -6687,7 +6687,7 @@ function initialiseTablesList(collectionId, data) {
               // delete the table json file
               deleteContent(collectionId, tableJson + '.json', onSuccess = function () {}, onError = function (error) {});
 
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
               refreshTablesList(collectionId, data);
 
               swal({
@@ -6719,7 +6719,7 @@ function initialiseTablesList(collectionId, data) {
 function logout() {
   delete_cookie('access_token');
   localStorage.setItem("loggedInAs", "");
-  Florence.refreshAdminMenu();
+  Ermintrude.refreshAdminMenu();
   viewController();
 }
 
@@ -7075,7 +7075,7 @@ function makeEditSections(collectionId, pageData, isPageComplete) {
 
   // Listen on all input within the workspace edit panel for dirty checks.
   $('.workspace-edit :input').on('input', function () {
-    Florence.Editor.isDirty = true;
+    Ermintrude.Editor.isDirty = true;
     // remove the handler now we know content has changed.
     //$(':input').unbind('input');
     //console.log('Changes detected.');
@@ -7083,12 +7083,12 @@ function makeEditSections(collectionId, pageData, isPageComplete) {
 }
 
 function refreshEditNavigation() {
-  getCollection(Florence.collection.id,
+  getCollection(Ermintrude.collection.id,
     success = function (collection) {
       var pagePath = getPathName();
       var pageFile = pagePath + '/data.json';
       var lastCompletedEvent = getLastCompletedEvent(collection, pageFile);
-      var isPageComplete = !(!lastCompletedEvent || lastCompletedEvent.email === Florence.Authentication.loggedInEmail());
+      var isPageComplete = !(!lastCompletedEvent || lastCompletedEvent.email === Ermintrude.Authentication.loggedInEmail());
 
       var editNav = templates.editNav({isPageComplete: isPageComplete});
       $('.edit-nav').html(editNav);
@@ -7270,7 +7270,7 @@ function postApproveCollection(collectionId) {
 function saveAndCompleteContent(collectionId, path, content, redirectToPath) {
   putContent(collectionId, path, content,
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       if (redirectToPath) {
         completeContent(collectionId, path, redirectToPath);
       } else {
@@ -7294,7 +7294,7 @@ function completeContent(collectionId, path, redirectToPath) {
     safePath = '';          // edge case for home
   }
 
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     var url = "/zebedee/complete/" + collectionId + "?uri=" + safePath + "/data_cy.json";
   } else {
     var url = "/zebedee/complete/" + collectionId + "?uri=" + safePath + "/data.json";
@@ -7324,7 +7324,7 @@ function postContent(collectionId, path, content, overwriteExisting, success, er
     safePath = '';          // edge case for home
   }
 
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     var url = "/zebedee/content/" + collectionId + "?uri=" + safePath + "/data_cy.json";
     var toAddLang = JSON.parse(content);
     toAddLang.description.language = 'cy';
@@ -7373,7 +7373,7 @@ function postLogin(email, password) {
     success: function (response) {
       document.cookie = "access_token=" + response + ";path=/";
       localStorage.setItem("loggedInAs", email);
-      Florence.refreshAdminMenu();
+      Ermintrude.refreshAdminMenu();
       viewController();
     },
     error: function (response) {
@@ -7458,7 +7458,7 @@ function postPermission(success, error, email, admin, editor) {
 }function saveAndReviewContent(collectionId, path, content, redirectToPath) {
   putContent(collectionId, path, content,
     success = function (response) {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       if (redirectToPath) {
         postReview(collectionId, path, redirectToPath);
       } else {
@@ -7482,7 +7482,7 @@ function postReview(collectionId, path, redirectToPath) {
     safePath = '';          // edge case for home
   }
 
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     var url = "/zebedee/review/" + collectionId + "?uri=" + safePath + "/data_cy.json";
   } else {
     var url = "/zebedee/review/" + collectionId + "?uri=" + safePath + "/data.json";
@@ -7646,14 +7646,14 @@ function refreshPreview(url) {
 
   if (url) {
     var safeUrl = checkPathSlashes(url);
-    var newUrl = Florence.tredegarBaseUrl + safeUrl;
+    var newUrl = Ermintrude.tredegarBaseUrl + safeUrl;
     document.getElementById('iframe').contentWindow.location.href = newUrl;
     $('.browser-location').val(newUrl);
   }
   else {
-    var urlStored = Florence.globalVars.pagePath;
+    var urlStored = Ermintrude.globalVars.pagePath;
     var safeUrl = checkPathSlashes(urlStored);
-    var newUrl = Florence.tredegarBaseUrl + safeUrl;
+    var newUrl = Ermintrude.tredegarBaseUrl + safeUrl;
     document.getElementById('iframe').contentWindow.location.href = newUrl;
     $('.browser-location').val(newUrl);
   }
@@ -7730,11 +7730,11 @@ function saveRelated (collectionId, path, data, templateData, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     success = function (response) {
       console.log("Updating completed " + response);
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       resolveTitle(collectionId, data, templateData, field, idField);
       refreshPreview(path);
       var iframeEvent = document.getElementById('iframe').contentWindow;
-      iframeEvent.addEventListener('click', Florence.Handler, true);
+      iframeEvent.addEventListener('click', Ermintrude.Handler, true);
     },
     error = function (response) {
       if (response.status === 400) {
@@ -7767,7 +7767,7 @@ function setShortcuts(field) {
       ev.stopImmediatePropagation();
     });
   });
-}function setupFlorence() {
+}function setupErmintrude() {
   window.templates = Handlebars.templates;
   Handlebars.registerPartial("browseNode", templates.browseNode);
   Handlebars.registerPartial("editNav", templates.editNav);
@@ -7836,18 +7836,18 @@ function setShortcuts(field) {
 
 
 
-  Florence.globalVars.activeTab = false;
+  Ermintrude.globalVars.activeTab = false;
 
-  // load main florence template
-  var florence = templates.florence;
+  // load main ermintrude template
+  var ermintrude = templates.ermintrude;
 
-  $('body').append(florence);
-  Florence.refreshAdminMenu();
+  $('body').append(ermintrude);
+  Ermintrude.refreshAdminMenu();
 
   var adminMenu = $('.admin-nav');
   // dirty checks on admin menu
   adminMenu.on('click', '.nav--admin__item', function () {
-    if (Florence.Editor.isDirty) {
+    if (Ermintrude.Editor.isDirty) {
       swal ({
         title: "Warning",
         text: "If you do not come back to this page, you will lose any unsaved changes",
@@ -7857,7 +7857,7 @@ function setShortcuts(field) {
         cancelButtonText: "Cancel"
       }, function(result){
         if (result === true) {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           processMenuClick(this);
           return true;
         } else {
@@ -7871,7 +7871,7 @@ function setShortcuts(field) {
 
 
   window.onbeforeunload = function () {
-    if (Florence.Editor.isDirty) {
+    if (Ermintrude.Editor.isDirty) {
       return 'You have unsaved changes.';
     }
   };
@@ -7879,7 +7879,7 @@ function setShortcuts(field) {
 
 
   function processMenuClick(clicked) {
-    Florence.collection = {};
+    Ermintrude.collection = {};
 
     $('.nav--admin__item--collection').hide();
     $('.nav--admin__item').removeClass('selected');
@@ -7907,9 +7907,6 @@ function setShortcuts(field) {
       viewController();
     }
   }
-
-  //var interval = setTimeout(ping, 60000);
-  //ping();
 }
 
 function releaseEditor(collectionId, data) {
@@ -7922,11 +7919,11 @@ function releaseEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -8065,7 +8062,7 @@ function releaseEditor(collectionId, data) {
         data.description.cancellationNotice = [updatedContent];
         putContent(collectionId, data.uri, JSON.stringify(data),
           success = function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             loadPageDataIntoEditor(data.uri, collectionId);
             refreshPreview(data.uri);
           },
@@ -8157,7 +8154,7 @@ function releaseEditor(collectionId, data) {
       if (noSave) {
         putContent(collectionId, data.uri, JSON.stringify(data),
           success = function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             refreshPreview(data.uri);
           },
           error = function (response) {
@@ -8239,17 +8236,17 @@ function t1Editor(collectionId, data, templateData) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
 
   resolveTitleT1(collectionId, data, templateData, 'sections');
 
   // Metadata edition and saving
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     $("#title").on('input', function () {
       $(this).textareaAutoSize();
       data.description.title = $(this).val();
@@ -8367,7 +8364,7 @@ function resolveTitleT1(collectionId, data, templateData, field) {
         }, function(result) {
           if (result === true) {
             var iframeEvent = document.getElementById('iframe').contentWindow;
-            iframeEvent.removeEventListener('click', Florence.Handler, true);
+            iframeEvent.removeEventListener('click', Ermintrude.Handler, true);
             createWorkspace('/', collectionId, '', true);
 
             $('#' + index).replaceWith(
@@ -8401,7 +8398,7 @@ function resolveTitleT1(collectionId, data, templateData, field) {
                     putContent(collectionId, '', JSON.stringify(data),
                       success = function (response) {
                         console.log("Updating completed " + response);
-                        Florence.Editor.isDirty = false;
+                        Ermintrude.Editor.isDirty = false;
                         createWorkspace('/', collectionId, 'edit');
                       },
                       error = function (response) {
@@ -8454,11 +8451,11 @@ function t2Editor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
 
   // Metadata load, edition and saving
@@ -8542,11 +8539,11 @@ function t3Editor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -8675,11 +8672,11 @@ function ArticleDownloadEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -8694,7 +8691,7 @@ function ArticleDownloadEditor(collectionId, data) {
     $(this).textareaAutoSize();
     data.description.edition = $(this).val();
   });
-  //if (!Florence.collection.date) {                        //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                        //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -8806,7 +8803,7 @@ function ArticleDownloadEditor(collectionId, data) {
 
       putContent(collectionId, data.uri, JSON.stringify(data),
         success = function () {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           refreshPreview();
           refreshChartList(collectionId, data);
         },
@@ -8819,7 +8816,7 @@ function ArticleDownloadEditor(collectionId, data) {
 
   $('#add-table').click(function () {
     loadTableBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshPreview();
       refreshTablesList(collectionId, data);
     });
@@ -8827,7 +8824,7 @@ function ArticleDownloadEditor(collectionId, data) {
 
   $('#add-image').click(function () {
     loadImageBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       //refreshPreview();
       refreshImagesList(collectionId, data);
     });
@@ -8948,11 +8945,11 @@ function articleEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -9079,7 +9076,7 @@ function articleEditor(collectionId, data) {
 
       putContent(collectionId, data.uri, JSON.stringify(data),
         success = function () {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           refreshPreview();
           refreshChartList(collectionId, data);
         },
@@ -9092,7 +9089,7 @@ function articleEditor(collectionId, data) {
 
   $('#add-table').click(function () {
     loadTableBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshPreview();
       refreshTablesList(collectionId, data);
     });
@@ -9100,7 +9097,7 @@ function articleEditor(collectionId, data) {
 
   $('#add-image').click(function () {
     loadImageBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       //refreshPreview();
       refreshImagesList(collectionId, data);
     });
@@ -9235,11 +9232,11 @@ function bulletinEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -9254,7 +9251,7 @@ function bulletinEditor(collectionId, data) {
     $(this).textareaAutoSize();
     data.description.edition = $(this).val();
   });
-  //if (!Florence.collection.date) {                        //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                        //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -9390,7 +9387,7 @@ function bulletinEditor(collectionId, data) {
 
       putContent(collectionId, data.uri, JSON.stringify(data),
         success = function () {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           refreshPreview();
           refreshChartList(collectionId, data);
         },
@@ -9403,7 +9400,7 @@ function bulletinEditor(collectionId, data) {
 
   $('#add-table').click(function () {
     loadTableBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshPreview();
       refreshTablesList(collectionId, data);
     });
@@ -9411,7 +9408,7 @@ function bulletinEditor(collectionId, data) {
 
   $('#add-image').click(function () {
     loadImageBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       //refreshPreview();
       refreshImagesList(collectionId, data);
     });
@@ -9545,11 +9542,11 @@ function timeseriesEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -9698,7 +9695,7 @@ function timeseriesEditor(collectionId, data) {
   editNav.off(); // remove any existing event handlers.
 
   editNav.on('click', '.btn-edit-save', function () {
-    if (Florence.globalVars.welsh) {
+    if (Ermintrude.globalVars.welsh) {
       sweetAlert('You cannot perform this operation in Welsh.');
     } else {
       save();
@@ -9708,7 +9705,7 @@ function timeseriesEditor(collectionId, data) {
 
   // completed to review
   editNav.on('click', '.btn-edit-save-and-submit-for-review', function () {
-    if (Florence.globalVars.welsh) {
+    if (Ermintrude.globalVars.welsh) {
       sweetAlert('You cannot perform this operation in Welsh.');
     } else {
       save();
@@ -9781,11 +9778,11 @@ function compendiumChapterEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -9802,7 +9799,7 @@ function compendiumChapterEditor(collectionId, data) {
       autoSaveMetadata(collectionId, data);
     }, 3000);
   });
-  //if (!Florence.collection.date) {                    //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                    //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -9914,7 +9911,7 @@ function compendiumChapterEditor(collectionId, data) {
 
       putContent(collectionId, data.uri, JSON.stringify(data),
         success = function () {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           refreshPreview();
           refreshChartList(collectionId, data);
         },
@@ -9927,7 +9924,7 @@ function compendiumChapterEditor(collectionId, data) {
 
   $('#add-table').click(function () {
     loadTableBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshPreview();
       refreshTablesList(collectionId, data);
     });
@@ -9935,7 +9932,7 @@ function compendiumChapterEditor(collectionId, data) {
 
   $('#add-image').click(function () {
     loadImageBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       //refreshPreview();
       refreshImagesList(collectionId, data);
     });
@@ -10064,11 +10061,11 @@ function compendiumDataEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -10085,7 +10082,7 @@ function compendiumDataEditor(collectionId, data) {
       autoSaveMetadata(collectionId, data);
     }, 3000);
   });
-  //if (!Florence.collection.date) {                    //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                    //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -10274,11 +10271,11 @@ function compendiumEditor(collectionId, data, templateData) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -10296,7 +10293,7 @@ function compendiumEditor(collectionId, data, templateData) {
     $(this).textareaAutoSize();
     data.description.edition = $(this).val();
   });
-  //if (!Florence.collection.date) {                    //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                    //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -10644,7 +10641,7 @@ function editChapters(collectionId, data) {
                 type: "success",
                 timer: 2000
               });
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
               deleteContent(collectionId, selectedChapter, function () {
                 refreshPreview(path);
                 loadPageDataIntoEditor(path, collectionId);
@@ -10755,7 +10752,7 @@ function editData(collectionId, data) {
                   type: "success",
                   timer: 2000
                 });
-                Florence.Editor.isDirty = false;
+                Ermintrude.Editor.isDirty = false;
                 deleteContent(collectionId, selectedData, function () {
                   refreshPreview(path);
                   loadPageDataIntoEditor(path, collectionId);
@@ -10787,11 +10784,11 @@ function adHocEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -10815,7 +10812,7 @@ function adHocEditor(collectionId, data) {
     $(this).textareaAutoSize();
     data.description.title = $(this).val();
   });
-  //if (!Florence.collection.date) {                    //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                    //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -10914,11 +10911,11 @@ function foiEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -10943,7 +10940,7 @@ function foiEditor(collectionId, data) {
     $(this).textareaAutoSize();
     data.description.title = $(this).val();
   });
-  //if (!Florence.collection.date) {                    //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                    //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -11032,11 +11029,11 @@ function methodologyDownloadEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -11173,11 +11170,11 @@ function methodologyEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -11187,7 +11184,7 @@ function methodologyEditor(collectionId, data) {
     $(this).textareaAutoSize();
     data.description.title = $(this).val();
   });
-  //if (!Florence.collection.date) {                        //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                        //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -11274,7 +11271,7 @@ function methodologyEditor(collectionId, data) {
 
       putContent(collectionId, data.uri, JSON.stringify(data),
         success = function () {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           refreshPreview();
           refreshChartList(collectionId, data);
         },
@@ -11287,7 +11284,7 @@ function methodologyEditor(collectionId, data) {
 
   $('#add-table').click(function () {
     loadTableBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshPreview();
       refreshTablesList(collectionId, data);
     });
@@ -11295,7 +11292,7 @@ function methodologyEditor(collectionId, data) {
 
   $('#add-image').click(function () {
     loadImageBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       //refreshPreview();
       refreshImagesList(collectionId, data);
     });
@@ -11397,11 +11394,11 @@ function qmiEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -11603,11 +11600,11 @@ function staticLandingPageEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
 
 
@@ -11664,7 +11661,7 @@ function staticLandingPageEditor(collectionId, data) {
 
       $('#section-get_' + index).click(function () {
         var iframeEvent = document.getElementById('iframe').contentWindow;
-        iframeEvent.removeEventListener('click', Florence.Handler, true);
+        iframeEvent.removeEventListener('click', Ermintrude.Handler, true);
         createWorkspace(data.uri, collectionId, '', true);
         $('#section-get_' + index).html('Copy link').off().one('click', function () {
           var uriCheck = getPathNameTrimLast();
@@ -11673,11 +11670,11 @@ function staticLandingPageEditor(collectionId, data) {
           putContent(collectionId, data.uri, JSON.stringify(data),
             success = function (response) {
               console.log("Updating completed " + response);
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
               viewWorkspace(data.uri, collectionId, 'edit');
               refreshPreview(data.uri);
               var iframeEvent = document.getElementById('iframe').contentWindow;
-              iframeEvent.addEventListener('click', Florence.Handler, true);
+              iframeEvent.addEventListener('click', Ermintrude.Handler, true);
             },
             error = function (response) {
               if (response.status === 400) {
@@ -11827,11 +11824,11 @@ function staticPageEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
 
   $("#metadata-ad").remove();
@@ -11940,11 +11937,11 @@ function datasetEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function () {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -11992,11 +11989,11 @@ function datasetEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -12016,7 +12013,7 @@ function datasetEditor(collectionId, data) {
       autoSaveMetadata(collectionId, data);
     }, 3000);
   });
-  //if (!Florence.collection.date) {                      //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                      //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -12277,7 +12274,7 @@ function addEditionEditButton(collectionId, data, templateData) {
             timer: 2000
           });
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position;
+          Ermintrude.globalVars.pagePos = position;
           $('#edition-delete_' + index).parent().remove();
           $.ajax({
             url: "/zebedee/content/" + collectionId + "?uri=" + data.datasets[index].uri,
@@ -12326,7 +12323,7 @@ function transfer(source, destination, uri) {
 
 function treeNodeSelect(url){
 
-  var urlPart = url.replace(Florence.tredegarBaseUrl, '');
+  var urlPart = url.replace(Ermintrude.tredegarBaseUrl, '');
   var selectedListItem = $('[data-url="' + urlPart + '"]'); //get first li with data-url with url
   $('.page-list li').removeClass('selected');
   $('.page-options').hide();
@@ -12354,7 +12351,7 @@ function uiTidyUp() {
   var redirect = redirectToPath;
   putContent(collectionId, path, content,
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       if (redirect) {
         createWorkspace(redirect, collectionId, 'edit');
         return;
@@ -12445,7 +12442,7 @@ function viewCollectionDetails(collectionId) {
 
   function populateCollectionDetails(collection, collectionId) {
 
-    Florence.setActiveCollection(collection);
+    Ermintrude.setActiveCollection(collection);
 
     if (!collection.publishDate) {
       collection.date = '[manual collection]';
@@ -12536,10 +12533,10 @@ function viewCollectionDetails(collectionId) {
       var language = $(this).attr('data-language');
       if (language === 'cy') {
         var safePath = checkPathSlashes(path);
-        Florence.globalVars.welsh = true;
+        Ermintrude.globalVars.welsh = true;
       } else {
         var safePath = checkPathSlashes(path);
-        Florence.globalVars.welsh = false;
+        Ermintrude.globalVars.welsh = false;
       }
       getPageDataDescription(collectionId, safePath,
         success = function () {
@@ -12605,7 +12602,7 @@ function viewCollectionDetails(collectionId) {
     });
 
     $('.btn-collection-work-on').click(function () {
-      Florence.globalVars.welsh = false;
+      Ermintrude.globalVars.welsh = false;
       createWorkspace('', collectionId, 'browse');
     });
 
@@ -12727,7 +12724,7 @@ function viewCollectionDetails(collectionId) {
   }
 }function viewController(view) {
 
-	if (Florence.Authentication.isAuthenticated()) {
+	if (Ermintrude.Authentication.isAuthenticated()) {
 
 		if (view === 'collections') {
 			viewCollections();
@@ -12817,7 +12814,7 @@ var manual = '[manual collection]';
 
     $('.publish-select-table tbody tr').click(function(){
       var collections = $(this).attr('data-collections').split(',');
-      Florence.collectionToPublish.publishDate = $(this).find('td').html();
+      Ermintrude.collectionToPublish.publishDate = $(this).find('td').html();
       viewPublishDetails(collections);
 
       $('.publish-select-table tbody tr').removeClass('selected');
@@ -12832,7 +12829,7 @@ function viewPublishDetails(collections) {
 
   var manual = '[manual collection]';
   var result = {
-    date: Florence.collectionToPublish.publishDate,
+    date: Ermintrude.collectionToPublish.publishDate,
     subtitle: '',
     collectionDetails: [],
   }
@@ -13034,7 +13031,7 @@ function viewUserDetails(email) {
     $('.btn-user-change-password').click(function () {
       var currentPasswordRequired = false;
 
-      if(email == Florence.Authentication.loggedInEmail()) {
+      if(email == Ermintrude.Authentication.loggedInEmail()) {
         currentPasswordRequired = true;
       }
 
@@ -13142,7 +13139,7 @@ function viewWorkspace(path, collectionId, menu) {
     currentPath = path;
   }
 
-  Florence.globalVars.pagePath = currentPath;
+  Ermintrude.globalVars.pagePath = currentPath;
 
   if (menu === 'browse') {
     $('.nav--workspace li').removeClass('selected');

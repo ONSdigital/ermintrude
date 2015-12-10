@@ -14,7 +14,7 @@ function loadCreator (parentUrl, collectionId, type) {
     }
   );
 
-  //releaseDate = Florence.collection.date;             //to be added back to scheduled collections
+  //releaseDate = Ermintrude.collection.date;             //to be added back to scheduled collections
 
   if (type === 'bulletin' || type === 'article') {
     $('#pagetype').val(type).change();

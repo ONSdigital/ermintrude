@@ -55,7 +55,7 @@ function initialiseMarkdown(collectionId, data, field, idField) {
       }, function(result) {
         if (result === true) {
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position + 300;
+          Ermintrude.globalVars.pagePos = position + 300;
           $(this).parent().remove();
           data[field].splice(index, 1);
           saveMarkdown(collectionId, data.uri, data, field, idField);
@@ -75,7 +75,7 @@ function initialiseMarkdown(collectionId, data, field, idField) {
   //Add
   $('#add-' + idField).off().one('click', function () {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 300;
+    Ermintrude.globalVars.pagePos = position + 300;
     data[field].push({markdown:"", title:""});
     saveMarkdown(collectionId, data.uri, data, field, idField);
   });
@@ -95,7 +95,7 @@ function initialiseMarkdown(collectionId, data, field, idField) {
 function saveMarkdown (collectionId, path, data, field, idField) {
     putContent(collectionId, path, JSON.stringify(data),
         success = function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             refreshMarkdown (collectionId, data, field, idField);
             refreshChartList(collectionId, data);
             refreshTablesList(collectionId, data);

@@ -2,7 +2,7 @@ function viewPublishDetails(collections) {
 
   var manual = '[manual collection]';
   var result = {
-    date: Florence.collectionToPublish.publishDate,
+    date: Ermintrude.collectionToPublish.publishDate,
     subtitle: '',
     collectionDetails: [],
   }

@@ -6,7 +6,7 @@ function initialiseLastNoteMarkdown(collectionId, data, field, field2) {
     data[field][lastIndex][field2] = updatedContent;
     putContent(collectionId, data.uri, JSON.stringify(data),
       success = function () {
-        Florence.Editor.isDirty = false;
+        Ermintrude.Editor.isDirty = false;
         loadPageDataIntoEditor(data.uri, collectionId);
         refreshPreview(data.uri);
       },

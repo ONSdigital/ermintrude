@@ -59,7 +59,7 @@ function editMarkdownOneObject (collectionId, data, field, title) {
 function saveMarkdownOne (collectionId, path, data, field) {
   putContent(collectionId, path, JSON.stringify(data),
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       editMarkdownOneObject (collectionId, data, field);
     },
     error = function (response) {

@@ -6,7 +6,7 @@
 function autoSaveMetadata(collectionId, data) {
   putContent(collectionId, data.uri, JSON.stringify(data),
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
     },
     error = function (response) {
       if (response.status === 400) {

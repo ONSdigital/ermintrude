@@ -62,7 +62,7 @@ function loadMarkdownEditor(content, onSave, pageData, notEmpty) {
 
   var onInsertSave = function(name, markdown) {
     insertAtCursor($('#wmd-input')[0], markdown);
-    Florence.Editor.markdownEditor.refreshPreview();
+    Ermintrude.Editor.markdownEditor.refreshPreview();
   };
 
   $(".btn-markdown-editor-chart").click(function(){
@@ -76,7 +76,7 @@ function loadMarkdownEditor(content, onSave, pageData, notEmpty) {
   $(".btn-markdown-editor-image").click(function(){
     loadImageBuilder(pageData, function(name, markdown, pageData) {
       onInsertSave(name, markdown);
-      refreshImagesList(Florence.collection.id, pageData)
+      refreshImagesList(Ermintrude.collection.id, pageData)
     });
   });
 
@@ -166,7 +166,7 @@ function markdownEditor() {
   });
 
   var editor = new Markdown.Editor(converter);
-  Florence.Editor.markdownEditor = editor;
+  Ermintrude.Editor.markdownEditor = editor;
 
   editor.hooks.chain("onPreviewRefresh", function () {
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);

@@ -157,7 +157,7 @@ function loadImageBuilder(pageData, onSave, image) {
         var toFile = pageUrl + '/' + file.filename.replace(previewImage.filename, image.filename);
         if (fromFile != toFile){
           console.log("moving... table file: " + fromFile + " to: " + toFile);
-          moveContent(Florence.collection.id, fromFile, toFile,
+          moveContent(Ermintrude.collection.id, fromFile, toFile,
             onSuccess = function () {
               console.log("Moved table file: " + fromFile + " to: " + toFile);
             });
@@ -184,7 +184,7 @@ function loadImageBuilder(pageData, onSave, image) {
       $(previewImage.files).each(function (index, file) {
 
         var fileToDelete = pageUrl + '/' + file.filename;
-        deleteContent(Florence.collection.id, fileToDelete,
+        deleteContent(Ermintrude.collection.id, fileToDelete,
           onSuccess = function () {
             console.log("deleted image file: " + fileToDelete);
           });
@@ -209,7 +209,7 @@ function loadImageBuilder(pageData, onSave, image) {
   }
 
   function renderImage(imageUri) {
-    var iframeMarkup = '<iframe id="preview-frame" frameBorder ="0" scrolling = "yes" src="' + '/zebedee/resource/' + Florence.collection.id + '?uri=' + imageUri + '"></iframe>';
+    var iframeMarkup = '<iframe id="preview-frame" frameBorder ="0" scrolling = "yes" src="' + '/zebedee/resource/' + Ermintrude.collection.id + '?uri=' + imageUri + '"></iframe>';
     $('#image').html(iframeMarkup);
     var iframe = document.getElementById('preview-frame');
     iframe.height = "500px";
@@ -248,7 +248,7 @@ function loadImageBuilder(pageData, onSave, image) {
 
   function uploadFile(path, formData, success) {
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + path,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + path,
       type: 'POST',
       data: formData,
       async: false,
@@ -287,7 +287,7 @@ function loadImageBuilder(pageData, onSave, image) {
     var imageJson = noExtension[1] + ".json";
 
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + imageJson,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + imageJson,
       type: 'POST',
       data: JSON.stringify(image),
       processData: false,

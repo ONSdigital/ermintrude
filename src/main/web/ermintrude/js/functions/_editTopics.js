@@ -14,7 +14,7 @@ function editTopics(collectionId, data, templateData, field, idField) {
   $('#' + idField).replaceWith(html);
   initialiseTopics(collectionId, data, templateData, field, idField);
   resolveTopicTitle(collectionId, data, templateData, field, idField);
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 }
 
 function refreshTopics(collectionId, data, templateData, field, idField) {
@@ -52,13 +52,13 @@ function initialiseTopics(collectionId, data, templateData, field, idField) {
               timer: 2000
             });
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             data[field].splice(index, 1);
             templateData[field].splice(index, 1);
             putContent(collectionId, data.uri, JSON.stringify(data),
               success = function () {
-                Florence.Editor.isDirty = false;
+                Ermintrude.Editor.isDirty = false;
                 refreshPreview(data.uri);
                 refreshTopics(collectionId, data, templateData, field, idField)
               },
@@ -82,7 +82,7 @@ function initialiseTopics(collectionId, data, templateData, field, idField) {
     var hasLatest; //Latest markup doesn't need to show in handlebars template
     var position = $(".workspace-edit").scrollTop();
 
-    Florence.globalVars.pagePos = position;
+    Ermintrude.globalVars.pagePos = position;
     var modal = templates.relatedModal(hasLatest);
     $('.workspace-menu').append(modal);
 
@@ -100,7 +100,7 @@ function initialiseTopics(collectionId, data, templateData, field, idField) {
 
     $('.btn-uri-browse').off().one('click', function () {
       var iframeEvent = document.getElementById('iframe').contentWindow;
-      iframeEvent.removeEventListener('click', Florence.Handler, true);
+      iframeEvent.removeEventListener('click', Ermintrude.Handler, true);
       createWorkspace(data.uri, collectionId, '', true);
       $('.modal').remove();
 
@@ -207,11 +207,11 @@ function saveTopics (collectionId, path, data, templateData, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     success = function (response) {
       console.log("Updating completed " + response);
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       resolveTopicTitle(collectionId, data, templateData, field, idField);
       refreshPreview(path);
       var iframeEvent = document.getElementById('iframe').contentWindow;
-      iframeEvent.addEventListener('click', Florence.Handler, true);
+      iframeEvent.addEventListener('click', Ermintrude.Handler, true);
     },
     error = function (response) {
       if (response.status === 400) {

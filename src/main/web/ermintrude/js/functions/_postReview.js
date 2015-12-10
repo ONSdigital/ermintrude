@@ -1,7 +1,7 @@
 function saveAndReviewContent(collectionId, path, content, redirectToPath) {
   putContent(collectionId, path, content,
     success = function (response) {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       if (redirectToPath) {
         postReview(collectionId, path, redirectToPath);
       } else {
@@ -25,7 +25,7 @@ function postReview(collectionId, path, redirectToPath) {
     safePath = '';          // edge case for home
   }
 
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     var url = "/zebedee/review/" + collectionId + "?uri=" + safePath + "/data_cy.json";
   } else {
     var url = "/zebedee/review/" + collectionId + "?uri=" + safePath + "/data.json";

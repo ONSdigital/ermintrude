@@ -1,6 +1,6 @@
 function treeNodeSelect(url){
 
-  var urlPart = url.replace(Florence.tredegarBaseUrl, '');
+  var urlPart = url.replace(Ermintrude.tredegarBaseUrl, '');
   var selectedListItem = $('[data-url="' + urlPart + '"]'); //get first li with data-url with url
   $('.page-list li').removeClass('selected');
   $('.page-options').hide();

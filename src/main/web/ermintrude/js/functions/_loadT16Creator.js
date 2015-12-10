@@ -99,7 +99,7 @@ function loadT16Creator(collectionId, releaseDate, pageType, parentUrl) {
         sweetAlert("This is not a valid file title");
         return true;
       } else {
-        Florence.globalVars.pagePath = safeNewUri;
+        Ermintrude.globalVars.pagePath = safeNewUri;
         saveContent(collectionId, safeNewUri, pageData);
       }
       e.preventDefault();

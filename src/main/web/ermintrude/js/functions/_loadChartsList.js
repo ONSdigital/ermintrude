@@ -36,7 +36,7 @@ function initialiseChartList(collectionId, data) {
 
             putContent(collectionId, basePath, JSON.stringify(data),
               success = function () {
-                Florence.Editor.isDirty = false;
+                Ermintrude.Editor.isDirty = false;
                 refreshPreview();
                 refreshChartList(collectionId, data);
               },
@@ -68,7 +68,7 @@ function initialiseChartList(collectionId, data) {
               deleteContent(collectionId, chartJson + '.json', onSuccess = function () {
               }, onError = function () {
               });
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
               swal({
                 title: "Deleted",
                 text: "This chart has been deleted",

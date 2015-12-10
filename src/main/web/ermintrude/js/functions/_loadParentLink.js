@@ -16,7 +16,7 @@ function loadParentLink(collectionId, data, parentUrl) {
   //Take user to parent edit screen on link click
   $('.child-page__link').click(function () {
     //If there are edits check whether user wants to continue
-    if (Florence.Editor.isDirty) {
+    if (Ermintrude.Editor.isDirty) {
       swal ({
         title: "Warning",
         text: "You have unsaved changes. Are you sure you want to continue?",
@@ -26,7 +26,7 @@ function loadParentLink(collectionId, data, parentUrl) {
         cancelButtonText: "Cancel"
       }, function (result) {
         if (result === true) {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           //Return to parent if user confirms it
           updateContent(collectionId, data.uri, JSON.stringify(data), parentUrl);
           return true;

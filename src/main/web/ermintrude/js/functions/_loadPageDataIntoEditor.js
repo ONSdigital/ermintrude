@@ -7,7 +7,7 @@
 
 function loadPageDataIntoEditor(path, collectionId, click) {
 
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     if (path === '/') {       //add whatever needed to read content in Welsh
       var pageUrlData = path + '&lang=cy';
       var toApproveUrlData = '/data_cy.json';
@@ -43,7 +43,7 @@ function loadPageDataIntoEditor(path, collectionId, click) {
     getCollection(collectionId,
       success = function (response) {
         var lastCompletedEvent = getLastCompletedEvent(response, toApproveUrlData);
-        isPageComplete = !(!lastCompletedEvent || lastCompletedEvent.email === Florence.Authentication.loggedInEmail());
+        isPageComplete = !(!lastCompletedEvent || lastCompletedEvent.email === Ermintrude.Authentication.loggedInEmail());
       },
       error = function (response) {
         handleApiError(response);

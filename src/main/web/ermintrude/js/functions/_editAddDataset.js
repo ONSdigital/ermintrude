@@ -16,7 +16,7 @@ function addDataset(collectionId, data, field, idField) {
     lastIndex = 0;
   }
   var uploadedNotSaved = {uploaded: false, saved: false, editionUri: ""};
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 
   //Add
   if (data.timeseries) {
@@ -29,7 +29,7 @@ function addDataset(collectionId, data, field, idField) {
 
   $('#add-' + idField).one('click', function () {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 200;
+    Ermintrude.globalVars.pagePos = position + 200;
     $('#sortable-' + idField).append(
       '<div id="' + lastIndex + '" class="edit-section__item">' +
       '  <form id="UploadForm">' +
@@ -50,7 +50,7 @@ function addDataset(collectionId, data, field, idField) {
       //Check files uploaded and delete them
       if (uploadedNotSaved.uploaded === true) {
         data[field].splice(-1, 1);
-        deleteContent(Florence.collection.id, uploadedNotSaved.editionUri,
+        deleteContent(Ermintrude.collection.id, uploadedNotSaved.editionUri,
           onSuccess = function () {
           },
           onError = function (error) {

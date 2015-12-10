@@ -14,7 +14,7 @@ function addFileWithDetails(collectionId, data, field, idField) {
   var uriUpload;
   var downloadExtensions;
 
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 
   // Edit
   if (!data[field] || data[field].length === 0) {
@@ -40,7 +40,7 @@ function addFileWithDetails(collectionId, data, field, idField) {
               timer: 2000
             });
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             $.ajax({
               url: "/zebedee/content/" + collectionId + "?uri=" + data.uri + data[field][index].file,
@@ -85,7 +85,7 @@ function addFileWithDetails(collectionId, data, field, idField) {
 
   $('#add-' + idField).one('click', function () {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 200;
+    Ermintrude.globalVars.pagePos = position + 200;
     $('#sortable-' + idField).append(
       '<div id="' + lastIndex + '" class="edit-section__item">' +
       '  <form id="UploadForm">' +

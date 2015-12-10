@@ -18,7 +18,7 @@ function loadTableBuilder(pageData, onSave, table) {
 
     // send xls file to zebedee
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + xlsPath,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + xlsPath,
       type: 'POST',
       data: formData,
       async: false,
@@ -32,7 +32,7 @@ function loadTableBuilder(pageData, onSave, table) {
 
     function createTableHtml(previewTable) {
       $.ajax({
-        url: "/zebedee/table/" + Florence.collection.id + "?uri=" + xlsPath,
+        url: "/zebedee/table/" + Ermintrude.collection.id + "?uri=" + xlsPath,
         type: 'POST',
         success: function (html) {
           saveTableJson(previewTable, success = function () {
@@ -44,7 +44,7 @@ function loadTableBuilder(pageData, onSave, table) {
 
     function saveTableHtml(data) {
       $.ajax({
-        url: "/zebedee/content/" + Florence.collection.id + "?uri=" + htmlPath,
+        url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + htmlPath,
         type: 'POST',
         data: data,
         processData: false,
@@ -82,10 +82,10 @@ function loadTableBuilder(pageData, onSave, table) {
 
     // delete the preview table
     if (previewTable) {
-      deleteContent(Florence.collection.id, previewTable.uri + ".json");
+      deleteContent(Ermintrude.collection.id, previewTable.uri + ".json");
       $(previewTable.files).each(function (index, file) {
         var fileToDelete = pageUrl + '/' + file.filename;
-        deleteContent(Florence.collection.id, fileToDelete,
+        deleteContent(Ermintrude.collection.id, fileToDelete,
           onSuccess = function () {
             console.log("deleted table file: " + fileToDelete);
           });
@@ -99,7 +99,7 @@ function loadTableBuilder(pageData, onSave, table) {
     var tableJson = table.uri + ".json";
 
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + tableJson,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + tableJson,
       type: 'POST',
       data: JSON.stringify(table),
       processData: false,
@@ -143,12 +143,12 @@ function loadTableBuilder(pageData, onSave, table) {
         var fromFile = pageUrl + '/' + file.filename;
         var toFile = pageUrl + '/' + file.filename.replace(previewTable.filename, table.filename);
         console.log("moving... table file: " + fromFile + " to: " + toFile);
-        moveContent(Florence.collection.id, fromFile, toFile,
+        moveContent(Ermintrude.collection.id, fromFile, toFile,
           onSuccess = function () {
             console.log("Moved table file: " + fromFile + " to: " + toFile);
           });
       });
-      deleteContent(Florence.collection.id, previewTable.uri + ".json", function(){}, function(){});
+      deleteContent(Ermintrude.collection.id, previewTable.uri + ".json", function(){}, function(){});
     } else { // just keep the preview files
       table = previewTable;
       addTableToPageJson(table);

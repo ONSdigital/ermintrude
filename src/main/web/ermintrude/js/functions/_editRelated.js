@@ -14,7 +14,7 @@ function editRelated(collectionId, data, templateData, field, idField) {
   $('#' + idField).replaceWith(html);
   initialiseRelated(collectionId, data, templateData, field, idField);
   resolveTitle(collectionId, data, templateData, field, idField);
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 }
 
 function refreshRelated(collectionId, data, templateData, field, idField) {
@@ -72,13 +72,13 @@ function initialiseRelated(collectionId, data, templateData, field, idField) {
               timer: 2000
             });
             var position = $(".workspace-edit").scrollTop();
-            Florence.globalVars.pagePos = position;
+            Ermintrude.globalVars.pagePos = position;
             $(this).parent().remove();
             data[field].splice(index, 1);
             templateData[field].splice(index, 1);
             putContent(collectionId, data.uri, JSON.stringify(data),
               success = function () {
-                Florence.Editor.isDirty = false;
+                Ermintrude.Editor.isDirty = false;
                 refreshPreview(data.uri);
                 refreshRelated(collectionId, data, templateData, field, idField);
               },
@@ -107,7 +107,7 @@ function initialiseRelated(collectionId, data, templateData, field, idField) {
     hasLatest = {hasLatest : true};
   }
 
-    Florence.globalVars.pagePos = position;
+    Ermintrude.globalVars.pagePos = position;
     var modal = templates.relatedModal(hasLatest);
     $('.workspace-menu').append(modal);
 
@@ -126,7 +126,7 @@ function initialiseRelated(collectionId, data, templateData, field, idField) {
 
     $('.btn-uri-browse').off().one('click', function () {
       var iframeEvent = document.getElementById('iframe').contentWindow;
-      iframeEvent.removeEventListener('click', Florence.Handler, true);
+      iframeEvent.removeEventListener('click', Ermintrude.Handler, true);
       createWorkspace(data.uri, collectionId, '', true);
       $('.modal').remove();
 

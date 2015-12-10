@@ -348,7 +348,7 @@ function makeEditSections(collectionId, pageData, isPageComplete) {
 
   // Listen on all input within the workspace edit panel for dirty checks.
   $('.workspace-edit :input').on('input', function () {
-    Florence.Editor.isDirty = true;
+    Ermintrude.Editor.isDirty = true;
     // remove the handler now we know content has changed.
     //$(':input').unbind('input');
     //console.log('Changes detected.');
@@ -356,12 +356,12 @@ function makeEditSections(collectionId, pageData, isPageComplete) {
 }
 
 function refreshEditNavigation() {
-  getCollection(Florence.collection.id,
+  getCollection(Ermintrude.collection.id,
     success = function (collection) {
       var pagePath = getPathName();
       var pageFile = pagePath + '/data.json';
       var lastCompletedEvent = getLastCompletedEvent(collection, pageFile);
-      var isPageComplete = !(!lastCompletedEvent || lastCompletedEvent.email === Florence.Authentication.loggedInEmail());
+      var isPageComplete = !(!lastCompletedEvent || lastCompletedEvent.email === Ermintrude.Authentication.loggedInEmail());
 
       var editNav = templates.editNav({isPageComplete: isPageComplete});
       $('.edit-nav').html(editNav);

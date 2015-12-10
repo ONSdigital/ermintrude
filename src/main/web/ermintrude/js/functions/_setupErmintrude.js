@@ -1,4 +1,4 @@
-function setupFlorence() {
+function setupErmintrude() {
   window.templates = Handlebars.templates;
   Handlebars.registerPartial("browseNode", templates.browseNode);
   Handlebars.registerPartial("editNav", templates.editNav);
@@ -67,18 +67,18 @@ function setupFlorence() {
 
 
 
-  Florence.globalVars.activeTab = false;
+  Ermintrude.globalVars.activeTab = false;
 
-  // load main florence template
-  var florence = templates.florence;
+  // load main ermintrude template
+  var ermintrude = templates.ermintrude;
 
-  $('body').append(florence);
-  Florence.refreshAdminMenu();
+  $('body').append(ermintrude);
+  Ermintrude.refreshAdminMenu();
 
   var adminMenu = $('.admin-nav');
   // dirty checks on admin menu
   adminMenu.on('click', '.nav--admin__item', function () {
-    if (Florence.Editor.isDirty) {
+    if (Ermintrude.Editor.isDirty) {
       swal ({
         title: "Warning",
         text: "If you do not come back to this page, you will lose any unsaved changes",
@@ -88,7 +88,7 @@ function setupFlorence() {
         cancelButtonText: "Cancel"
       }, function(result){
         if (result === true) {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           processMenuClick(this);
           return true;
         } else {
@@ -102,7 +102,7 @@ function setupFlorence() {
 
 
   window.onbeforeunload = function () {
-    if (Florence.Editor.isDirty) {
+    if (Ermintrude.Editor.isDirty) {
       return 'You have unsaved changes.';
     }
   };
@@ -110,7 +110,7 @@ function setupFlorence() {
 
 
   function processMenuClick(clicked) {
-    Florence.collection = {};
+    Ermintrude.collection = {};
 
     $('.nav--admin__item--collection').hide();
     $('.nav--admin__item').removeClass('selected');
@@ -138,8 +138,5 @@ function setupFlorence() {
       viewController();
     }
   }
-
-  //var interval = setTimeout(ping, 60000);
-  //ping();
 }
 

@@ -22,7 +22,7 @@ function viewUserDetails(email) {
     $('.btn-user-change-password').click(function () {
       var currentPasswordRequired = false;
 
-      if(email == Florence.Authentication.loggedInEmail()) {
+      if(email == Ermintrude.Authentication.loggedInEmail()) {
         currentPasswordRequired = true;
       }
 

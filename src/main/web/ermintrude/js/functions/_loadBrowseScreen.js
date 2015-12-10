@@ -6,7 +6,7 @@ function loadBrowseScreen(collectionId, click) {
     type: 'GET',
     success: function (response) {
       var browserContent = $('#iframe')[0].contentWindow;
-      var baseURL = Florence.tredegarBaseUrl;
+      var baseURL = Ermintrude.tredegarBaseUrl;
       var html = templates.workBrowse(response);
       $('.workspace-menu').html(html);
       $('.workspace-browse').css("overflow", "scroll");
@@ -27,7 +27,7 @@ function loadBrowseScreen(collectionId, click) {
 
           //change iframe location
           browserContent.location.href = newURL;
-          Florence.globalVars.pagePath = uri;
+          Ermintrude.globalVars.pagePath = uri;
           $('.browser-location').val(newURL);
         }
 

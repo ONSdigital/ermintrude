@@ -47,7 +47,7 @@ var manual = '[manual collection]';
 
     $('.publish-select-table tbody tr').click(function(){
       var collections = $(this).attr('data-collections').split(',');
-      Florence.collectionToPublish.publishDate = $(this).find('td').html();
+      Ermintrude.collectionToPublish.publishDate = $(this).find('td').html();
       viewPublishDetails(collections);
 
       $('.publish-select-table tbody tr').removeClass('selected');

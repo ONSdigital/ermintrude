@@ -110,7 +110,7 @@ function viewReleaseSelector() {
     releaseList.find('tr').on('click', function () {
       var releaseTitle = $(this).attr('data-id');
       var releaseUri = $(this).attr('data-uri');
-      Florence.CreateCollection.selectedRelease = {uri: releaseUri, title: releaseTitle};
+      Ermintrude.CreateCollection.selectedRelease = {uri: releaseUri, title: releaseTitle};
 
       $('.selected-release').text(releaseTitle);
       $('.release-select').stop().fadeOut(200).remove();

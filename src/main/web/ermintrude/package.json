@@ -1,9 +1,9 @@
 {
-  "description": “Ermintrude javascript build",
+  "description": "Florence javascript build",
   "license" : "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ONSdigital/ermintrude”
+    "url": "https://github.com/ONSdigital/florence"
   },
   "devDependencies": {
     "cat": "latest",

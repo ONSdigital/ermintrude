@@ -7,11 +7,11 @@ function staticLandingPageEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
 
 
@@ -68,7 +68,7 @@ function staticLandingPageEditor(collectionId, data) {
 
       $('#section-get_' + index).click(function () {
         var iframeEvent = document.getElementById('iframe').contentWindow;
-        iframeEvent.removeEventListener('click', Florence.Handler, true);
+        iframeEvent.removeEventListener('click', Ermintrude.Handler, true);
         createWorkspace(data.uri, collectionId, '', true);
         $('#section-get_' + index).html('Copy link').off().one('click', function () {
           var uriCheck = getPathNameTrimLast();
@@ -77,11 +77,11 @@ function staticLandingPageEditor(collectionId, data) {
           putContent(collectionId, data.uri, JSON.stringify(data),
             success = function (response) {
               console.log("Updating completed " + response);
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
               viewWorkspace(data.uri, collectionId, 'edit');
               refreshPreview(data.uri);
               var iframeEvent = document.getElementById('iframe').contentWindow;
-              iframeEvent.addEventListener('click', Florence.Handler, true);
+              iframeEvent.addEventListener('click', Ermintrude.Handler, true);
             },
             error = function (response) {
               if (response.status === 400) {

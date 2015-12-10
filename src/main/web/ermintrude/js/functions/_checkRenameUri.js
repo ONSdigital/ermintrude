@@ -35,7 +35,7 @@ function checkRenameUri(collectionId, data, renameUri, onSave) {
           }
           moveContent(collectionId, data.uri, newUri,
             onSuccess = function () {
-              Florence.globalVars.pagePath = newUri;
+              Ermintrude.globalVars.pagePath = newUri;
               onSave(collectionId, newUri, JSON.stringify(data));
             }
           );
@@ -49,7 +49,7 @@ function checkRenameUri(collectionId, data, renameUri, onSave) {
           var newUri = tmpNewUri.join("/");
           moveContent(collectionId, data.uri, newUri,
             onSuccess = function () {
-              Florence.globalVars.pagePath = newUri;
+              Ermintrude.globalVars.pagePath = newUri;
               onSave(collectionId, newUri, JSON.stringify(data));
             }
           );
@@ -73,7 +73,7 @@ function checkRenameUri(collectionId, data, renameUri, onSave) {
           }
           moveContent(collectionId, data.uri, newUri,
             onSuccess = function () {
-              Florence.globalVars.pagePath = newUri;
+              Ermintrude.globalVars.pagePath = newUri;
               onSave(collectionId, newUri, JSON.stringify(data));
             }
           );

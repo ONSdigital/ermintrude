@@ -10,11 +10,11 @@ function compendiumEditor(collectionId, data, templateData) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -32,7 +32,7 @@ function compendiumEditor(collectionId, data, templateData) {
     $(this).textareaAutoSize();
     data.description.edition = $(this).val();
   });
-  //if (!Florence.collection.date) {                    //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                    //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -380,7 +380,7 @@ function editChapters(collectionId, data) {
                 type: "success",
                 timer: 2000
               });
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
               deleteContent(collectionId, selectedChapter, function () {
                 refreshPreview(path);
                 loadPageDataIntoEditor(path, collectionId);
@@ -491,7 +491,7 @@ function editData(collectionId, data) {
                   type: "success",
                   timer: 2000
                 });
-                Florence.Editor.isDirty = false;
+                Ermintrude.Editor.isDirty = false;
                 deleteContent(collectionId, selectedData, function () {
                   refreshPreview(path);
                   loadPageDataIntoEditor(path, collectionId);

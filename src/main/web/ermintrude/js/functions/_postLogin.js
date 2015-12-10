@@ -18,7 +18,7 @@ function postLogin(email, password) {
     success: function (response) {
       document.cookie = "access_token=" + response + ";path=/";
       localStorage.setItem("loggedInAs", email);
-      Florence.refreshAdminMenu();
+      Ermintrude.refreshAdminMenu();
       viewController();
     },
     error: function (response) {

@@ -22,7 +22,7 @@ function loadT8Creator (collectionId, releaseDate, pageType, parentUrl, pageTitl
     dataType: 'json',
     crossDomain: true,
     success: function (checkData) {
-      if (checkData.type === 'product_page' && !Florence.globalVars.welsh) {
+      if (checkData.type === 'product_page' && !Ermintrude.globalVars.welsh) {
         submitFormHandler();
         return true;
       } else {

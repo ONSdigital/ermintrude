@@ -85,13 +85,13 @@ function loadT7Creator(collectionId, releaseDate, pageType, parentUrl) {
       pageData.fileName = pageNameTrimmed;
       pageData.description.reference = isNumber;
       var adHocUrl = isNumber + pageNameTrimmed;
-      if (pageType === 'static_qmi' && !Florence.globalVars.welsh) {
+      if (pageType === 'static_qmi' && !Ermintrude.globalVars.welsh) {
         newUri = makeUrl(parentUrl, 'qmis', pageNameTrimmed);
-      } else if (pageType === 'static_adhoc' && !Florence.globalVars.welsh) {
+      } else if (pageType === 'static_adhoc' && !Ermintrude.globalVars.welsh) {
         newUri = makeUrl(parentUrl, 'adhocs', adHocUrl);
-      } else if ((pageType === 'static_methodology' || pageType === 'static_methodology_download') && !Florence.globalVars.welsh) {
+      } else if ((pageType === 'static_methodology' || pageType === 'static_methodology_download') && !Ermintrude.globalVars.welsh) {
         newUri = makeUrl(parentUrl, 'methodologies', pageNameTrimmed);
-      } else if (!Florence.globalVars.welsh) {
+      } else if (!Ermintrude.globalVars.welsh) {
         newUri = makeUrl(parentUrl, pageNameTrimmed);
       } else {
         sweetAlert('You can not perform that operation in Welsh.');

@@ -44,7 +44,7 @@ function editLink (collectionId, data, field, idField) {
       }, function(result) {
         if (result === true) {
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position + 300;
+          Ermintrude.globalVars.pagePos = position + 300;
           $(this).parent().remove();
           data[field].splice(index, 1);
           saveLink(collectionId, data.uri, data, field, idField);
@@ -63,7 +63,7 @@ function editLink (collectionId, data, field, idField) {
   //Add
   $('#add-' + idField).click(function () {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 300;
+    Ermintrude.globalVars.pagePos = position + 300;
 
       //TODO This function breaking when adding related link
       console.log(data);
@@ -88,7 +88,7 @@ function editLink (collectionId, data, field, idField) {
 function saveLink (collectionId, path, data, field, idField) {
     putContent(collectionId, path, JSON.stringify(data),
         success = function (response) {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             editLink (collectionId, data, field, idField);
         },
         error = function (response) {

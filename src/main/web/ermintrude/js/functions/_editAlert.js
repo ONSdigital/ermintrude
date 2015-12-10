@@ -24,7 +24,7 @@ function editAlert(collectionId, data, templateData, field, idField) {
     templateData[field].push({markdown: "", date: tmpDate, type: "alert"});
     saveAlert(collectionId, data.uri, data, templateData, field, idField);
   });
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
 }
 
 function refreshAlert(collectionId, data, templateData, field, idField) {
@@ -96,7 +96,7 @@ function initialiseAlert(collectionId, data, templateData, field, idField) {
             timer: 2000
           });
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position;
+          Ermintrude.globalVars.pagePos = position;
           $(this).parent().remove();
           data[field].splice(index, 1);
           templateData[field].splice(index, 1);
@@ -122,7 +122,7 @@ function initialiseAlert(collectionId, data, templateData, field, idField) {
 function saveAlert(collectionId, path, data, templateData, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshAlert(collectionId, data, templateData, field, idField);
       refreshPreview(data.uri);
     },

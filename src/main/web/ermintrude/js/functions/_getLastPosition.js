@@ -3,7 +3,7 @@
  */
 
 function getLastPosition () {
-  var position = Florence.globalVars.pagePos;
+  var position = Ermintrude.globalVars.pagePos;
   if (position > 0) {
     setTimeout(function() {
       $(".workspace-edit").scrollTop(position + 100);

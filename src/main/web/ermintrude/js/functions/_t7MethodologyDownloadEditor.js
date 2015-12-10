@@ -8,11 +8,11 @@ function methodologyDownloadEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 

@@ -1,6 +1,6 @@
 function viewController(view) {
 
-	if (Florence.Authentication.isAuthenticated()) {
+	if (Ermintrude.Authentication.isAuthenticated()) {
 
 		if (view === 'collections') {
 			viewCollections();

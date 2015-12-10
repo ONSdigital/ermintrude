@@ -12,11 +12,11 @@ function compendiumChapterEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -33,7 +33,7 @@ function compendiumChapterEditor(collectionId, data) {
       autoSaveMetadata(collectionId, data);
     }, 3000);
   });
-  //if (!Florence.collection.date) {                    //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                    //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -145,7 +145,7 @@ function compendiumChapterEditor(collectionId, data) {
 
       putContent(collectionId, data.uri, JSON.stringify(data),
         success = function () {
-          Florence.Editor.isDirty = false;
+          Ermintrude.Editor.isDirty = false;
           refreshPreview();
           refreshChartList(collectionId, data);
         },
@@ -158,7 +158,7 @@ function compendiumChapterEditor(collectionId, data) {
 
   $('#add-table').click(function () {
     loadTableBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshPreview();
       refreshTablesList(collectionId, data);
     });
@@ -166,7 +166,7 @@ function compendiumChapterEditor(collectionId, data) {
 
   $('#add-image').click(function () {
     loadImageBuilder(data, function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       //refreshPreview();
       refreshImagesList(collectionId, data);
     });

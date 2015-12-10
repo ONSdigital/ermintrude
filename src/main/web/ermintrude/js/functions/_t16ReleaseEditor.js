@@ -8,11 +8,11 @@ function releaseEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -151,7 +151,7 @@ function releaseEditor(collectionId, data) {
         data.description.cancellationNotice = [updatedContent];
         putContent(collectionId, data.uri, JSON.stringify(data),
           success = function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             loadPageDataIntoEditor(data.uri, collectionId);
             refreshPreview(data.uri);
           },
@@ -243,7 +243,7 @@ function releaseEditor(collectionId, data) {
       if (noSave) {
         putContent(collectionId, data.uri, JSON.stringify(data),
           success = function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             refreshPreview(data.uri);
           },
           error = function (response) {

@@ -13,7 +13,7 @@ function editDocWithFilesCorrection(collectionId, data, field, idField) {
   }
   var oldFile = $.extend(true, {}, data);
   var uploadedNotSaved = {uploaded: false, saved: false, files: oldFile.downloads};
-  $(".workspace-edit").scrollTop(Florence.globalVars.pagePos);
+  $(".workspace-edit").scrollTop(Ermintrude.globalVars.pagePos);
   //Add file types
   if (data.type === 'compendium_data'){
     downloadExtensions = /\.csv$|.xls$|.zip$/;
@@ -123,7 +123,7 @@ function editDocWithFilesCorrection(collectionId, data, field, idField) {
 
   function fileCorrection(index) {
     var position = $(".workspace-edit").scrollTop();
-    Florence.globalVars.pagePos = position + 200;
+    Ermintrude.globalVars.pagePos = position + 200;
     $('#correction-filename_show_' + index).append(
       '<div id="file-added_' + index + '" class="edit-section__item">' +
       '  <form id="UploadForm">' +
@@ -242,7 +242,7 @@ function initialiseDocWithFilesCorrection(collectionId, data, field, idField) {
         var uriToDelete = $(this).parent().children('#' + idField + '-edition_' + index).attr(idField + '-url');
         deleteUnpublishedVersion(collectionId, uriToDelete, function () {
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position;
+          Ermintrude.globalVars.pagePos = position;
           $(this).parent().remove();
           //delete uploaded files in this directory
           _.each(filesToDelete, function (download) {
@@ -273,7 +273,7 @@ function initialiseDocWithFilesCorrection(collectionId, data, field, idField) {
 function saveDocWithFilesCorrection(collectionId, path, data, field, idField) {
   putContent(collectionId, path, JSON.stringify(data),
     function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       refreshDocWithFilesCorrection(collectionId, data, field, idField);
       refreshPreview(path);
     },

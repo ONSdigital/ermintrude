@@ -4,7 +4,7 @@
 function logout() {
   delete_cookie('access_token');
   localStorage.setItem("loggedInAs", "");
-  Florence.refreshAdminMenu();
+  Ermintrude.refreshAdminMenu();
   viewController();
 }
 

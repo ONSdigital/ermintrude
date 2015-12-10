@@ -25,7 +25,7 @@ function initialiseImagesList(collectionId, data) {
       getPageResource(collectionId, imageJson,
         onSuccess = function (imageData) {
           loadImageBuilder(data, function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             //refreshPreview();
             refreshImagesList(collectionId, data);
           }, imageData);
@@ -70,7 +70,7 @@ function initialiseImagesList(collectionId, data) {
           // save the updated page json
           putContent(collectionId, basePath, JSON.stringify(data),
             success = function () {
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
 
               swal({
                 title: "Deleted",

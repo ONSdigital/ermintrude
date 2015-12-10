@@ -64,7 +64,7 @@ function loadChartBuilder(pageData, onSave, chart) {
 
     var jsonPath = chart.uri + ".json";
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + jsonPath,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + jsonPath,
       type: 'POST',
       data: JSON.stringify(chart),
       processData: false,
@@ -156,7 +156,7 @@ function loadChartBuilder(pageData, onSave, chart) {
     chart.title = $('#chart-title').val();
     chart.filename = chart.filename ? chart.filename : StringUtils.randomId(); //  chart.title.replace(/[^A-Z0-9]+/ig, "").toLowerCase();
 
-    if (Florence.globalVars.welsh) {
+    if (Ermintrude.globalVars.welsh) {
       if (pageUrl.match(/\/cy\/?$/)) {
         chart.uri = pageUrl + "/" + chart.filename;
       } else {
@@ -489,7 +489,7 @@ function loadChartBuilder(pageData, onSave, chart) {
 
     var pngUri = pageUrl + "/" + chart.filename + suffix + ".png";
     $.ajax({
-      url: "/zebedee/content/" + Florence.collection.id + "?uri=" + pngUri,
+      url: "/zebedee/content/" + Ermintrude.collection.id + "?uri=" + pngUri,
       type: 'POST',
       data: new Blob([array], {
         type: 'image/png'

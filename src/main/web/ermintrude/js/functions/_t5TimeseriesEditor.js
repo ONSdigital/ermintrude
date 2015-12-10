@@ -7,11 +7,11 @@ function timeseriesEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -160,7 +160,7 @@ function timeseriesEditor(collectionId, data) {
   editNav.off(); // remove any existing event handlers.
 
   editNav.on('click', '.btn-edit-save', function () {
-    if (Florence.globalVars.welsh) {
+    if (Ermintrude.globalVars.welsh) {
       sweetAlert('You cannot perform this operation in Welsh.');
     } else {
       save();
@@ -170,7 +170,7 @@ function timeseriesEditor(collectionId, data) {
 
   // completed to review
   editNav.on('click', '.btn-edit-save-and-submit-for-review', function () {
-    if (Florence.globalVars.welsh) {
+    if (Ermintrude.globalVars.welsh) {
       sweetAlert('You cannot perform this operation in Welsh.');
     } else {
       save();

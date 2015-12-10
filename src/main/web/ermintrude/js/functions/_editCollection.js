@@ -69,7 +69,7 @@ function editCollection (collection) {
         type: 'PUT',
         data: JSON.stringify(collection),
         success: function (updatedCollection) {
-          Florence.setActiveCollection(updatedCollection);
+          Ermintrude.setActiveCollection(updatedCollection);
           createWorkspace('', updatedCollection.id, 'browse');
         },
         error: function (response) {

@@ -4,7 +4,7 @@ function postContent(collectionId, path, content, overwriteExisting, success, er
     safePath = '';          // edge case for home
   }
 
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     var url = "/zebedee/content/" + collectionId + "?uri=" + safePath + "/data_cy.json";
     var toAddLang = JSON.parse(content);
     toAddLang.description.language = 'cy';

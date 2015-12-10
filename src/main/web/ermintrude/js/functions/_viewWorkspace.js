@@ -5,7 +5,7 @@ function viewWorkspace(path, collectionId, menu) {
     currentPath = path;
   }
 
-  Florence.globalVars.pagePath = currentPath;
+  Ermintrude.globalVars.pagePath = currentPath;
 
   if (menu === 'browse') {
     $('.nav--workspace li').removeClass('selected');

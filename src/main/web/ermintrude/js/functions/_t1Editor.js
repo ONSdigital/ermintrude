@@ -7,17 +7,17 @@ function t1Editor(collectionId, data, templateData) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
 
   resolveTitleT1(collectionId, data, templateData, 'sections');
 
   // Metadata edition and saving
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     $("#title").on('input', function () {
       $(this).textareaAutoSize();
       data.description.title = $(this).val();
@@ -135,7 +135,7 @@ function resolveTitleT1(collectionId, data, templateData, field) {
         }, function(result) {
           if (result === true) {
             var iframeEvent = document.getElementById('iframe').contentWindow;
-            iframeEvent.removeEventListener('click', Florence.Handler, true);
+            iframeEvent.removeEventListener('click', Ermintrude.Handler, true);
             createWorkspace('/', collectionId, '', true);
 
             $('#' + index).replaceWith(
@@ -169,7 +169,7 @@ function resolveTitleT1(collectionId, data, templateData, field) {
                     putContent(collectionId, '', JSON.stringify(data),
                       success = function (response) {
                         console.log("Updating completed " + response);
-                        Florence.Editor.isDirty = false;
+                        Ermintrude.Editor.isDirty = false;
                         createWorkspace('/', collectionId, 'edit');
                       },
                       error = function (response) {

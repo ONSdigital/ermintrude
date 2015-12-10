@@ -60,7 +60,7 @@ function editMarkdownWithNoTitle (collectionId, data, field, idField) {
 function saveMarkdownNoTitle (collectionId, path, data, field, idField) {
     putContent(collectionId, path, JSON.stringify(data),
         success = function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             editMarkdownWithNoTitle(collectionId, data, field, idField);
         },
         error = function (response) {

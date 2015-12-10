@@ -1,8 +1,8 @@
 // The florence object is used for storing application state.
-var Florence = Florence || {
+var Ermintrude = Ermintrude || {
     tredegarBaseUrl: window.location.origin,
     refreshAdminMenu: function () {
-      var mainNavHtml = templates.mainNav(Florence);
+      var mainNavHtml = templates.mainNav(Ermintrude);
       $('.admin-nav').html(mainNavHtml);
     },
     setActiveCollection: function (collection) {
@@ -12,42 +12,42 @@ var Florence = Florence || {
       } else {
         var formattedDate = StringUtils.formatIsoDateString(collection.publishDate);
       }
-      Florence.collection = {id: collection.id, name: collection.name, date: formattedDate, type: collection.type};
+      Ermintrude.collection = {id: collection.id, name: collection.name, date: formattedDate, type: collection.type};
     }
   };
 
-Florence.Editor = {
+Ermintrude.Editor = {
   isDirty: false,
   data: {}
 };
 
-Florence.CreateCollection = {
+Ermintrude.CreateCollection = {
   selectedRelease:""
 };
 
-Florence.collection = {};
+Ermintrude.collection = {};
 
-Florence.collectionToPublish = {};
+Ermintrude.collectionToPublish = {};
 
-Florence.globalVars = {pagePath: '', activeTab: false, pagePos: '', welsh: false};
+Ermintrude.globalVars = {pagePath: '', activeTab: false, pagePos: '', welsh: false};
 
-Florence.Authentication = {
+Ermintrude.Authentication = {
   accessToken: function () {
     return CookieUtils.getCookieValue("access_token");
   },
   isAuthenticated: function () {
-    return Florence.Authentication.accessToken() !== '';
+    return Ermintrude.Authentication.accessToken() !== '';
   },
   loggedInEmail: function () {
     return localStorage.getItem("loggedInAs")
   }
 };
 
-Florence.Handler = function (e) {
-  if (Florence.Editor.isDirty) {
+Ermintrude.Handler = function (e) {
+  if (Ermintrude.Editor.isDirty) {
     var result = confirm("You have unsaved changes. Are you sure you want to continue");
     if (result === true) {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       processPreviewClick(this);
       return true;
     } else {
@@ -62,9 +62,9 @@ Florence.Handler = function (e) {
     setTimeout(function () {
       checkForPageChanged(function (newUrl) {
         var safeUrl = checkPathSlashes(newUrl);
-        Florence.globalVars.pagePath = safeUrl;
+        Ermintrude.globalVars.pagePath = safeUrl;
         if ($('.workspace-edit').length) {
-          loadPageDataIntoEditor(safeUrl, Florence.collection.id, 'click');
+          loadPageDataIntoEditor(safeUrl, Ermintrude.collection.id, 'click');
         }
         else if ($('.workspace-browse').length) {
           treeNodeSelect(safeUrl);
@@ -76,7 +76,7 @@ Florence.Handler = function (e) {
 
 // if running in a node environment export this as a module.
 if (typeof module !== 'undefined') {
-  module.exports = Florence;
+  module.exports = Ermintrude;
 }
 
 

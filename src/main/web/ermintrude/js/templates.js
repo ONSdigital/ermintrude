@@ -696,7 +696,7 @@ templates['editorTopics'] = template({"1":function(depth0,helpers,partials,data,
     + alias3(((helper = (helper = helpers.idField || (depth0 != null ? depth0.idField : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"idField","hash":{},"data":data}) : helper)))
     + "</button>\n    </div>\n  </div>\n</div>";
 },"useData":true,"useDepths":true});
-templates['florence'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+templates['ermintrude'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     return "<div class=\"wrapper\">\n  <nav class=\"admin-nav\">\n  </nav>\n  <div class=\"section\">\n  </div>\n</div>";
 },"useData":true});
 templates['iframeNav'] = template({"1":function(depth0,helpers,partials,data) {

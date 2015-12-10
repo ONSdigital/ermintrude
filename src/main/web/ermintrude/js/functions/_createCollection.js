@@ -14,11 +14,11 @@ function createCollection() {
   }
 
   if (scheduleType === 'release' && publishType === 'scheduled') {
-    if(!Florence.CreateCollection.selectedRelease) {
+    if(!Ermintrude.CreateCollection.selectedRelease) {
       sweetAlert('Please select a release');
       return true;
     }
-    releaseUri  = Florence.CreateCollection.selectedRelease.uri;
+    releaseUri  = Ermintrude.CreateCollection.selectedRelease.uri;
   } else {
     releaseUri  = null;
   }
@@ -45,7 +45,7 @@ function createCollection() {
       type: 'POST',
       data: JSON.stringify({name: collectionId, type: publishType, publishDate: collectionDate, releaseUri: releaseUri, isEncrypted: true}),
       success: function (collection) {
-        Florence.setActiveCollection(collection);
+        Ermintrude.setActiveCollection(collection);
         createWorkspace('', collection.id, 'browse');
       },
       error: function (response) {

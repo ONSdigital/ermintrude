@@ -8,11 +8,11 @@ function datasetLandingEditor(collectionId, data) {
   $(".edit-accordion").on('accordionactivate', function (event, ui) {
     setActiveTab = $(".edit-accordion").accordion("option", "active");
     if (setActiveTab !== false) {
-      Florence.globalVars.activeTab = setActiveTab;
+      Ermintrude.globalVars.activeTab = setActiveTab;
     }
   });
 
-  getActiveTab = Florence.globalVars.activeTab;
+  getActiveTab = Ermintrude.globalVars.activeTab;
   accordion(getActiveTab);
   getLastPosition();
 
@@ -32,7 +32,7 @@ function datasetLandingEditor(collectionId, data) {
       autoSaveMetadata(collectionId, data);
     }, 3000);
   });
-  //if (!Florence.collection.date) {                      //overwrite scheduled collection date
+  //if (!Ermintrude.collection.date) {                      //overwrite scheduled collection date
   if (!data.description.releaseDate) {
     $('#releaseDate').datepicker({dateFormat: 'dd MM yy'}).on('change', function () {
       data.description.releaseDate = new Date($(this).datepicker({dateFormat: 'dd MM yy'})[0].value).toISOString();
@@ -293,7 +293,7 @@ function addEditionEditButton(collectionId, data, templateData) {
             timer: 2000
           });
           var position = $(".workspace-edit").scrollTop();
-          Florence.globalVars.pagePos = position;
+          Ermintrude.globalVars.pagePos = position;
           $('#edition-delete_' + index).parent().remove();
           $.ajax({
             url: "/zebedee/content/" + collectionId + "?uri=" + data.datasets[index].uri,

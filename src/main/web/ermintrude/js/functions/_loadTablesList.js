@@ -25,7 +25,7 @@ function initialiseTablesList(collectionId, data) {
       getPageData(collectionId, tableJson,
         onSuccess = function (tableData) {
           loadTableBuilder(data, function () {
-            Florence.Editor.isDirty = false;
+            Ermintrude.Editor.isDirty = false;
             refreshPreview();
             refreshTablesList(collectionId, data);
           }, tableData);
@@ -66,7 +66,7 @@ function initialiseTablesList(collectionId, data) {
               // delete the table json file
               deleteContent(collectionId, tableJson + '.json', onSuccess = function () {}, onError = function (error) {});
 
-              Florence.Editor.isDirty = false;
+              Ermintrude.Editor.isDirty = false;
               refreshTablesList(collectionId, data);
 
               swal({

@@ -1,7 +1,7 @@
 function saveAndCompleteContent(collectionId, path, content, redirectToPath) {
   putContent(collectionId, path, content,
     success = function () {
-      Florence.Editor.isDirty = false;
+      Ermintrude.Editor.isDirty = false;
       if (redirectToPath) {
         completeContent(collectionId, path, redirectToPath);
       } else {
@@ -25,7 +25,7 @@ function completeContent(collectionId, path, redirectToPath) {
     safePath = '';          // edge case for home
   }
 
-  if (Florence.globalVars.welsh) {
+  if (Ermintrude.globalVars.welsh) {
     var url = "/zebedee/complete/" + collectionId + "?uri=" + safePath + "/data_cy.json";
   } else {
     var url = "/zebedee/complete/" + collectionId + "?uri=" + safePath + "/data.json";
