@@ -26,7 +26,8 @@ function viewCollectionDetails(collectionId) {
     ProcessPages(collection.reviewed);
 
     var collectionHtml = window.templates.collectionDetails(collection);
-    $('.collection-selected').html(collectionHtml).animate({right: "0%"}, 500);
+    //$('.collection-selected').html(collectionHtml).animate({right: "0%"}, 500);
+    $('.workspace-menu').html(collectionHtml);
 
     var deleteButton = $('#collection-delete');
     if (collection.inProgress.length === 0

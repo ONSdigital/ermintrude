@@ -35,15 +35,15 @@ function viewCollections(collectionId) {
     if (collectionId) {
       $('.collections-select-table tr[data-id="' + collectionId + '"]')
         .addClass('selected');
-      viewCollectionDetails(collectionId);
     }
-
     $('.collections-select-table tbody tr').click(function () {
       $('.collections-select-table tbody tr').removeClass('selected');
       $(this).addClass('selected');
       var collectionId = $(this).attr('data-id');
-      viewCollectionDetails(collectionId);
+      //viewCollectionDetails(collectionId);
+      createWorkspace('', collectionId, viewCollectionDetails(collectionId));
     });
+
 
     $('form input[type=radio]').click(function () {
 

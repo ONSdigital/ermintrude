@@ -1,10 +1,5 @@
 function setupErmintrude() {
   window.templates = Handlebars.templates;
-  Handlebars.registerPartial("browseNode", templates.browseNode);
-  Handlebars.registerPartial("editNav", templates.editNav);
-  Handlebars.registerPartial("editNavChild", templates.editNavChild);
-  Handlebars.registerPartial("selectorHour", templates.selectorHour);
-  Handlebars.registerPartial("selectorMinute", templates.selectorMinute);
   Handlebars.registerHelper('select', function( value, options ){
     var $el = $('<select />').html( options.fn(this) );
     $el.find('[value="' + value + '"]').attr({'selected':'selected'});
@@ -45,27 +40,6 @@ function setupErmintrude() {
     return value1 + value2;
   });
   // Add two values together. Primary usage was '@index + 1' to create numbered lists
-  Handlebars.registerHelper('lastEditedBy', function(array) {
-    if(array) {
-      var event = array[array.length - 1];
-      return 'Last edited ' + StringUtils.formatIsoDateString(new Date(event.date)) + " by " + event.email;
-    }
-    return '';
-  });
-  Handlebars.registerHelper('createdBy', function(array) {
-    if(array) {
-      var event = getCollectionCreatedEvent(array);
-      if (event) {
-        return 'Created ' + StringUtils.formatIsoDateString(new Date(event.date)) + " by " + event.email + '';
-      } else {
-        return "";
-      }
-    }
-    return "";
-  });
-
-
-
 
   Ermintrude.globalVars.activeTab = false;
 
@@ -125,12 +99,6 @@ function setupErmintrude() {
       var thisCollection = CookieUtils.getCookieValue("collection");
       viewCollections(thisCollection);
       $(".nav--admin__item--collections").addClass('selected');
-    } else if (menuItem.hasClass("nav--admin__item--users")) {
-      viewController('users');
-    } else if (menuItem.hasClass("nav--admin__item--publish")) {
-      viewController('publish');
-    } else if (menuItem.hasClass("nav--admin__item--reports")) {
-        viewController('reports');
     } else if (menuItem.hasClass("nav--admin__item--login")) {
       viewController('login');
     } else if (menuItem.hasClass("nav--admin__item--logout")) {

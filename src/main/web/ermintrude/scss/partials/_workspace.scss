@@ -72,63 +72,12 @@
 
 .workspace {
 
-  &-nav {
-    background-color: $pickled-bluewood;
-  }
-
-  &-browse {
-    background-color: $quill-gray;
-  }
-
-  &-browser {
-    background-color: $mine-shaft;
-    padding-bottom: ($gutter / 4) * 3;
-  }
-
-  &-create {
-    h1 {
-      margin-top: 0;
-      font-size: $magicnumber1 * 3;
-      padding-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    form {
-      margin-top: 0;
-      padding: 0 $gutter;
-    }
-
-    label {
-      box-sizing: border-box;
-      padding-top: $lineheight / 2;
-      padding-left: $gutter;
-      margin-top: $lineheight;
-      width: 25%;
-      position: absolute;
-      height: $lineheight * 2;
-      background-color: $scarpa-flow;
-      color: $porcelain;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-    }
-
-    input {
-      margin-left: 25%;
-      width: 75%;
-    }
-
-    input.full {
-      margin-left: 0;
-      width: 100%;
-    }
-  }
-
   &-edit {
     box-sizing: border-box;
     overflow-y: scroll;
     background-color: $quill-gray;
     // padding-bottom: $lineheight * 4;
-    height: $lineheight * 35;
+    //height: $lineheight * 35;
     // position: relative;
 
     h1 {

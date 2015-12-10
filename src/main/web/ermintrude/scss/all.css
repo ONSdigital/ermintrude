@@ -6441,8 +6441,7 @@ input[type="checkbox"] {
 .workspace-edit {
   box-sizing: border-box;
   overflow-y: scroll;
-  background-color: #CCCCCB;
-  height: 735px; }
+  background-color: #CCCCCB; }
   .workspace-edit h1 {
     margin-top: 0;
     font-size: 21px;
