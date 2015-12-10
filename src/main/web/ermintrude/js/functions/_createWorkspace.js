@@ -45,5 +45,7 @@ function createWorkspace(path, collectionId, onFunction) {
     Ermintrude.globalVars.welsh = Ermintrude.globalVars.welsh === false ? true : false;
     createWorkspace(Ermintrude.globalVars.pagePath, collectionId, 'browse');
   });
+
+  onFunction(collectionId);
 }
 

@@ -39,54 +39,9 @@ function viewCollections(collectionId) {
     $('.collections-select-table tbody tr').click(function () {
       $('.collections-select-table tbody tr').removeClass('selected');
       $(this).addClass('selected');
-      var collectionId = $(this).attr('data-id');
-      //viewCollectionDetails(collectionId);
-      createWorkspace('', collectionId, viewCollectionDetails(collectionId));
-    });
-
-
-    $('form input[type=radio]').click(function () {
-
-      if ($(this).val() === 'manual') {
-        $('#scheduledPublishOptions').hide();
-      } else if ($(this).val() === 'scheduled') {
-        $('#scheduledPublishOptions').show();
-      } else if ($(this).val() === 'custom') {
-        $('#customScheduleOptions').show();
-        $('#releaseScheduleOptions').hide();
-      } else if ($(this).val() === 'release') {
-        $('#customScheduleOptions').hide();
-        $('#releaseScheduleOptions').show();
-      }
-    });
-
-    var noBefore = function (date) {
-      if (date < new Date()) {
-        return [false];
-      }
-      return [true];
-    }
-
-
-    $(function () {
-      var today = new Date();
-      $('#date').datepicker({
-        minDate: today,
-        dateFormat: 'dd/mm/yy',
-        constrainInput: true,
-        beforeShowDay: noBefore
-      });
-    });
-
-
-    $('.btn-select-release').on("click", function (e) {
-      e.preventDefault();
-      viewReleaseSelector();
-    });
-
-    $('.form-create-collection').submit(function (e) {
-      e.preventDefault();
-      createCollection();
+      Ermintrude.collection.id = $(this).attr('data-id');
+      Ermintrude.collection.name = $(this).attr('data-name');
+      createWorkspace(Ermintrude.globalVars.pagePath, Ermintrude.collection.id, viewCollectionDetails);
     });
   }
 }

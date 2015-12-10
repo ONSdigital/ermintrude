@@ -80,6 +80,8 @@ templates['collectionList'] = template({"1":function(depth0,helpers,partials,dat
 
   return "      <tr data-id=\""
     + alias3(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" data-name=\""
+    + alias3(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"name","hash":{},"data":data}) : helper)))
     + "\">\n        <td headers=\"collection-name\" class=\"collection-name\">"
     + alias3(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"name","hash":{},"data":data}) : helper)))
     + "</td>\n        <td headers=\"collection-date\" class=\"collection-date\">"
@@ -134,7 +136,7 @@ templates['userDetails'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":fun
     + "</h2>\n</div>\n\n<div class=\"section-content\">\n</div>\n\n<nav class=\"section-nav\">\n  <button class=\"btn-user-change-password btn-collection-work-on\">Change password</button>\n  <button class=\"btn-user-delete btn-page-delete\">Delete user</button>\n  <button class=\"btn-user-cancel btn-collection-cancel\">Cancel</button>\n</nav>\n\n";
 },"useData":true});
 templates['workSpace'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<nav class=\"panel col col--1 workspace-nav\">\n  <ul class=\"nav nav--workspace\">\n    <div id=\"nav--workspace__welsh\" style=\"margin-top: 20px;\"></div>\n    <br/>\n  </ul>\n</nav>\n<div class=\"col col--4 workspace-menu\">\n    <p style=\"color: #f5f6f7\">Loading ...</p>\n</div>\n<section class=\"panel col col--7 workspace-browser\">\n  <div class=\"browser\">\n    <div class=\"addressbar\">\n      <button class=\"browser-btn-back\">&lt;</button>\n      <button class=\"browser-btn-forward\">&gt;</button>\n      <label for=\"browser-location\" class=\"browser-location-label\">Preview URL</label><input id=\"browser-location\" class=\"browser-location\" type=\"text\" value=\"\">\n      <button class=\"browser-btn-mobile\">Mobile</button>\n    </div>\n    <iframe id=\"iframe\" src=\""
+    return "<nav class=\"panel col col--1 workspace-nav\">\n  <ul class=\"nav nav--workspace\">\n    <div id=\"nav--workspace__welsh\" style=\"margin-top: 20px;\"></div>\n    <br/>\n  </ul>\n</nav>\n<div class=\"col col--4 workspace-menu\">\n    <p style=\"color: #f5f6f7\">Loading ...</p>\n</div>\n<section class=\"panel col col--7 workspace-browser\">\n  <div class=\"browser\">\n    <!--<div class=\"addressbar\">-->\n      <!--<button class=\"browser-btn-back\">&lt;</button>-->\n      <!--<button class=\"browser-btn-forward\">&gt;</button>-->\n      <!--<label for=\"browser-location\" class=\"browser-location-label\">Preview URL</label><input id=\"browser-location\" class=\"browser-location\" type=\"text\" value=\"\">-->\n      <!--<button class=\"browser-btn-mobile\">Mobile</button>-->\n    <!--</div>-->\n    <iframe id=\"iframe\" src=\""
     + this.escapeExpression(this.lambda(depth0, depth0))
     + "\"></iframe>\n  </div>\n</section>\n";
 },"useData":true});
