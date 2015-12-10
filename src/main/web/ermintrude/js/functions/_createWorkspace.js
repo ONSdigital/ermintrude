@@ -43,7 +43,7 @@ function createWorkspace(path, collectionId, onFunction) {
 
   $('#nav--workspace__welsh').on('click', function () {
     Ermintrude.globalVars.welsh = Ermintrude.globalVars.welsh === false ? true : false;
-    createWorkspace(Ermintrude.globalVars.pagePath, collectionId, 'browse');
+    createWorkspace(Ermintrude.globalVars.pagePath, collectionId, viewCollectionDetails);
   });
 
   onFunction(collectionId);
