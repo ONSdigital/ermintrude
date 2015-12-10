@@ -1,0 +1,29 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+
+# NPM
+.sass-cache/
+node_modules
+src/main/web/florece/js/npm-debug.log
+npm-debug.log
+
+# Dev project files
+src/main/web/florence/js/main.js
+src/main/web/florence/js/templates.js
+src/main/web/florence/css/style.min.css
+src/main/web/florence/css/style.min.css.map
