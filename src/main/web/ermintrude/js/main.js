@@ -78,13 +78,7 @@ Ermintrude.Handler = function (e) {
       checkForPageChanged(function (newUrl) {
         var safeUrl = checkPathSlashes(newUrl);
         Ermintrude.globalVars.pagePath = safeUrl;
-        //if ($('.workspace-edit').length) {
-        //  loadPageDataIntoEditor(safeUrl, Ermintrude.collection.id, 'click');
-        //}
-        //else if ($('.workspace-browse').length) {
-        //  treeNodeSelect(safeUrl);
-        //}
-        console.log(safeUrl);
+        checkDocuments(safeUrl);
       });
     }, 200);
   }
@@ -110,7 +104,16 @@ if (typeof module !== 'undefined') {
 
 
 
-setupErmintrude();/**
+setupErmintrude();function checkDocuments(url){
+
+  var urlPart = url.replace(Ermintrude.tredegarBaseUrl, '');
+  var selectedListItem = $('[data-path="' + urlPart + '"]'); //get first li with data-url with url
+  $('.page-list li').removeClass('selected');
+
+  $(selectedListItem).addClass('selected');
+  console.log(urlPart);
+}
+/**
  * Checks for changes in the iframe path
  * @param onChanged - function
  */
