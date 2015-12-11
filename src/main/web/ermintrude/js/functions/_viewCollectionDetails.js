@@ -1,5 +1,7 @@
 function viewCollectionDetails(collectionId) {
 
+  var resultToSort = [];
+
   getCollectionDetails(collectionId,
     success = function (response) {
       populateCollectionDetails(response);
@@ -8,9 +10,7 @@ function viewCollectionDetails(collectionId) {
       handleApiError(response);
     }
   );
-
   function populateCollectionDetails(collection) {
-
     Ermintrude.setActiveCollection(collection);
 
     if (!collection.publishDate) {
@@ -25,7 +25,9 @@ function viewCollectionDetails(collectionId) {
     ProcessPages(collection.complete);
     ProcessPages(collection.reviewed);
 
-    var collectionHtml = window.templates.collectionDetails(collection);
+    var sorted = _.sortBy(resultToSort, 'name');
+
+    var collectionHtml = window.templates.collectionDetails(sorted);
     $('.workspace-menu').html(collectionHtml);
 
     //page-list
@@ -40,10 +42,10 @@ function viewCollectionDetails(collectionId) {
   }
 
   function ProcessPages(pages) {
-    _.sortBy(pages, 'uri');
     _.each(pages, function (page) {
       page.uri = page.uri.replace('/data.json', '');
-      return page;
+      page.name = page.description.title ? page.description.title : 'zz';
+      resultToSort.push(page);
     });
   }
 }

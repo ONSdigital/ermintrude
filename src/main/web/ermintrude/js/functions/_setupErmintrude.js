@@ -96,6 +96,7 @@ function setupErmintrude() {
     if (menuItem.hasClass("nav--admin__item--collections")) {
       $('.collection-selected').animate({right: "-100%"}, 1000);
       setTimeout(function () {viewController('collections')}, 1100);
+      Ermintrude.globalVars.pagePath = '';
     } else if (menuItem.hasClass("nav--admin__item--collection")) {
       var thisCollection = CookieUtils.getCookieValue("collection");
       $('.collection-selected').animate({right: "-100%"}, 1000);

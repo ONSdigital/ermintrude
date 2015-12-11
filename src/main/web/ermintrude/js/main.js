@@ -490,6 +490,7 @@ function setupErmintrude() {
     if (menuItem.hasClass("nav--admin__item--collections")) {
       $('.collection-selected').animate({right: "-100%"}, 1000);
       setTimeout(function () {viewController('collections')}, 1100);
+      Ermintrude.globalVars.pagePath = '';
     } else if (menuItem.hasClass("nav--admin__item--collection")) {
       var thisCollection = CookieUtils.getCookieValue("collection");
       $('.collection-selected').animate({right: "-100%"}, 1000);
@@ -565,6 +566,8 @@ function viewChangePassword(email, authenticate) {
 
 function viewCollectionDetails(collectionId) {
 
+  var resultToSort = [];
+
   getCollectionDetails(collectionId,
     success = function (response) {
       populateCollectionDetails(response);
@@ -573,9 +576,7 @@ function viewCollectionDetails(collectionId) {
       handleApiError(response);
     }
   );
-
   function populateCollectionDetails(collection) {
-
     Ermintrude.setActiveCollection(collection);
 
     if (!collection.publishDate) {
@@ -590,7 +591,9 @@ function viewCollectionDetails(collectionId) {
     ProcessPages(collection.complete);
     ProcessPages(collection.reviewed);
 
-    var collectionHtml = window.templates.collectionDetails(collection);
+    var sorted = _.sortBy(resultToSort, 'name');
+
+    var collectionHtml = window.templates.collectionDetails(sorted);
     $('.workspace-menu').html(collectionHtml);
 
     //page-list
@@ -605,10 +608,10 @@ function viewCollectionDetails(collectionId) {
   }
 
   function ProcessPages(pages) {
-    _.sortBy(pages, 'uri');
     _.each(pages, function (page) {
       page.uri = page.uri.replace('/data.json', '');
-      return page;
+      page.name = page.description.title ? page.description.title : 'zz';
+      resultToSort.push(page);
     });
   }
 }function viewCollections(collectionId) {

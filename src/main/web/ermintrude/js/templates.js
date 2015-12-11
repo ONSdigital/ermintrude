@@ -46,15 +46,15 @@ templates['changePassword'] = template({"1":function(depth0,helpers,partials,dat
     + "      <label for=\"password-new\">New password:</label><input id=\"password-new\" type=\"password\" cols=\"40\" rows=\"1\"/>\n      <label for=\"password-confirm\">Confirm new password:</label><input id=\"password-confirm\" type=\"password\" cols=\"40\"\n                                                                        rows=\"1\"/>\n      <button id=\"update-password\" class=\"btn-florence-login fl-panel--user-and-access__login \">Update password</button>\n      <button id=\"update-password-cancel\" class=\"\">Cancel</button>\n    </div>\n  </div>\n</div>";
 },"useData":true});
 templates['collectionDetails'] = template({"1":function(depth0,helpers,partials,data) {
-    var stack1, helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
+    var stack1, alias1=this.lambda, alias2=this.escapeExpression;
 
   return "      <li data-path=\""
-    + alias3(((helper = (helper = helpers.uri || (depth0 != null ? depth0.uri : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"uri","hash":{},"data":data}) : helper)))
+    + alias2(alias1((depth0 != null ? depth0.uri : depth0), depth0))
     + "\"><span class=\"page-item page-item--"
-    + alias3(((helper = (helper = helpers.type || (depth0 != null ? depth0.type : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"type","hash":{},"data":data}) : helper)))
+    + alias2(alias1((depth0 != null ? depth0.type : depth0), depth0))
     + "\">"
-    + ((stack1 = (helpers.ifCond || (depth0 && depth0.ifCond) || alias1).call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.language : stack1),"===","cy",{"name":"ifCond","hash":{},"fn":this.program(2, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + alias3(this.lambda(((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.title : stack1), depth0))
+    + ((stack1 = (helpers.ifCond || (depth0 && depth0.ifCond) || helpers.helperMissing).call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.language : stack1),"===","cy",{"name":"ifCond","hash":{},"fn":this.program(2, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.title : stack1), depth0))
     + ((stack1 = helpers['if'].call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.edition : stack1),{"name":"if","hash":{},"fn":this.program(4, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "</span>\n      </li>\n";
 },"2":function(depth0,helpers,partials,data) {
@@ -68,11 +68,7 @@ templates['collectionDetails'] = template({"1":function(depth0,helpers,partials,
     var stack1;
 
   return "<section class=\"panel workspace-edit\">\n<div>\n  <ul class=\"page-list\">\n"
-    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.inProgress : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "  </ul>\n  <ul class=\"page-list\">\n"
-    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.complete : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "  </ul>\n  <ul class=\"page-list\">\n"
-    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.reviewed : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers.each.call(depth0,depth0,{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "  </ul>\n</div>\n";
 },"useData":true});
 templates['collectionList'] = template({"1":function(depth0,helpers,partials,data) {

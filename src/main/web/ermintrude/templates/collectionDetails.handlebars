@@ -1,26 +1,12 @@
 <section class="panel workspace-edit">
 <div>
   <ul class="page-list">
-    {{#each inProgress}}
-      <li data-path="{{uri}}"><span class="page-item page-item--{{type}}">{{#ifCond description.language '===' 'cy'}}(Welsh)
-      {{/ifCond}}{{description
-      .title}}{{#if description.edition}}: {{description.edition}}{{/if}}</span>
-      </li>
-    {{/each}}
-  </ul>
-  <ul class="page-list">
-    {{#each complete}}
-      <li data-path="{{uri}}"><span class="page-item page-item--{{type}}">{{#ifCond description.language '===' 'cy'}}(Welsh)
-      {{/ifCond}}{{description
-      .title}}{{#if description.edition}}: {{description.edition}}{{/if}}</span>
-      </li>
-    {{/each}}
-  </ul>
-  <ul class="page-list">
-    {{#each reviewed}}
-      <li data-path="{{uri}}"><span class="page-item page-item--{{type}}">{{#ifCond description.language '===' 'cy'}}(Welsh)
-      {{/ifCond}}{{description
-      .title}}{{#if description.edition}}: {{description.edition}}{{/if}}</span>
+    {{#each this}}
+      <li data-path="{{this.uri}}"><span class="page-item page-item--{{this.type}}">{{#ifCond this.description.language
+    '==='
+    'cy'}}(Welsh)
+      {{/ifCond}}{{this.description
+      .title}}{{#if this.description.edition}}: {{this.description.edition}}{{/if}}</span>
       </li>
     {{/each}}
   </ul>
