@@ -94,10 +94,12 @@ function setupErmintrude() {
 
 
     if (menuItem.hasClass("nav--admin__item--collections")) {
-      viewController('collections');
+      $('.collection-selected').animate({right: "-100%"}, 1000);
+      setTimeout(function () {viewController('collections')}, 1100);
     } else if (menuItem.hasClass("nav--admin__item--collection")) {
       var thisCollection = CookieUtils.getCookieValue("collection");
-      viewCollections(thisCollection);
+      $('.collection-selected').animate({right: "-100%"}, 1000);
+      setTimeout(function () {viewCollections(thisCollection)}, 1100);
       $(".nav--admin__item--collections").addClass('selected');
     } else if (menuItem.hasClass("nav--admin__item--login")) {
       viewController('login');

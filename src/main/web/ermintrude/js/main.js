@@ -78,12 +78,13 @@ Ermintrude.Handler = function (e) {
       checkForPageChanged(function (newUrl) {
         var safeUrl = checkPathSlashes(newUrl);
         Ermintrude.globalVars.pagePath = safeUrl;
-        if ($('.workspace-edit').length) {
-          loadPageDataIntoEditor(safeUrl, Ermintrude.collection.id, 'click');
-        }
-        else if ($('.workspace-browse').length) {
-          treeNodeSelect(safeUrl);
-        }
+        //if ($('.workspace-edit').length) {
+        //  loadPageDataIntoEditor(safeUrl, Ermintrude.collection.id, 'click');
+        //}
+        //else if ($('.workspace-browse').length) {
+        //  treeNodeSelect(safeUrl);
+        //}
+        console.log(safeUrl);
       });
     }, 200);
   }
@@ -167,8 +168,8 @@ function createWorkspace(path, collectionId, onFunction) {
   }
   Ermintrude.refreshAdminMenu();
 
-  var workSpace = templates.workSpace(Ermintrude.tredegarBaseUrl + safePath);
-  $('.section').html(workSpace);
+  var iframeLink = Ermintrude.tredegarBaseUrl + safePath;
+  document.getElementById('iframe').contentWindow.location.href = iframeLink;
 
   document.getElementById('iframe').onload = function () {
     $('.browser-location').val(Ermintrude.tredegarBaseUrl + Ermintrude.globalVars.pagePath);
@@ -182,9 +183,9 @@ function createWorkspace(path, collectionId, onFunction) {
     $('#nav--workspace__welsh').empty().append('<a href="#">Language: Welsh</a>');
   }
 
-  $('#nav--workspace__welsh').on('click', function () {
+  $('#nav--workspace__welsh').one('click', function () {
     Ermintrude.globalVars.welsh = Ermintrude.globalVars.welsh === false ? true : false;
-    createWorkspace(Ermintrude.globalVars.pagePath, collectionId, 'browse');
+    createWorkspace(Ermintrude.globalVars.pagePath, collectionId, viewCollectionDetails);
   });
 
   onFunction(collectionId);
@@ -484,10 +485,12 @@ function setupErmintrude() {
 
 
     if (menuItem.hasClass("nav--admin__item--collections")) {
-      viewController('collections');
+      $('.collection-selected').animate({right: "-100%"}, 1000);
+      setTimeout(function () {viewController('collections')}, 1100);
     } else if (menuItem.hasClass("nav--admin__item--collection")) {
       var thisCollection = CookieUtils.getCookieValue("collection");
-      viewCollections(thisCollection);
+      $('.collection-selected').animate({right: "-100%"}, 1000);
+      setTimeout(function () {viewCollections(thisCollection)}, 1100);
       $(".nav--admin__item--collections").addClass('selected');
     } else if (menuItem.hasClass("nav--admin__item--login")) {
       viewController('login');
@@ -649,6 +652,7 @@ function viewCollectionDetails(collectionId) {
       Ermintrude.collection.id = $(this).attr('data-id');
       Ermintrude.collection.name = $(this).attr('data-name');
       createWorkspace(Ermintrude.globalVars.pagePath, Ermintrude.collection.id, viewCollectionDetails);
+      $('.collection-selected').animate({right: "0%"}, 1000);
     });
   }
 }function viewController(view) {

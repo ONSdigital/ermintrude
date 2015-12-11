@@ -92,7 +92,7 @@ templates['collectionList'] = template({"1":function(depth0,helpers,partials,dat
 
   return "<section class=\"panel col col--3 collection-create\">\n</section>\n<section class=\"panel col col--6 collection-select\" xmlns=\"http://www.w3.org/1999/html\">\n  <h1 class=\"text-align-center\">Select a collection</h1>\n  <table class=\"collections-select-table\">\n    <thead>\n    <tr>\n      <th id=\"collection-name\" scope=\"col\">Collection name</th>\n      <th id=\"collection-date\" scope=\"col\">Collection date</th>\n    </tr>\n    </thead>\n    <tbody>\n"
     + ((stack1 = helpers.each.call(depth0,depth0,{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "    </tbody>\n  </table>\n</section>\n\n<!--to delete-->\n<section class=\"panel col col--6 collection-selected\">\n\n</section>";
+    + "    </tbody>\n  </table>\n</section>\n\n<section class=\"panel col col--12 collection-selected\">\n  <nav class=\"panel col col--1 workspace-nav\">\n    <ul class=\"nav nav--workspace\">\n      <div id=\"nav--workspace__welsh\" style=\"margin-top: 20px;\"></div>\n      <br/>\n    </ul>\n  </nav>\n  <div class=\"col col--4 workspace-menu\">\n    <p style=\"color: #f5f6f7\">Loading ...</p>\n  </div>\n  <section class=\"panel col col--7 workspace-browser\">\n    <div class=\"browser\">\n      <iframe id=\"iframe\" src=\"\"></iframe>\n    </div>\n  </section>\n</section>";
 },"useData":true});
 templates['ermintrude'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     return "<div class=\"wrapper\">\n  <nav class=\"admin-nav\">\n  </nav>\n  <div class=\"section\">\n  </div>\n</div>";
@@ -134,10 +134,5 @@ templates['userDetails'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":fun
   return "<div class=\"section-head\">\n  <h2>"
     + this.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"name","hash":{},"data":data}) : helper)))
     + "</h2>\n</div>\n\n<div class=\"section-content\">\n</div>\n\n<nav class=\"section-nav\">\n  <button class=\"btn-user-change-password btn-collection-work-on\">Change password</button>\n  <button class=\"btn-user-delete btn-page-delete\">Delete user</button>\n  <button class=\"btn-user-cancel btn-collection-cancel\">Cancel</button>\n</nav>\n\n";
-},"useData":true});
-templates['workSpace'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<nav class=\"panel col col--1 workspace-nav\">\n  <ul class=\"nav nav--workspace\">\n    <div id=\"nav--workspace__welsh\" style=\"margin-top: 20px;\"></div>\n    <br/>\n  </ul>\n</nav>\n<div class=\"col col--4 workspace-menu\">\n    <p style=\"color: #f5f6f7\">Loading ...</p>\n</div>\n<section class=\"panel col col--7 workspace-browser\">\n  <div class=\"browser\">\n    <!--<div class=\"addressbar\">-->\n      <!--<button class=\"browser-btn-back\">&lt;</button>-->\n      <!--<button class=\"browser-btn-forward\">&gt;</button>-->\n      <!--<label for=\"browser-location\" class=\"browser-location-label\">Preview URL</label><input id=\"browser-location\" class=\"browser-location\" type=\"text\" value=\"\">-->\n      <!--<button class=\"browser-btn-mobile\">Mobile</button>-->\n    <!--</div>-->\n    <iframe id=\"iframe\" src=\""
-    + this.escapeExpression(this.lambda(depth0, depth0))
-    + "\"></iframe>\n  </div>\n</section>\n";
 },"useData":true});
 })();

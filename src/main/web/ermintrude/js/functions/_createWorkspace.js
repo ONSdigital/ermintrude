@@ -26,8 +26,8 @@ function createWorkspace(path, collectionId, onFunction) {
   }
   Ermintrude.refreshAdminMenu();
 
-  var workSpace = templates.workSpace(Ermintrude.tredegarBaseUrl + safePath);
-  $('.section').html(workSpace);
+  var iframeLink = Ermintrude.tredegarBaseUrl + safePath;
+  document.getElementById('iframe').contentWindow.location.href = iframeLink;
 
   document.getElementById('iframe').onload = function () {
     $('.browser-location').val(Ermintrude.tredegarBaseUrl + Ermintrude.globalVars.pagePath);
@@ -41,7 +41,7 @@ function createWorkspace(path, collectionId, onFunction) {
     $('#nav--workspace__welsh').empty().append('<a href="#">Language: Welsh</a>');
   }
 
-  $('#nav--workspace__welsh').on('click', function () {
+  $('#nav--workspace__welsh').one('click', function () {
     Ermintrude.globalVars.welsh = Ermintrude.globalVars.welsh === false ? true : false;
     createWorkspace(Ermintrude.globalVars.pagePath, collectionId, viewCollectionDetails);
   });

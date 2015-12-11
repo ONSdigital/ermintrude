@@ -63,12 +63,13 @@ Ermintrude.Handler = function (e) {
       checkForPageChanged(function (newUrl) {
         var safeUrl = checkPathSlashes(newUrl);
         Ermintrude.globalVars.pagePath = safeUrl;
-        if ($('.workspace-edit').length) {
-          loadPageDataIntoEditor(safeUrl, Ermintrude.collection.id, 'click');
-        }
-        else if ($('.workspace-browse').length) {
-          treeNodeSelect(safeUrl);
-        }
+        //if ($('.workspace-edit').length) {
+        //  loadPageDataIntoEditor(safeUrl, Ermintrude.collection.id, 'click');
+        //}
+        //else if ($('.workspace-browse').length) {
+        //  treeNodeSelect(safeUrl);
+        //}
+        console.log(safeUrl);
       });
     }, 200);
   }
