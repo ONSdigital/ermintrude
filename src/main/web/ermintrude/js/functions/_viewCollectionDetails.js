@@ -44,7 +44,7 @@ function viewCollectionDetails(collectionId) {
   function ProcessPages(pages) {
     _.each(pages, function (page) {
       page.uri = page.uri.replace('/data.json', '');
-      page.name = page.description.title ? page.description.title : 'zz';
+      page.name = page.description.title ? page.description.title : page.description.edition;
       resultToSort.push(page);
     });
   }
