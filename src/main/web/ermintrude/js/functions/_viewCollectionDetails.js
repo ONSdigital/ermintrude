@@ -49,3 +49,4 @@ function viewCollectionDetails(collectionId) {
     });
   }
 }
+

@@ -113,6 +113,7 @@ setupErmintrude();function checkDocuments(url){
   $(selectedListItem).addClass('selected');
   console.log(urlPart);
 }
+
 /**
  * Checks for changes in the iframe path
  * @param onChanged - function
@@ -221,6 +222,7 @@ function getCollectionDetails(collectionId, success, error) {
     }
   });
 }
+
 function getPathName() {
   var parsedUrl = document.getElementById('iframe').contentWindow.location.pathname;
   var safeUrl = checkPathSlashes(parsedUrl);
@@ -261,6 +263,7 @@ function handleApiError(response) {
     sweetAlert("Error", message, "error");
   }
 }
+
 /**
  * Logout the current user and return to the login screen.
  */
@@ -273,7 +276,9 @@ function logout() {
 
 function delete_cookie(name) {
   document.cookie = name + '=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-}/**
+}
+
+/**
  * Http post to the zebedee API to authenticate a user.
  * @param email - the email of the user to authenticate
  * @param password - the password of the user
@@ -306,6 +311,7 @@ function postLogin(email, password) {
   });
   return true;
 }
+
 /**
  * HTTP post to the zebedee API to set a new password
  * @param success - function to run on success
@@ -338,7 +344,9 @@ function postPassword(success, error, email, password, oldPassword) {
       }
     }
   });
-}/**
+}
+
+/**
  * Post to the zebedee API permission endpoint.
  * Set permissions for the given email address.
  * @param success
@@ -375,7 +383,9 @@ function postPermission(success, error, email, admin, editor) {
       }
     }
   });
-}function refreshPreview(url) {
+}
+
+function refreshPreview(url) {
 
   if (url) {
     var safeUrl = checkPathSlashes(url);
@@ -614,7 +624,9 @@ function viewCollectionDetails(collectionId) {
       resultToSort.push(page);
     });
   }
-}function viewCollections(collectionId) {
+}
+
+function viewCollections(collectionId) {
 
   $.ajax({
     url: "/zebedee/collections",
@@ -661,7 +673,9 @@ function viewCollectionDetails(collectionId) {
       $('.collection-selected').animate({right: "0%"}, 1000);
     });
   }
-}function viewController(view) {
+}
+
+function viewController(view) {
 
 	if (Ermintrude.Authentication.isAuthenticated()) {
 

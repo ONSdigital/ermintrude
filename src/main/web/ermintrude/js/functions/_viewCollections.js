@@ -46,3 +46,4 @@ function viewCollections(collectionId) {
     });
   }
 }
+

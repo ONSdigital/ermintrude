@@ -7,3 +7,4 @@ function checkDocuments(url){
   $(selectedListItem).addClass('selected');
   console.log(urlPart);
 }
+

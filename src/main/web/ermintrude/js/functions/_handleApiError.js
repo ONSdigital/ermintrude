@@ -23,3 +23,4 @@ function handleApiError(response) {
     sweetAlert("Error", message, "error");
   }
 }
+

@@ -25,3 +25,4 @@ function getCollectionDetails(collectionId, success, error) {
     }
   });
 }
+
