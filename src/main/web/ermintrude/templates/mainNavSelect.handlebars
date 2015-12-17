@@ -1,0 +1,8 @@
+<div class="select-wrap">
+  <select id="docs-list" name="docs-list">
+    <option value="">Select a document to view</option>
+    {{#each this}}
+      <option value="{{this.uri}}">{{this.name}}</option>
+    {{/each}}
+  </select>
+</div>

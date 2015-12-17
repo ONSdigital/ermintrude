@@ -1,5 +1,6 @@
 function setupErmintrude() {
   window.templates = Handlebars.templates;
+  //Handlebars.registerPartial("mainNavSelect", templates.mainNavSelect);
   Handlebars.registerHelper('select', function( value, options ){
     var $el = $('<select />').html( options.fn(this) );
     $el.find('[value="' + value + '"]').attr({'selected':'selected'});
@@ -96,15 +97,18 @@ function setupErmintrude() {
     if (menuItem.hasClass("nav--admin__item--collections")) {
       $('.collection-selected').animate({right: "-100%"}, 1000);
       setTimeout(function () {viewController('collections')}, 1100);
+      $('.select-wrap').remove();
       Ermintrude.globalVars.pagePath = '';
     } else if (menuItem.hasClass("nav--admin__item--collection")) {
       var thisCollection = CookieUtils.getCookieValue("collection");
       $('.collection-selected').animate({right: "-100%"}, 1000);
       setTimeout(function () {viewCollections(thisCollection)}, 1100);
+      $('.select-wrap').remove();
       $(".nav--admin__item--collections").addClass('selected');
     } else if (menuItem.hasClass("nav--admin__item--login")) {
       viewController('login');
     } else if (menuItem.hasClass("nav--admin__item--logout")) {
+      $('.select-wrap').remove();
       logout();
       viewController();
     }

@@ -71,7 +71,8 @@ button {
 
 form {
 	position: relative;
-	//margin-top: - $lineheight; //Only needed on forms in collection/user workspace. Was breaking all other forms
+	margin-top: 2px;
+    padding: 0 15px;
 }
 
 ::-webkit-input-placeholder {
@@ -129,17 +130,17 @@ select {
 	 display: inline-block;
 	 width: 100%;
 	 box-sizing: border-box;
-	 border: 3px solid $scarpa-flow;
+	 border: 5px solid $scarpa-flow;
 	 border-radius: 4px;
 	 background-color: $white;
-	 margin: 0 0 $lineheight 0;
+	 margin: 10px 0 0 0;
 
  	&:before {
  		content: '';
  		border-top-right-radius: 4px;
  		border-bottom-right-radius : 4px;
  		width: 42px;
- 		height: 40px;
+ 		height: 39px;
  		position: absolute;
  		top: -2px;
  		right: -3px;

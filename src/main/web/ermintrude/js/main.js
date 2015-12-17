@@ -25,7 +25,7 @@ var Ermintrude = Ermintrude || {
       if (!collection.publishDate) {
         var formattedDate = null;
       } else {
-        var formattedDate = StringUtils.formatIsoDateString(collection.publishDate);
+        var formattedDate = formatIsoDateString(collection.publishDate);
       }
       Ermintrude.collection = {id: collection.id, name: collection.name, date: formattedDate, type: collection.type};
     }
@@ -366,6 +366,7 @@ function refreshPreview(url) {
 
 function setupErmintrude() {
   window.templates = Handlebars.templates;
+  //Handlebars.registerPartial("mainNavSelect", templates.mainNavSelect);
   Handlebars.registerHelper('select', function( value, options ){
     var $el = $('<select />').html( options.fn(this) );
     $el.find('[value="' + value + '"]').attr({'selected':'selected'});
@@ -462,15 +463,18 @@ function setupErmintrude() {
     if (menuItem.hasClass("nav--admin__item--collections")) {
       $('.collection-selected').animate({right: "-100%"}, 1000);
       setTimeout(function () {viewController('collections')}, 1100);
+      $('.select-wrap').remove();
       Ermintrude.globalVars.pagePath = '';
     } else if (menuItem.hasClass("nav--admin__item--collection")) {
       var thisCollection = CookieUtils.getCookieValue("collection");
       $('.collection-selected').animate({right: "-100%"}, 1000);
       setTimeout(function () {viewCollections(thisCollection)}, 1100);
+      $('.select-wrap').remove();
       $(".nav--admin__item--collections").addClass('selected');
     } else if (menuItem.hasClass("nav--admin__item--login")) {
       viewController('login');
     } else if (menuItem.hasClass("nav--admin__item--logout")) {
+      $('.select-wrap').remove();
       logout();
       viewController();
     }
@@ -554,9 +558,9 @@ function viewCollectionDetails(collectionId) {
     if (!collection.publishDate) {
       collection.date = '[manual collection]';
     } else if (collection.publishDate && collection.type === 'manual') {
-      collection.date = '[manual collection] Originally scheduled for ' + StringUtils.formatIsoFull(collection.publishDate);
+      collection.date = '[manual collection] Originally scheduled for ' + formatIsoFull(collection.publishDate);
     } else {
-      collection.date = StringUtils.formatIsoFull(collection.publishDate);
+      collection.date = formatIsoFull(collection.publishDate);
     }
 
     ProcessPages(collection.inProgress);
@@ -565,16 +569,21 @@ function viewCollectionDetails(collectionId) {
 
     var sorted = _.sortBy(resultToSort, 'name');
 
-    var collectionHtml = window.templates.collectionDetails(sorted);
-    $('.workspace-menu').html(collectionHtml);
+    var collectionHtml = window.templates.mainNavSelect(sorted);
+    $('#mainNavSelect').html(collectionHtml);
 
     //page-list
-    $('.page-item').click(function () {
-      $('.page-list li').removeClass('selected');
-      $('.page-options').hide();
-      var path = $(this).parent('li').attr('data-path');
-      $(this).parent('li').addClass('selected');
-      $(this).next('.page-options').show();
+    //$('.page-item').click(function () {
+    //  $('.page-list li').removeClass('selected');
+    //  $('.page-options').hide();
+    //  var path = $(this).parent('li').attr('data-path');
+    //  $(this).parent('li').addClass('selected');
+    //  $(this).next('.page-options').show();
+    //  refreshPreview(path);
+    //});
+
+    $('select#docs-list').change(function () {
+      var path = $('#docs-list option:selected').val();
       refreshPreview(path);
     });
   }
@@ -586,6 +595,13 @@ function viewCollectionDetails(collectionId) {
       resultToSort.push(page);
     });
   }
+}
+
+function formatIsoFull(input) {
+  var date = new Date(input);
+  var minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+  var formattedDate = $.datepicker.formatDate('DD dd MM yy', date) + ' ' + date.getHours() + ':' + minutes;
+  return formattedDate;
 }
 
 function viewCollections(collectionId) {
@@ -610,10 +626,10 @@ function viewCollections(collectionId) {
           date = '[manual collection]';
           response.push({id: collection.id, name: collection.name, date: date});
         } else if (collection.publishDate && collection.type === 'manual') {
-          var formattedDate = StringUtils.formatIsoDateString(collection.publishDate) + ' [rolled back]';
+          var formattedDate = formatIsoDateString(collection.publishDate) + ' [rolled back]';
           response.push({id: collection.id, name: collection.name, date: formattedDate});
         } else {
-          var formattedDate = StringUtils.formatIsoDateString(collection.publishDate);
+          var formattedDate = formatIsoDateString(collection.publishDate);
           response.push({id: collection.id, name: collection.name, date: formattedDate});
         }
       }
@@ -637,6 +653,12 @@ function viewCollections(collectionId) {
   }
 }
 
+function formatIsoDateString(input) {
+  var date = new Date(input);
+  var minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+  var formattedDate = $.datepicker.formatDate('dd/mm/yy', date) + ' ' + date.getHours() + ':' + minutes;
+  return formattedDate;
+}
 function viewController(view) {
 
 	if (Ermintrude.Authentication.isAuthenticated()) {

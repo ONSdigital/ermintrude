@@ -86,9 +86,9 @@ templates['collectionList'] = template({"1":function(depth0,helpers,partials,dat
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "<section class=\"panel col col--3 collection-create\">\n</section>\n<section class=\"panel col col--6 collection-select\" xmlns=\"http://www.w3.org/1999/html\">\n  <h1 class=\"text-align-center\">Select a collection</h1>\n  <table class=\"collections-select-table\">\n    <thead>\n    <tr>\n      <th id=\"collection-name\" scope=\"col\">Collection name</th>\n      <th id=\"collection-date\" scope=\"col\">Collection date</th>\n    </tr>\n    </thead>\n    <tbody>\n"
+  return "<section class=\"panel col col--2 collection-create\">\n</section>\n<section class=\"panel col col--8 collection-select\" xmlns=\"http://www.w3.org/1999/html\">\n  <h1 class=\"text-align-center\">Select a collection</h1>\n  <table class=\"collections-select-table\">\n    <thead>\n    <tr>\n      <th id=\"collection-name\" scope=\"col\">Collection name</th>\n      <th id=\"collection-date\" scope=\"col\">Collection date</th>\n    </tr>\n    </thead>\n    <tbody>\n"
     + ((stack1 = helpers.each.call(depth0,depth0,{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "    </tbody>\n  </table>\n</section>\n\n<section class=\"panel col col--12 collection-selected\">\n  <nav class=\"panel col col--1 workspace-nav\">\n    <ul class=\"nav nav--workspace\">\n      <div id=\"nav--workspace__welsh\" style=\"margin-top: 20px;\"></div>\n      <br/>\n    </ul>\n  </nav>\n  <div class=\"col col--4 workspace-menu\">\n    <p style=\"color: #f5f6f7\">Loading ...</p>\n  </div>\n  <section class=\"panel col col--7 workspace-browser\">\n    <div class=\"browser\">\n      <iframe id=\"iframe\" src=\"\"></iframe>\n    </div>\n  </section>\n</section>";
+    + "    </tbody>\n  </table>\n</section>\n\n<section class=\"panel col col--12 collection-selected\">\n  <section class=\"panel col col--12 workspace-browser\">\n    <div class=\"browser\">\n      <iframe id=\"iframe\" src=\"\"></iframe>\n    </div>\n  </section>\n</section>";
 },"useData":true});
 templates['ermintrude'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     return "<div class=\"wrapper\">\n  <nav class=\"admin-nav\">\n  </nav>\n  <div class=\"section\">\n  </div>\n</div>";
@@ -100,13 +100,13 @@ templates['mainNav'] = template({"1":function(depth0,helpers,partials,data) {
     var stack1;
 
   return ((stack1 = helpers['if'].call(depth0,((stack1 = (depth0 != null ? depth0.collection : depth0)) != null ? stack1.name : stack1),{"name":"if","hash":{},"fn":this.program(2, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "\n        <li class=\"nav--admin__item nav--admin__item--collections "
+    + "\n      <li class=\"nav--admin__item nav--admin__item--collections "
     + ((stack1 = helpers['if'].call(depth0,((stack1 = (depth0 != null ? depth0.Authentication : depth0)) != null ? stack1.isAuthenticated : stack1),{"name":"if","hash":{},"fn":this.program(4, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "\">\n        <a href=\"#\">Collections</a></li>\n\n        <li class=\"nav--admin__item nav--admin__item--logout\"><a href=\"#\">Logout</a></li>\n";
+    + "\">\n        <a href=\"#\">Collections</a></li>\n\n      <li class=\"nav--admin__item nav--admin__item--logout\"><a href=\"#\">Logout</a></li>\n";
 },"2":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "          <li id=\"working-on\" class=\"nav--admin__item nav--admin__item--collection selected\"><a href=\"#\">Working on: "
+  return "        <li id=\"working-on\" class=\"nav--admin__item nav--admin__item--collection selected\"><a href=\"#\">Working\n          on: "
     + this.escapeExpression(this.lambda(((stack1 = (depth0 != null ? depth0.collection : depth0)) != null ? stack1.name : stack1), depth0))
     + "</a></li>\n";
 },"4":function(depth0,helpers,partials,data) {
@@ -116,13 +116,28 @@ templates['mainNav'] = template({"1":function(depth0,helpers,partials,data) {
 },"5":function(depth0,helpers,partials,data) {
     return "selected";
 },"7":function(depth0,helpers,partials,data) {
-    return "        <li class=\"nav--admin__item nav--admin__item--login selected\"><a href=\"#\">Login</a></li>\n";
+    return "      <li class=\"nav--admin__item nav--admin__item--login selected\"><a href=\"#\">Login</a></li>\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "<ul class=\"nav nav--admin\">\n"
+  return "<section class=\"col--4 nav-left\">\n  <form method=\"post\" action=\"\" id=\"mainNavSelect\" class=\"form-list-collection\">\n  </form>\n</section>\n<section class=\"col--8 nav-right\">\n  <ul class=\" nav--admin\">\n"
     + ((stack1 = helpers['if'].call(depth0,((stack1 = (depth0 != null ? depth0.Authentication : depth0)) != null ? stack1.isAuthenticated : stack1),{"name":"if","hash":{},"fn":this.program(1, data, 0),"inverse":this.program(7, data, 0),"data":data})) != null ? stack1 : "")
-    + "</ul>\n";
+    + "  </ul>\n</section>\n";
+},"useData":true});
+templates['mainNavSelect'] = template({"1":function(depth0,helpers,partials,data) {
+    var alias1=this.lambda, alias2=this.escapeExpression;
+
+  return "      <option value=\""
+    + alias2(alias1((depth0 != null ? depth0.uri : depth0), depth0))
+    + "\">"
+    + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
+    + "</option>\n";
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<div class=\"select-wrap\">\n  <select id=\"docs-list\" name=\"docs-list\">\n    <option value=\"\">Select a document to view</option>\n"
+    + ((stack1 = helpers.each.call(depth0,depth0,{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + "  </select>\n</div>";
 },"useData":true});
 templates['userDetails'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var helper;

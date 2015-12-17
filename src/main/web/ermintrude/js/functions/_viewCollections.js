@@ -20,10 +20,10 @@ function viewCollections(collectionId) {
           date = '[manual collection]';
           response.push({id: collection.id, name: collection.name, date: date});
         } else if (collection.publishDate && collection.type === 'manual') {
-          var formattedDate = StringUtils.formatIsoDateString(collection.publishDate) + ' [rolled back]';
+          var formattedDate = formatIsoDateString(collection.publishDate) + ' [rolled back]';
           response.push({id: collection.id, name: collection.name, date: formattedDate});
         } else {
-          var formattedDate = StringUtils.formatIsoDateString(collection.publishDate);
+          var formattedDate = formatIsoDateString(collection.publishDate);
           response.push({id: collection.id, name: collection.name, date: formattedDate});
         }
       }
@@ -47,3 +47,9 @@ function viewCollections(collectionId) {
   }
 }
 
+function formatIsoDateString(input) {
+  var date = new Date(input);
+  var minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+  var formattedDate = $.datepicker.formatDate('dd/mm/yy', date) + ' ' + date.getHours() + ':' + minutes;
+  return formattedDate;
+}

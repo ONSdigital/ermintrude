@@ -10,7 +10,7 @@ var Ermintrude = Ermintrude || {
       if (!collection.publishDate) {
         var formattedDate = null;
       } else {
-        var formattedDate = StringUtils.formatIsoDateString(collection.publishDate);
+        var formattedDate = formatIsoDateString(collection.publishDate);
       }
       Ermintrude.collection = {id: collection.id, name: collection.name, date: formattedDate, type: collection.type};
     }

@@ -16,9 +16,9 @@ function viewCollectionDetails(collectionId) {
     if (!collection.publishDate) {
       collection.date = '[manual collection]';
     } else if (collection.publishDate && collection.type === 'manual') {
-      collection.date = '[manual collection] Originally scheduled for ' + StringUtils.formatIsoFull(collection.publishDate);
+      collection.date = '[manual collection] Originally scheduled for ' + formatIsoFull(collection.publishDate);
     } else {
-      collection.date = StringUtils.formatIsoFull(collection.publishDate);
+      collection.date = formatIsoFull(collection.publishDate);
     }
 
     ProcessPages(collection.inProgress);
@@ -27,16 +27,21 @@ function viewCollectionDetails(collectionId) {
 
     var sorted = _.sortBy(resultToSort, 'name');
 
-    var collectionHtml = window.templates.collectionDetails(sorted);
-    $('.workspace-menu').html(collectionHtml);
+    var collectionHtml = window.templates.mainNavSelect(sorted);
+    $('#mainNavSelect').html(collectionHtml);
 
     //page-list
-    $('.page-item').click(function () {
-      $('.page-list li').removeClass('selected');
-      $('.page-options').hide();
-      var path = $(this).parent('li').attr('data-path');
-      $(this).parent('li').addClass('selected');
-      $(this).next('.page-options').show();
+    //$('.page-item').click(function () {
+    //  $('.page-list li').removeClass('selected');
+    //  $('.page-options').hide();
+    //  var path = $(this).parent('li').attr('data-path');
+    //  $(this).parent('li').addClass('selected');
+    //  $(this).next('.page-options').show();
+    //  refreshPreview(path);
+    //});
+
+    $('select#docs-list').change(function () {
+      var path = $('#docs-list option:selected').val();
       refreshPreview(path);
     });
   }
@@ -48,5 +53,12 @@ function viewCollectionDetails(collectionId) {
       resultToSort.push(page);
     });
   }
+}
+
+function formatIsoFull(input) {
+  var date = new Date(input);
+  var minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+  var formattedDate = $.datepicker.formatDate('DD dd MM yy', date) + ' ' + date.getHours() + ':' + minutes;
+  return formattedDate;
 }
 
