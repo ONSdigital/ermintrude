@@ -125,13 +125,19 @@ templates['mainNav'] = template({"1":function(depth0,helpers,partials,data) {
     + "  </ul>\n</section>\n";
 },"useData":true});
 templates['mainNavSelect'] = template({"1":function(depth0,helpers,partials,data) {
-    var alias1=this.lambda, alias2=this.escapeExpression;
+    var stack1, alias1=this.lambda, alias2=this.escapeExpression;
 
   return "      <option value=\""
     + alias2(alias1((depth0 != null ? depth0.uri : depth0), depth0))
     + "\">"
     + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
+    + ((stack1 = helpers['if'].call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.edition : stack1),{"name":"if","hash":{},"fn":this.program(2, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "</option>\n";
+},"2":function(depth0,helpers,partials,data) {
+    var stack1;
+
+  return ": "
+    + this.escapeExpression(this.lambda(((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.edition : stack1), depth0));
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 

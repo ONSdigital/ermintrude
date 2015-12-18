@@ -2,7 +2,7 @@
   <select id="docs-list" name="docs-list">
     <option value="">Select a document to view</option>
     {{#each this}}
-      <option value="{{this.uri}}">{{this.name}}</option>
+      <option value="{{this.uri}}">{{this.name}}{{#if description.edition}}: {{description.edition}}{{/if}}</option>
     {{/each}}
   </select>
 </div>
