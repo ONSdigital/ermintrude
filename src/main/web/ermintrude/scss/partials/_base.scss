@@ -206,6 +206,10 @@ $panel-height-2-top-nav: 756px;
   float: right !important;
 }
 
+select::-ms-expand {
+  display: none;
+}
+
 .selectbg {
   display: block;
   width: 100%;
