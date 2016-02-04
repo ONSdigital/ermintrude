@@ -15,17 +15,15 @@ function viewCollections(collectionId) {
 
   function populateCollectionTable(data) {
     $.each(data, function (i, collection) {
-      if (!collection.approvedStatus) {
-        if (!collection.publishDate) {
-          date = '[manual collection]';
-          response.push({id: collection.id, name: collection.name, date: date});
-        } else if (collection.publishDate && collection.type === 'manual') {
-          var formattedDate = formatIsoDateString(collection.publishDate) + ' [rolled back]';
-          response.push({id: collection.id, name: collection.name, date: formattedDate});
-        } else {
-          var formattedDate = formatIsoDateString(collection.publishDate);
-          response.push({id: collection.id, name: collection.name, date: formattedDate});
-        }
+      if (!collection.publishDate) {
+        date = '[manual collection]';
+        response.push({id: collection.id, name: collection.name, date: date});
+      } else if (collection.publishDate && collection.type === 'manual') {
+        var formattedDate = formatIsoDateString(collection.publishDate) + ' [rolled back]';
+        response.push({id: collection.id, name: collection.name, date: formattedDate});
+      } else {
+        var formattedDate = formatIsoDateString(collection.publishDate);
+        response.push({id: collection.id, name: collection.name, date: formattedDate});
       }
     });
 
