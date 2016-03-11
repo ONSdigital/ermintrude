@@ -245,23 +245,44 @@ function getPathNameTrimLast() {
  */
 function handleApiError(response) {
 
-  if(!response || response.status === 200)
-    return;
+    if (!response || response.status === 200)
+        return;
 
-  if(response.status === 403 || response.status === 401) {
-    logout();
-  } else if (response.status === 504) {
-    sweetAlert('This task is taking longer than expected', "It will continue to run in the background.", "info");
-  } else {
-    var message = 'An error has occurred, please contact an administrator.';
+    if (response.status === 403 || response.status === 401) {
+        sweetAlert('You are not logged in', 'Please refresh Florence and log back in.');
+        logout();
+    } else if (response.status === 504) {
+        sweetAlert('This task is taking longer than expected', "It will continue to run in the background.", "info");
+    } else {
+        var message = 'An error has occurred, please contact an administrator.';
 
-    if(response.responseJSON) {
-      message = message + ' ' + response.responseJSON.message;
+        if (response.responseJSON) {
+            message = response.responseJSON.message;
+        }
+
+        console.log(message);
+        sweetAlert("Error", message, "error");
     }
+}
 
-    console.log(message);
-    sweetAlert("Error", message, "error");
-  }
+/* Unique error handling for the login screen */
+function handleLoginApiError(response) {
+
+    if (!response || response.status === 200)
+        return;
+
+    if (response.status === 401) {
+        sweetAlert('Incorrect login details', 'These login credentials were not recognised. Please try again.', 'error');
+    } else {
+        var message = 'An error has occurred, please contact an administrator.';
+
+        if (response.responseJSON) {
+            message = response.responseJSON.message;
+        }
+
+        console.log(message);
+        sweetAlert("Error", message, "error");
+    }
 }
 
 /**
@@ -285,32 +306,33 @@ function delete_cookie(name) {
  * @param password - the password of the user
  * @returns {boolean}
  */
+
 function postLogin(email, password) {
-  $.ajax({
-    url: "/zebedee/login",
-    dataType: 'json',
-    contentType: 'application/json',
-    crossDomain: true,
-    type: 'POST',
-    data: JSON.stringify({
-      email: email,
-      password: password
-    }),
-    success: function (response) {
-      document.cookie = "access_token=" + response + ";path=/";
-      localStorage.setItem("loggedInAs", email);
-      Ermintrude.refreshAdminMenu();
-      viewController();
-    },
-    error: function (response) {
-      if (response.status === 417) {
-        viewChangePassword(email, true);
-      } else {
-        handleApiError(response);
-      }
-    }
-  });
-  return true;
+    $.ajax({
+        url: "/zebedee/login",
+        dataType: 'json',
+        contentType: 'application/json',
+        crossDomain: true,
+        type: 'POST',
+        data: JSON.stringify({
+            email: email,
+            password: password
+        }),
+        success: function (response) {
+            document.cookie = "access_token=" + response + ";path=/";
+            localStorage.setItem("loggedInAs", email);
+            Ermintrude.refreshAdminMenu();
+            viewController();
+        },
+        error: function (response) {
+            if (response.status === 417) {
+                viewChangePassword(email, true);
+            } else {
+                handleLoginApiError(response);
+            }
+        }
+    });
+    return true;
 }
 
 /**
@@ -621,17 +643,15 @@ function viewCollections(collectionId) {
 
   function populateCollectionTable(data) {
     $.each(data, function (i, collection) {
-      if (!collection.approvedStatus) {
-        if (!collection.publishDate) {
-          date = '[manual collection]';
-          response.push({id: collection.id, name: collection.name, date: date});
-        } else if (collection.publishDate && collection.type === 'manual') {
-          var formattedDate = formatIsoDateString(collection.publishDate) + ' [rolled back]';
-          response.push({id: collection.id, name: collection.name, date: formattedDate});
-        } else {
-          var formattedDate = formatIsoDateString(collection.publishDate);
-          response.push({id: collection.id, name: collection.name, date: formattedDate});
-        }
+      if (!collection.publishDate) {
+        date = '[manual collection]';
+        response.push({id: collection.id, name: collection.name, date: date});
+      } else if (collection.publishDate && collection.type === 'manual') {
+        var formattedDate = formatIsoDateString(collection.publishDate) + ' [rolled back]';
+        response.push({id: collection.id, name: collection.name, date: formattedDate});
+      } else {
+        var formattedDate = formatIsoDateString(collection.publishDate);
+        response.push({id: collection.id, name: collection.name, date: formattedDate});
       }
     });
 
