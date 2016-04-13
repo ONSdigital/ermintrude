@@ -41,6 +41,7 @@ function viewCollections(collectionId) {
       Ermintrude.collection.name = $(this).attr('data-name');
       createWorkspace(Ermintrude.globalVars.pagePath, Ermintrude.collection.id, viewCollectionDetails);
       $('.collection-selected').animate({right: "0%"}, 1000);
+        hideBugHerd(1000);
     });
   }
 }

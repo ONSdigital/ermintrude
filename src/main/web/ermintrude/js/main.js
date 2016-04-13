@@ -121,6 +121,7 @@ setupErmintrude();function checkDocuments(url){
 function checkForPageChanged(onChanged) {
   var iframeUrl = Ermintrude.globalVars.pagePath;
   var nowUrl = $('#iframe')[0].contentWindow.document.location.pathname;
+  hideBugHerd(300);
   if (iframeUrl !== nowUrl) {
     Ermintrude.globalVars.activeTab = false;
     Ermintrude.globalVars.pagePos = '';
@@ -285,6 +286,32 @@ function handleLoginApiError(response) {
     }
 }
 
+/*
+ * Remove the BugHerd feedback button
+ * @params timeout
+ */
+
+function hideBugHerd(timeout) {
+
+    function ifIframeLoaded() {
+        $('#iframe').ready(function () {
+            console.log('iframe contents loaded');
+            hideTheButton();
+        });
+    }
+
+    function hideTheButton() {
+        var $button = $('#iframe').contents().find('#bugherd-feedback');
+        if ($button.length) {
+            console.log('b length: ' + $button.length);
+            $button.remove();
+            return false;
+        }
+        setTimeout(hideTheButton, 10);
+    }
+    setTimeout(ifIframeLoaded, timeout);
+}
+
 /**
  * Logout the current user and return to the login screen.
  */
@@ -384,6 +411,8 @@ function refreshPreview(url) {
     document.getElementById('iframe').contentWindow.location.href = newUrl;
     $('.browser-location').val(newUrl);
   }
+    hideBugHerd(500)
+
 }
 
 function setupErmintrude() {
@@ -669,6 +698,7 @@ function viewCollections(collectionId) {
       Ermintrude.collection.name = $(this).attr('data-name');
       createWorkspace(Ermintrude.globalVars.pagePath, Ermintrude.collection.id, viewCollectionDetails);
       $('.collection-selected').animate({right: "0%"}, 1000);
+        hideBugHerd(1000);
     });
   }
 }

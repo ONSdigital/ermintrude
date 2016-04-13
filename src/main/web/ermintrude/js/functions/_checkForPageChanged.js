@@ -5,6 +5,7 @@
 function checkForPageChanged(onChanged) {
   var iframeUrl = Ermintrude.globalVars.pagePath;
   var nowUrl = $('#iframe')[0].contentWindow.document.location.pathname;
+  hideBugHerd(300);
   if (iframeUrl !== nowUrl) {
     Ermintrude.globalVars.activeTab = false;
     Ermintrude.globalVars.pagePos = '';

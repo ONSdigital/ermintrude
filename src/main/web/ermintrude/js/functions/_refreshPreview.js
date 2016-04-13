@@ -13,5 +13,7 @@ function refreshPreview(url) {
     document.getElementById('iframe').contentWindow.location.href = newUrl;
     $('.browser-location').val(newUrl);
   }
+    hideBugHerd(500)
+
 }
 
