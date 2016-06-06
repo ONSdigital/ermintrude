@@ -1,4 +1,4 @@
-from onsdigital/java-node-component
+FROM onsdigital/java-node-component
 
 # Add the built artifact
 WORKDIR /usr/src
