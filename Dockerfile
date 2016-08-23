@@ -2,7 +2,6 @@ FROM onsdigital/java-node-component
 
 # Add the built artifact
 WORKDIR /usr/src
-ADD git_commit_id /usr/src/
 ADD ./target/*-jar-with-dependencies.jar /usr/src/target/
 ADD ./target/web /usr/src/target/web
 
