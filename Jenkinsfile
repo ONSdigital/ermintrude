@@ -52,13 +52,13 @@ node {
 
 def deploymentGroupsFor(branch) {
     if (branch == 'develop') {
-        return [env.CODEDEPLOY_FRONTEND_DEPLOYMENT_GROUP, env.CODEDEPLOY_PUBLISHING_DEPLOYMENT_GROUP]
+        return [env.CODEDEPLOY_PUBLISHING_DEPLOYMENT_GROUP]
     }
     if (branch == 'dd-develop') {
-        return [env.CODEDEPLOY_DISCOVERY_FRONTEND_DEPLOYMENT_GROUP, env.CODEDEPLOY_DISCOVERY_PUBLISHING_DEPLOYMENT_GROUP]
+        return [env.CODEDEPLOY_DISCOVERY_PUBLISHING_DEPLOYMENT_GROUP]
     }
     if (branch == 'dd-master') {
-        return [env.CODEDEPLOY_DISCOVERY_ALPHA_FRONTEND_DEPLOYMENT_GROUP, env.env.CODEDEPLOY_DISCOVERY_ALPHA_PUBLISHING_DEPLOYMENT_GROUP]
+        return [env.env.CODEDEPLOY_DISCOVERY_ALPHA_PUBLISHING_DEPLOYMENT_GROUP]
     }
     return []
 }
