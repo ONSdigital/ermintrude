@@ -58,7 +58,7 @@ def deploymentGroupsFor(branch) {
         return [env.CODEDEPLOY_DISCOVERY_PUBLISHING_DEPLOYMENT_GROUP]
     }
     if (branch == 'dd-master') {
-        return [env.env.CODEDEPLOY_DISCOVERY_ALPHA_PUBLISHING_DEPLOYMENT_GROUP]
+        return [env.CODEDEPLOY_DISCOVERY_ALPHA_PUBLISHING_DEPLOYMENT_GROUP]
     }
     return []
 }
