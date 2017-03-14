@@ -127,13 +127,19 @@ templates['mainNav'] = template({"1":function(depth0,helpers,partials,data) {
 templates['mainNavSelect'] = template({"1":function(depth0,helpers,partials,data) {
     var stack1, alias1=this.lambda, alias2=this.escapeExpression;
 
-  return "      <option value=\""
+  return "      <option data-lang=\""
+    + ((stack1 = (helpers.ifCond || (depth0 && depth0.ifCond) || helpers.helperMissing).call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.language : stack1),"===","cy",{"name":"ifCond","hash":{},"fn":this.program(2, data, 0),"inverse":this.program(4, data, 0),"data":data})) != null ? stack1 : "")
+    + "\" value=\""
     + alias2(alias1((depth0 != null ? depth0.uri : depth0), depth0))
     + "\">"
     + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
-    + ((stack1 = helpers['if'].call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.edition : stack1),{"name":"if","hash":{},"fn":this.program(2, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers['if'].call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.edition : stack1),{"name":"if","hash":{},"fn":this.program(6, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "</option>\n";
 },"2":function(depth0,helpers,partials,data) {
+    return "cy";
+},"4":function(depth0,helpers,partials,data) {
+    return "en";
+},"6":function(depth0,helpers,partials,data) {
     var stack1;
 
   return ": "
