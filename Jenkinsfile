@@ -34,16 +34,33 @@ node {
         sh "aws s3 cp ermintrude-${revision}.tar.gz s3://${env.S3_REVISIONS_BUCKET}/"
     }
 
-    if (branch != 'develop') return
+    def deploymentGroups = deploymentGroupsFor(env.JOB_NAME.replaceFirst('.+/', ''))
+    if (deploymentGroups.size() < 1) return
 
     stage('Deploy') {
-        sh sprintf('aws deploy create-deployment %s %s %s,bundleType=tgz,key=%s', [
-            '--application-name ermintrude',
-            "--deployment-group-name ${env.CODEDEPLOY_PUBLISHING_DEPLOYMENT_GROUP}",
-            "--s3-location bucket=${env.S3_REVISIONS_BUCKET}",
-            "ermintrude-${revision}.tar.gz",
-        ])
+        def appName = 'ermintrude'
+        for (group in deploymentGroupsFor(branch)) {
+            sh sprintf('aws deploy create-deployment %s %s %s,bundleType=tgz,key=%s', [
+                    "--application-name ${appName}",
+                    "--deployment-group-name ${group}",
+                    "--s3-location bucket=${env.S3_REVISIONS_BUCKET}",
+                    "${appName}-${revision}.tar.gz",
+            ])
+        }
     }
+}
+
+def deploymentGroupsFor(branch) {
+    if (branch == 'develop') {
+        return [env.CODEDEPLOY_PUBLISHING_DEPLOYMENT_GROUP]
+    }
+    if (branch == 'dd-develop') {
+        return [env.CODEDEPLOY_DISCOVERY_PUBLISHING_DEPLOYMENT_GROUP]
+    }
+    if (branch == 'dd-master') {
+        return [env.CODEDEPLOY_DISCOVERY_ALPHA_PUBLISHING_DEPLOYMENT_GROUP]
+    }
+    return []
 }
 
 @NonCPS
