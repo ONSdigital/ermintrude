@@ -5,14 +5,13 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: onsdigital/dp-concourse-tools-git
+    repository: onsdigital/dp-concourse-tools-dp-node-java
 
 inputs:
-  - name: artifacts
   - name: ermintrude
 
 outputs:
   - name: build
 
 run:
-  path: ermintrude/ci/scripts/build-bundle.sh
+  path: ermintrude/ci/scripts/build.sh
