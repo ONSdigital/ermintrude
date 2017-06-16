@@ -1,0 +1,10 @@
+<form id="vis-files__form" class="vis-files__form">
+  <div class="select-wrap">
+    <select id="vis-files__select" name="vis-files__select">
+      <option value="">Select a visualisation page to view</option>
+      {{#each this}}
+        <option value="{{this.uri}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+</form>

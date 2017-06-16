@@ -1,4 +1,29 @@
-var CookieUtils = {
+/**
+ * @param {string} collectionID - Unique ID of the collection that is being previewed
+ * @param {string} url - URL of the page that the caller wants the JSON data for
+ * @returns {Promise} - Which resolves to the page JSON data or rejects with an error
+ */
+
+function getPage(collectionID, url) {
+    var fetchURL = '/zebedee/data/' + collectionID + '?uri=' + url;
+    var fetchOptions = {
+        method: "GET",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+    return new Promise((resolve, reject) => {
+        fetch(fetchURL, fetchOptions).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            reject(response);
+        }).then(response => {
+            resolve(response);
+        })
+    });
+}var CookieUtils = {
   getCookieValue: function (a, b) {
     b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
     return b ? b.pop() : '';
@@ -417,7 +442,6 @@ function refreshPreview(url) {
 
 function setupErmintrude() {
   window.templates = Handlebars.templates;
-  //Handlebars.registerPartial("mainNavSelect", templates.mainNavSelect);
   Handlebars.registerHelper('select', function( value, options ){
     var $el = $('<select />').html( options.fn(this) );
     $el.find('[value="' + value + '"]').attr({'selected':'selected'});
@@ -623,16 +647,6 @@ function viewCollectionDetails(collectionId) {
         var collectionHtml = window.templates.mainNavSelect(sorted);
         $('#mainNavSelect').html(collectionHtml);
 
-        //page-list
-        //$('.page-item').click(function () {
-        //  $('.page-list li').removeClass('selected');
-        //  $('.page-options').hide();
-        //  var path = $(this).parent('li').attr('data-path');
-        //  $(this).parent('li').addClass('selected');
-        //  $(this).next('.page-options').show();
-        //  refreshPreview(path);
-        //});
-
         $('select#docs-list').change(function () {
             var $selectedOption = $('#docs-list option:selected')
             var path = $selectedOption.val();
@@ -642,7 +656,35 @@ function viewCollectionDetails(collectionId) {
                 document.cookie = "lang=" + lang + ";path=/";
             }
 
+            getPage(collection.id, path).then(response => {
+                var templateData = [];
+                var files = response.filenames;
+                for (var i = 0; i < files.length; i++) {
+                    templateData.push({
+                        uri: response.uri + "/" + files[i],
+                        name: files[i]
+                    });
+                }
+                var visSelectTemplate = templates.visualisationFileSelect(templateData);
+                $('.nav-left').append(visSelectTemplate);
+                bindVisFilesChange();
+            }).catch(error => {
+                switch(error.status) {
+                    case(401): {
+                        logout();
+                        sweetAlert("Session has expired", "Please login again", "info");
+                        console.warn("User is not logged in, redirecting to login screen");
+                        break
+                    }
+                    default: {
+                        console.error("An unexpected error has occured\n", error.statusText);
+                        break;
+                    }
+                }
+            });
+            
             refreshPreview(path);
+
         });
     }
 
@@ -662,7 +704,11 @@ function formatIsoFull(input) {
     return formattedDate;
 }
 
-function viewCollections(collectionId) {
+function bindVisFilesChange() {
+    $('#vis-files__form').off().on('change', function() {
+        refreshPreview($(this).find(":selected").val());
+    });
+}function viewCollections(collectionId) {
 
   $.ajax({
     url: "/zebedee/collections",

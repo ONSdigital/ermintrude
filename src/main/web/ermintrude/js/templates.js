@@ -120,7 +120,7 @@ templates['mainNav'] = template({"1":function(depth0,helpers,partials,data) {
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "<section class=\"col--4 nav-left\">\n  <form method=\"post\" action=\"\" id=\"mainNavSelect\" class=\"form-list-collection\">\n  </form>\n</section>\n<section class=\"col--8 nav-right\">\n  <ul class=\" nav--admin\">\n"
+  return "<section class=\"col--8 nav-left\">\n  <form method=\"post\" action=\"\" id=\"mainNavSelect\" class=\"pages__form\">\n  </form>\n</section>\n<section class=\"col--4 nav-right\">\n  <ul class=\" nav--admin\">\n"
     + ((stack1 = helpers['if'].call(depth0,((stack1 = (depth0 != null ? depth0.Authentication : depth0)) != null ? stack1.isAuthenticated : stack1),{"name":"if","hash":{},"fn":this.program(1, data, 0),"inverse":this.program(7, data, 0),"data":data})) != null ? stack1 : "")
     + "  </ul>\n</section>\n";
 },"useData":true});
@@ -157,5 +157,20 @@ templates['userDetails'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":fun
   return "<div class=\"section-head\">\n  <h2>"
     + this.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"name","hash":{},"data":data}) : helper)))
     + "</h2>\n</div>\n\n<div class=\"section-content\">\n</div>\n\n<nav class=\"section-nav\">\n  <button class=\"btn-user-change-password btn-collection-work-on\">Change password</button>\n  <button class=\"btn-user-delete btn-page-delete\">Delete user</button>\n  <button class=\"btn-user-cancel btn-collection-cancel\">Cancel</button>\n</nav>\n\n";
+},"useData":true});
+templates['visualisationFileSelect'] = template({"1":function(depth0,helpers,partials,data) {
+    var alias1=this.lambda, alias2=this.escapeExpression;
+
+  return "        <option value=\""
+    + alias2(alias1((depth0 != null ? depth0.uri : depth0), depth0))
+    + "\">"
+    + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
+    + "</option>\n";
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<form id=\"vis-files__form\" class=\"vis-files__form\">\n  <div class=\"select-wrap\">\n    <select id=\"vis-files__select\" name=\"vis-files__select\">\n      <option value=\"\">Select a visualisation page to view</option>\n"
+    + ((stack1 = helpers.each.call(depth0,depth0,{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + "    </select>\n  </div>\n</form>";
 },"useData":true});
 })();

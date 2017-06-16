@@ -1,6 +1,5 @@
 function setupErmintrude() {
   window.templates = Handlebars.templates;
-  //Handlebars.registerPartial("mainNavSelect", templates.mainNavSelect);
   Handlebars.registerHelper('select', function( value, options ){
     var $el = $('<select />').html( options.fn(this) );
     $el.find('[value="' + value + '"]').attr({'selected':'selected'});

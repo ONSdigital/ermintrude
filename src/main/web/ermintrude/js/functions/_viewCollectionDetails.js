@@ -30,16 +30,6 @@ function viewCollectionDetails(collectionId) {
         var collectionHtml = window.templates.mainNavSelect(sorted);
         $('#mainNavSelect').html(collectionHtml);
 
-        //page-list
-        //$('.page-item').click(function () {
-        //  $('.page-list li').removeClass('selected');
-        //  $('.page-options').hide();
-        //  var path = $(this).parent('li').attr('data-path');
-        //  $(this).parent('li').addClass('selected');
-        //  $(this).next('.page-options').show();
-        //  refreshPreview(path);
-        //});
-
         $('select#docs-list').change(function () {
             var $selectedOption = $('#docs-list option:selected')
             var path = $selectedOption.val();
@@ -49,7 +39,35 @@ function viewCollectionDetails(collectionId) {
                 document.cookie = "lang=" + lang + ";path=/";
             }
 
+            getPage(collection.id, path).then(response => {
+                var templateData = [];
+                var files = response.filenames;
+                for (var i = 0; i < files.length; i++) {
+                    templateData.push({
+                        uri: response.uri + "/" + files[i],
+                        name: files[i]
+                    });
+                }
+                var visSelectTemplate = templates.visualisationFileSelect(templateData);
+                $('.nav-left').append(visSelectTemplate);
+                bindVisFilesChange();
+            }).catch(error => {
+                switch(error.status) {
+                    case(401): {
+                        logout();
+                        sweetAlert("Session has expired", "Please login again", "info");
+                        console.warn("User is not logged in, redirecting to login screen");
+                        break
+                    }
+                    default: {
+                        console.error("An unexpected error has occured\n", error.statusText);
+                        break;
+                    }
+                }
+            });
+            
             refreshPreview(path);
+
         });
     }
 
@@ -69,3 +87,8 @@ function formatIsoFull(input) {
     return formattedDate;
 }
 
+function bindVisFilesChange() {
+    $('#vis-files__form').off().on('change', function() {
+        refreshPreview($(this).find(":selected").val());
+    });
+}

@@ -13,8 +13,8 @@
         "node-sass": "latest"
     },
     "scripts": {
-        "watch-js": "npm run build-js && ./node_modules/onchange/cli.js 'js/classes/*.js' 'js/functions/*.js' -- npm run build-js ",
-        "build-js": "cat js/classes/*.js js/functions/*.js > js/main.js",
+        "watch-js": "npm run build-js && ./node_modules/onchange/cli.js 'js/api/*.js' 'js/classes/*.js' 'js/functions/*.js' -- npm run build-js ",
+        "build-js": "cat js/api/*.js js/classes/*.js js/functions/*.js > js/main.js",
         "watch-templates": "npm run build-templates && ./node_modules/onchange/cli.js 'templates/*.handlebars' -- npm run build-templates ",
         "build-templates": "./node_modules/handlebars/bin/handlebars templates/*.handlebars --output js/templates.js",
         "watch-css": "npm run build-css && ./node_modules/onchange/cli.js 'scss/partials/*.scss' -- npm run build-css ",
