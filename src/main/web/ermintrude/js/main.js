@@ -657,6 +657,10 @@ function viewCollectionDetails(collectionId) {
             }
 
             getPage(collection.id, path).then(response => {
+                if (response.type !== "visualisation") {
+                    $('#vis-files__form').remove();
+                    return;
+                }
                 var templateData = [];
                 var files = response.filenames;
                 for (var i = 0; i < files.length; i++) {
