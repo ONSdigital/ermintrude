@@ -1,0 +1,25 @@
+{
+    "description": "Ermintrude javascript build",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ONSdigital/ermintrude"
+    },
+    "devDependencies": {
+        "cat": "latest",
+        "catw": "latest",
+        "onchange": "latest",
+        "handlebars": "~3.0.1",
+        "node-sass": "latest"
+    },
+    "scripts": {
+        "watch-js": "npm run build-js && ./node_modules/onchange/cli.js 'js/classes/*.js' 'js/functions/*.js' -- npm run build-js ",
+        "build-js": "cat js/classes/*.js js/functions/*.js > js/main.js",
+        "watch-templates": "npm run build-templates && ./node_modules/onchange/cli.js 'templates/*.handlebars' -- npm run build-templates ",
+        "build-templates": "./node_modules/handlebars/bin/handlebars templates/*.handlebars --output js/templates.js",
+        "watch-css": "npm run build-css && ./node_modules/onchange/cli.js 'scss/partials/*.scss' -- npm run build-css ",
+        "build-css": "./node_modules/node-sass/bin/node-sass --output-style compressed scss/style.scss css/style.min.css",
+        "watch": "npm run watch-js & npm run watch-templates & npm run watch-css",
+        "postinstall": "npm run build-js & npm run build-templates & npm run build-css"
+    }
+}

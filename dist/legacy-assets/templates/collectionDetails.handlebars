@@ -1,0 +1,13 @@
+<section class="panel workspace-edit">
+<div>
+  <ul class="page-list">
+    {{#each this}}
+      <li data-path="{{this.uri}}"><span class="page-item page-item--{{this.type}}">{{#ifCond this.description.language
+    '==='
+    'cy'}}(Welsh)
+      {{/ifCond}}{{this.description
+      .title}}{{#if this.description.edition}}: {{this.description.edition}}{{/if}}</span>
+      </li>
+    {{/each}}
+  </ul>
+</div>

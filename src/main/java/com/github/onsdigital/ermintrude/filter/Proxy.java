@@ -28,9 +28,11 @@ public class Proxy implements Filter {
 
     private static final String ermintrudeToken = "/ermintrude";
     private static final String zebedeeToken = "/zebedee";
+    private static final String routerToken = "/datasets";
 
     private static final String babbageBaseUrl = Configuration.getBabbageUrl();
     private static final String zebedeeBaseUrl = Configuration.getZebedeeUrl();
+    private static final String routerBaseUrl = Configuration.getRouterUrl();
 
     private static final List<String> ermintrudePaths = Arrays.asList("");
 
@@ -45,18 +47,24 @@ public class Proxy implements Filter {
                     || requestUri.startsWith(ermintrudeToken)) {
                 return true; // carry on and serve the file
             }
-
+            
             String requestBaseUrl = babbageBaseUrl; // proxy to babbage by default.
+            
+            if (requestUri.startsWith(routerToken)) {
+                requestUri = requestUri.replace(routerToken, "");
+                requestBaseUrl = routerBaseUrl;
+            }
 
             if (requestUri.startsWith(zebedeeToken)) {
                 requestUri = requestUri.replace(zebedeeToken, "");
                 requestBaseUrl = zebedeeBaseUrl;
             }
-
+            
             HttpRequestBase proxyRequest;
             String requestUrl = requestBaseUrl + requestUri + "?" + requestQueryString;
             //System.out.println("Proxy request from " + request.getRequestURI() + " to " + requestUrl);
-
+            
+            
             switch (request.getMethod()) {
                 case "POST":
                     proxyRequest = new HttpPost(requestUrl);

@@ -1,0 +1,8 @@
+<div class="select-wrap">
+  <select id="docs-list" name="docs-list">
+    <option value="">Select a document to view</option>
+    {{#each this}}
+      <option data-lang="{{#ifCond description.language "===" "cy"}}cy{{else}}en{{/ifCond}}" value="{{this.uri}}">{{this.name}}{{#if description.edition}}: {{description.edition}}{{/if}}</option>
+    {{/each}}
+  </select>
+</div>

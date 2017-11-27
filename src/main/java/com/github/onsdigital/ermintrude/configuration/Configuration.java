@@ -6,13 +6,18 @@ public class Configuration {
 
     private static final String DEFAULT_BABBAGE_URL = "http://localhost:8080";
     private static final String DEFAULT_ZEBEDEE_URL = "http://localhost:8082";
+    private static final String DEFAULT_ROUTER_URL = "http://localhost:20000";
 
     public static String getBabbageUrl() {
         return StringUtils.defaultIfBlank(getValue("BABBAGE_URL"), DEFAULT_BABBAGE_URL);
     }
-
+    
     public static String getZebedeeUrl() {
         return StringUtils.defaultIfBlank(getValue("ZEBEDEE_URL"), DEFAULT_ZEBEDEE_URL);
+    }
+        
+    public static String getRouterUrl() {
+        return StringUtils.defaultIfBlank(getValue("ROUTER_URL"), DEFAULT_ROUTER_URL);
     }
 
     /**
