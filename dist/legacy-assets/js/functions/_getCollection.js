@@ -46,3 +46,21 @@ function getPageData(collectionId, path, success, error) {
   });
 }
 
+function getDatasetLatestVersion(datasetID, success, error) {
+  return $.ajax({
+    url: "dataset/datasets/" + datasetID,
+    dataType: 'json',
+    type: 'GET',
+    success: function (response) {
+      if (success)
+        success(response);
+    },
+    error: function (response) {
+      if (error) {
+        error(response);
+      } else {
+        handleApiError(response);
+      }
+    }
+  });
+}

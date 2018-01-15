@@ -28,11 +28,9 @@ public class Proxy implements Filter {
 
     private static final String ermintrudeToken = "/ermintrude";
     private static final String zebedeeToken = "/zebedee";
-    private static final String routerToken = "/datasets";
 
     private static final String babbageBaseUrl = Configuration.getBabbageUrl();
     private static final String zebedeeBaseUrl = Configuration.getZebedeeUrl();
-    private static final String routerBaseUrl = Configuration.getRouterUrl();
 
     private static final List<String> ermintrudePaths = Arrays.asList("");
 
