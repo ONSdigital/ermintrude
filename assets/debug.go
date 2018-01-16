@@ -281,7 +281,7 @@ type asset struct {
 
 // DistLegacyAssetsCssFlorenceCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssFlorenceCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/florence.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/florence.css"
 	name := "../dist/legacy-assets/css/florence.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -299,7 +299,7 @@ func DistLegacyAssetsCssFlorenceCss() (*asset, error) {
 
 // DistLegacyAssetsCssMainMinCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssMainMinCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/main.min.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/main.min.css"
 	name := "../dist/legacy-assets/css/main.min.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -317,7 +317,7 @@ func DistLegacyAssetsCssMainMinCss() (*asset, error) {
 
 // DistLegacyAssetsCssMainMinCssMap reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssMainMinCssMap() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/main.min.css.map"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/main.min.css.map"
 	name := "../dist/legacy-assets/css/main.min.css.map"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -335,7 +335,7 @@ func DistLegacyAssetsCssMainMinCssMap() (*asset, error) {
 
 // DistLegacyAssetsCssRapidPrototypeMainCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssRapidPrototypeMainCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/rapid-prototype-main.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/rapid-prototype-main.css"
 	name := "../dist/legacy-assets/css/rapid-prototype-main.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -353,7 +353,7 @@ func DistLegacyAssetsCssRapidPrototypeMainCss() (*asset, error) {
 
 // DistLegacyAssetsCssStyleMinCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssStyleMinCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/style.min.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/style.min.css"
 	name := "../dist/legacy-assets/css/style.min.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -371,7 +371,7 @@ func DistLegacyAssetsCssStyleMinCss() (*asset, error) {
 
 // DistLegacyAssetsCssThirdPartyC3Css reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssThirdPartyC3Css() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/c3.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/c3.css"
 	name := "../dist/legacy-assets/css/third-party/c3.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -389,7 +389,7 @@ func DistLegacyAssetsCssThirdPartyC3Css() (*asset, error) {
 
 // DistLegacyAssetsCssThirdPartyJqueryUiThemeMinCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssThirdPartyJqueryUiThemeMinCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/jquery-ui.theme.min.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/jquery-ui.theme.min.css"
 	name := "../dist/legacy-assets/css/third-party/jquery-ui.theme.min.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -407,7 +407,7 @@ func DistLegacyAssetsCssThirdPartyJqueryUiThemeMinCss() (*asset, error) {
 
 // DistLegacyAssetsCssThirdPartyJqueryTagitCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssThirdPartyJqueryTagitCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/jquery.tagit.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/jquery.tagit.css"
 	name := "../dist/legacy-assets/css/third-party/jquery.tagit.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -425,7 +425,7 @@ func DistLegacyAssetsCssThirdPartyJqueryTagitCss() (*asset, error) {
 
 // DistLegacyAssetsCssThirdPartyPagedownCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssThirdPartyPagedownCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/pagedown.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/pagedown.css"
 	name := "../dist/legacy-assets/css/third-party/pagedown.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -443,7 +443,7 @@ func DistLegacyAssetsCssThirdPartyPagedownCss() (*asset, error) {
 
 // DistLegacyAssetsCssThirdPartyResponsiveTablesCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssThirdPartyResponsiveTablesCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/responsive-tables.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/responsive-tables.css"
 	name := "../dist/legacy-assets/css/third-party/responsive-tables.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -461,7 +461,7 @@ func DistLegacyAssetsCssThirdPartyResponsiveTablesCss() (*asset, error) {
 
 // DistLegacyAssetsCssThirdPartySweetalertCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssThirdPartySweetalertCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/sweetalert.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/sweetalert.css"
 	name := "../dist/legacy-assets/css/third-party/sweetalert.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -479,7 +479,7 @@ func DistLegacyAssetsCssThirdPartySweetalertCss() (*asset, error) {
 
 // DistLegacyAssetsCssThirdPartyTagitUiZendeskCss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsCssThirdPartyTagitUiZendeskCss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/tagit.ui-zendesk.css"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/css/third-party/tagit.ui-zendesk.css"
 	name := "../dist/legacy-assets/css/third-party/tagit.ui-zendesk.css"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -497,7 +497,7 @@ func DistLegacyAssetsCssThirdPartyTagitUiZendeskCss() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansLicenseTxt reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansLicenseTxt() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/LICENSE.txt"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/LICENSE.txt"
 	name := "../dist/legacy-assets/font/Open_Sans/LICENSE.txt"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -515,7 +515,7 @@ func DistLegacyAssetsFontOpen_sansLicenseTxt() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansBoldEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansBoldEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Bold.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Bold.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Bold.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -533,7 +533,7 @@ func DistLegacyAssetsFontOpen_sansOpensansBoldEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansBoldSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansBoldSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Bold.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Bold.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Bold.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -551,7 +551,7 @@ func DistLegacyAssetsFontOpen_sansOpensansBoldSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansBoldTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansBoldTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Bold.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Bold.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Bold.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -569,7 +569,7 @@ func DistLegacyAssetsFontOpen_sansOpensansBoldTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansBoldWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansBoldWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Bold.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Bold.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Bold.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -587,7 +587,7 @@ func DistLegacyAssetsFontOpen_sansOpensansBoldWoff() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansBolditalicEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansBolditalicEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -605,7 +605,7 @@ func DistLegacyAssetsFontOpen_sansOpensansBolditalicEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansBolditalicSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansBolditalicSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -623,7 +623,7 @@ func DistLegacyAssetsFontOpen_sansOpensansBolditalicSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansBolditalicTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansBolditalicTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -641,7 +641,7 @@ func DistLegacyAssetsFontOpen_sansOpensansBolditalicTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansBolditalicWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansBolditalicWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-BoldItalic.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -659,7 +659,7 @@ func DistLegacyAssetsFontOpen_sansOpensansBolditalicWoff() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansExtraboldEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansExtraboldEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -677,7 +677,7 @@ func DistLegacyAssetsFontOpen_sansOpensansExtraboldEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansExtraboldSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansExtraboldSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -695,7 +695,7 @@ func DistLegacyAssetsFontOpen_sansOpensansExtraboldSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansExtraboldTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansExtraboldTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -713,7 +713,7 @@ func DistLegacyAssetsFontOpen_sansOpensansExtraboldTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansExtraboldWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansExtraboldWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBold.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -731,7 +731,7 @@ func DistLegacyAssetsFontOpen_sansOpensansExtraboldWoff() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -749,7 +749,7 @@ func DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -767,7 +767,7 @@ func DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -785,7 +785,7 @@ func DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-ExtraBoldItalic.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -803,7 +803,7 @@ func DistLegacyAssetsFontOpen_sansOpensansExtrabolditalicWoff() (*asset, error) 
 
 // DistLegacyAssetsFontOpen_sansOpensansItalicEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansItalicEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Italic.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Italic.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Italic.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -821,7 +821,7 @@ func DistLegacyAssetsFontOpen_sansOpensansItalicEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansItalicSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansItalicSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Italic.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Italic.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Italic.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -839,7 +839,7 @@ func DistLegacyAssetsFontOpen_sansOpensansItalicSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansItalicTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansItalicTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Italic.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Italic.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Italic.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -857,7 +857,7 @@ func DistLegacyAssetsFontOpen_sansOpensansItalicTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansItalicWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansItalicWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Italic.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Italic.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Italic.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -875,7 +875,7 @@ func DistLegacyAssetsFontOpen_sansOpensansItalicWoff() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansLightEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansLightEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Light.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Light.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Light.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -893,7 +893,7 @@ func DistLegacyAssetsFontOpen_sansOpensansLightEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansLightSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansLightSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Light.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Light.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Light.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -911,7 +911,7 @@ func DistLegacyAssetsFontOpen_sansOpensansLightSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansLightTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansLightTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Light.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Light.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Light.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -929,7 +929,7 @@ func DistLegacyAssetsFontOpen_sansOpensansLightTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansLightWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansLightWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Light.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Light.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Light.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -947,7 +947,7 @@ func DistLegacyAssetsFontOpen_sansOpensansLightWoff() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansLightitalicEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansLightitalicEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -965,7 +965,7 @@ func DistLegacyAssetsFontOpen_sansOpensansLightitalicEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansLightitalicSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansLightitalicSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -983,7 +983,7 @@ func DistLegacyAssetsFontOpen_sansOpensansLightitalicSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansLightitalicTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansLightitalicTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1001,7 +1001,7 @@ func DistLegacyAssetsFontOpen_sansOpensansLightitalicTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansLightitalicWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansLightitalicWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-LightItalic.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1019,7 +1019,7 @@ func DistLegacyAssetsFontOpen_sansOpensansLightitalicWoff() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansRegularEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansRegularEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Regular.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Regular.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Regular.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1037,7 +1037,7 @@ func DistLegacyAssetsFontOpen_sansOpensansRegularEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansRegularSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansRegularSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Regular.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Regular.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Regular.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1055,7 +1055,7 @@ func DistLegacyAssetsFontOpen_sansOpensansRegularSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansRegularTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansRegularTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Regular.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Regular.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Regular.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1073,7 +1073,7 @@ func DistLegacyAssetsFontOpen_sansOpensansRegularTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansRegularWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansRegularWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Regular.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Regular.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Regular.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1091,7 +1091,7 @@ func DistLegacyAssetsFontOpen_sansOpensansRegularWoff() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansSemiboldEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansSemiboldEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1109,7 +1109,7 @@ func DistLegacyAssetsFontOpen_sansOpensansSemiboldEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansSemiboldSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansSemiboldSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1127,7 +1127,7 @@ func DistLegacyAssetsFontOpen_sansOpensansSemiboldSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansSemiboldTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansSemiboldTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1145,7 +1145,7 @@ func DistLegacyAssetsFontOpen_sansOpensansSemiboldTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansSemiboldWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansSemiboldWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-Semibold.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1163,7 +1163,7 @@ func DistLegacyAssetsFontOpen_sansOpensansSemiboldWoff() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansSemibolditalicEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansSemibolditalicEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.eot"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1181,7 +1181,7 @@ func DistLegacyAssetsFontOpen_sansOpensansSemibolditalicEot() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansSemibolditalicSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansSemibolditalicSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.svg"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1199,7 +1199,7 @@ func DistLegacyAssetsFontOpen_sansOpensansSemibolditalicSvg() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansSemibolditalicTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansSemibolditalicTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.ttf"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1217,7 +1217,7 @@ func DistLegacyAssetsFontOpen_sansOpensansSemibolditalicTtf() (*asset, error) {
 
 // DistLegacyAssetsFontOpen_sansOpensansSemibolditalicWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontOpen_sansOpensansSemibolditalicWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.woff"
 	name := "../dist/legacy-assets/font/Open_Sans/OpenSans-SemiboldItalic.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1235,7 +1235,7 @@ func DistLegacyAssetsFontOpen_sansOpensansSemibolditalicWoff() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabLicenseTxt reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabLicenseTxt() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/LICENSE.txt"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/LICENSE.txt"
 	name := "../dist/legacy-assets/font/Roboto_Slab/LICENSE.txt"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1253,7 +1253,7 @@ func DistLegacyAssetsFontRoboto_slabLicenseTxt() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabBoldEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabBoldEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.eot"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1271,7 +1271,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabBoldEot() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabBoldSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabBoldSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.svg"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1289,7 +1289,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabBoldSvg() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabBoldTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabBoldTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.ttf"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1307,7 +1307,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabBoldTtf() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabBoldWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabBoldWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.woff"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Bold.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1325,7 +1325,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabBoldWoff() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabLightEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabLightEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.eot"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1343,7 +1343,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabLightEot() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabLightSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabLightSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.svg"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1361,7 +1361,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabLightSvg() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabLightTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabLightTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.ttf"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1379,7 +1379,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabLightTtf() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabLightWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabLightWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.woff"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Light.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1397,7 +1397,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabLightWoff() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabRegularEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabRegularEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.eot"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1415,7 +1415,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabRegularEot() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabRegularSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabRegularSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.svg"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1433,7 +1433,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabRegularSvg() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabRegularTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabRegularTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.ttf"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1451,7 +1451,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabRegularTtf() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabRegularWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabRegularWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.woff"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Regular.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1469,7 +1469,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabRegularWoff() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabThinEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabThinEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.eot"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1487,7 +1487,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabThinEot() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabThinSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabThinSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.svg"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1505,7 +1505,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabThinSvg() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabThinTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabThinTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.ttf"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1523,7 +1523,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabThinTtf() (*asset, error) {
 
 // DistLegacyAssetsFontRoboto_slabRobotoslabThinWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontRoboto_slabRobotoslabThinWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.woff"
 	name := "../dist/legacy-assets/font/Roboto_Slab/RobotoSlab-Thin.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1541,7 +1541,7 @@ func DistLegacyAssetsFontRoboto_slabRobotoslabThinWoff() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUflTxt reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUflTxt() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UFL.txt"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UFL.txt"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UFL.txt"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1559,7 +1559,7 @@ func DistLegacyAssetsFontUbuntu_monoUflTxt() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.eot"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1577,7 +1577,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldEot() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.svg"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1595,7 +1595,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldSvg() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.ttf"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1613,7 +1613,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldTtf() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.woff"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Bold.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1631,7 +1631,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoBoldWoff() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.eot"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1649,7 +1649,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicEot() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.svg"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1667,7 +1667,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicSvg() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.ttf"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1685,7 +1685,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicTtf() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.woff"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-BoldItalic.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1703,7 +1703,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoBolditalicWoff() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.eot"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1721,7 +1721,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicEot() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.svg"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1739,7 +1739,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicSvg() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.ttf"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1757,7 +1757,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicTtf() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.woff"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Italic.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1775,7 +1775,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoItalicWoff() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.eot"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1793,7 +1793,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularEot() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.svg"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1811,7 +1811,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularSvg() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.ttf"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1829,7 +1829,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularTtf() (*asset, error) {
 
 // DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.woff"
 	name := "../dist/legacy-assets/font/Ubuntu_Mono/UbuntuMono-Regular.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1847,7 +1847,7 @@ func DistLegacyAssetsFontUbuntu_monoUbuntumonoRegularWoff() (*asset, error) {
 
 // DistLegacyAssetsFontFlorenceEot reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontFlorenceEot() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/florence.eot"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/florence.eot"
 	name := "../dist/legacy-assets/font/florence.eot"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1865,7 +1865,7 @@ func DistLegacyAssetsFontFlorenceEot() (*asset, error) {
 
 // DistLegacyAssetsFontFlorenceSvg reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontFlorenceSvg() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/florence.svg"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/florence.svg"
 	name := "../dist/legacy-assets/font/florence.svg"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1883,7 +1883,7 @@ func DistLegacyAssetsFontFlorenceSvg() (*asset, error) {
 
 // DistLegacyAssetsFontFlorenceTtf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontFlorenceTtf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/florence.ttf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/florence.ttf"
 	name := "../dist/legacy-assets/font/florence.ttf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1901,7 +1901,7 @@ func DistLegacyAssetsFontFlorenceTtf() (*asset, error) {
 
 // DistLegacyAssetsFontFlorenceWoff reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsFontFlorenceWoff() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/florence.woff"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/font/florence.woff"
 	name := "../dist/legacy-assets/font/florence.woff"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1919,7 +1919,7 @@ func DistLegacyAssetsFontFlorenceWoff() (*asset, error) {
 
 // DistLegacyAssetsImgFloLogoPng reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgFloLogoPng() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/flo-logo.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/flo-logo.png"
 	name := "../dist/legacy-assets/img/flo-logo.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1937,7 +1937,7 @@ func DistLegacyAssetsImgFloLogoPng() (*asset, error) {
 
 // DistLegacyAssetsImgRule21Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgRule21Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/rule-21.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/rule-21.png"
 	name := "../dist/legacy-assets/img/rule-21.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1955,7 +1955,7 @@ func DistLegacyAssetsImgRule21Png() (*asset, error) {
 
 // DistLegacyAssetsImgRule22Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgRule22Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/rule-22.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/rule-22.png"
 	name := "../dist/legacy-assets/img/rule-22.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1973,7 +1973,7 @@ func DistLegacyAssetsImgRule22Png() (*asset, error) {
 
 // DistLegacyAssetsImgRulePng reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgRulePng() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/rule.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/rule.png"
 	name := "../dist/legacy-assets/img/rule.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -1991,7 +1991,7 @@ func DistLegacyAssetsImgRulePng() (*asset, error) {
 
 // DistLegacyAssetsImgSb_v_double_arrowPng reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgSb_v_double_arrowPng() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/sb_v_double_arrow.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/sb_v_double_arrow.png"
 	name := "../dist/legacy-assets/img/sb_v_double_arrow.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2009,7 +2009,7 @@ func DistLegacyAssetsImgSb_v_double_arrowPng() (*asset, error) {
 
 // DistLegacyAssetsImgSemiTransparentBgPng reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgSemiTransparentBgPng() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/semi-transparent-bg.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/semi-transparent-bg.png"
 	name := "../dist/legacy-assets/img/semi-transparent-bg.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2027,7 +2027,7 @@ func DistLegacyAssetsImgSemiTransparentBgPng() (*asset, error) {
 
 // DistLegacyAssetsImgSpritePng reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgSpritePng() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/sprite.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/sprite.png"
 	name := "../dist/legacy-assets/img/sprite.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2045,7 +2045,7 @@ func DistLegacyAssetsImgSpritePng() (*asset, error) {
 
 // DistLegacyAssetsImgUiBg_diagonalsThick_18_b81900_40x40Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiBg_diagonalsThick_18_b81900_40x40Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_diagonals-thick_18_b81900_40x40.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_diagonals-thick_18_b81900_40x40.png"
 	name := "../dist/legacy-assets/img/ui-bg_diagonals-thick_18_b81900_40x40.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2063,7 +2063,7 @@ func DistLegacyAssetsImgUiBg_diagonalsThick_18_b81900_40x40Png() (*asset, error)
 
 // DistLegacyAssetsImgUiBg_diagonalsThick_20_666666_40x40Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiBg_diagonalsThick_20_666666_40x40Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_diagonals-thick_20_666666_40x40.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_diagonals-thick_20_666666_40x40.png"
 	name := "../dist/legacy-assets/img/ui-bg_diagonals-thick_20_666666_40x40.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2081,7 +2081,7 @@ func DistLegacyAssetsImgUiBg_diagonalsThick_20_666666_40x40Png() (*asset, error)
 
 // DistLegacyAssetsImgUiBg_flat_10_000000_40x100Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiBg_flat_10_000000_40x100Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_flat_10_000000_40x100.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_flat_10_000000_40x100.png"
 	name := "../dist/legacy-assets/img/ui-bg_flat_10_000000_40x100.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2099,7 +2099,7 @@ func DistLegacyAssetsImgUiBg_flat_10_000000_40x100Png() (*asset, error) {
 
 // DistLegacyAssetsImgUiBg_glass_100_f6f6f6_1x400Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiBg_glass_100_f6f6f6_1x400Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_glass_100_f6f6f6_1x400.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_glass_100_f6f6f6_1x400.png"
 	name := "../dist/legacy-assets/img/ui-bg_glass_100_f6f6f6_1x400.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2117,7 +2117,7 @@ func DistLegacyAssetsImgUiBg_glass_100_f6f6f6_1x400Png() (*asset, error) {
 
 // DistLegacyAssetsImgUiBg_glass_100_fdf5ce_1x400Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiBg_glass_100_fdf5ce_1x400Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_glass_100_fdf5ce_1x400.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_glass_100_fdf5ce_1x400.png"
 	name := "../dist/legacy-assets/img/ui-bg_glass_100_fdf5ce_1x400.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2135,7 +2135,7 @@ func DistLegacyAssetsImgUiBg_glass_100_fdf5ce_1x400Png() (*asset, error) {
 
 // DistLegacyAssetsImgUiBg_glass_65_ffffff_1x400Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiBg_glass_65_ffffff_1x400Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_glass_65_ffffff_1x400.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_glass_65_ffffff_1x400.png"
 	name := "../dist/legacy-assets/img/ui-bg_glass_65_ffffff_1x400.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2153,7 +2153,7 @@ func DistLegacyAssetsImgUiBg_glass_65_ffffff_1x400Png() (*asset, error) {
 
 // DistLegacyAssetsImgUiBg_glossWave_35_f6a828_500x100Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiBg_glossWave_35_f6a828_500x100Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_gloss-wave_35_f6a828_500x100.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_gloss-wave_35_f6a828_500x100.png"
 	name := "../dist/legacy-assets/img/ui-bg_gloss-wave_35_f6a828_500x100.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2171,7 +2171,7 @@ func DistLegacyAssetsImgUiBg_glossWave_35_f6a828_500x100Png() (*asset, error) {
 
 // DistLegacyAssetsImgUiBg_highlightSoft_100_eeeeee_1x100Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiBg_highlightSoft_100_eeeeee_1x100Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_highlight-soft_100_eeeeee_1x100.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_highlight-soft_100_eeeeee_1x100.png"
 	name := "../dist/legacy-assets/img/ui-bg_highlight-soft_100_eeeeee_1x100.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2189,7 +2189,7 @@ func DistLegacyAssetsImgUiBg_highlightSoft_100_eeeeee_1x100Png() (*asset, error)
 
 // DistLegacyAssetsImgUiBg_highlightSoft_75_ffe45c_1x100Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiBg_highlightSoft_75_ffe45c_1x100Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_highlight-soft_75_ffe45c_1x100.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-bg_highlight-soft_75_ffe45c_1x100.png"
 	name := "../dist/legacy-assets/img/ui-bg_highlight-soft_75_ffe45c_1x100.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2207,7 +2207,7 @@ func DistLegacyAssetsImgUiBg_highlightSoft_75_ffe45c_1x100Png() (*asset, error) 
 
 // DistLegacyAssetsImgUiIcons_222222_256x240Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiIcons_222222_256x240Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_222222_256x240.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_222222_256x240.png"
 	name := "../dist/legacy-assets/img/ui-icons_222222_256x240.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2225,7 +2225,7 @@ func DistLegacyAssetsImgUiIcons_222222_256x240Png() (*asset, error) {
 
 // DistLegacyAssetsImgUiIcons_228ef1_256x240Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiIcons_228ef1_256x240Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_228ef1_256x240.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_228ef1_256x240.png"
 	name := "../dist/legacy-assets/img/ui-icons_228ef1_256x240.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2243,7 +2243,7 @@ func DistLegacyAssetsImgUiIcons_228ef1_256x240Png() (*asset, error) {
 
 // DistLegacyAssetsImgUiIcons_ef8c08_256x240Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiIcons_ef8c08_256x240Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_ef8c08_256x240.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_ef8c08_256x240.png"
 	name := "../dist/legacy-assets/img/ui-icons_ef8c08_256x240.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2261,7 +2261,7 @@ func DistLegacyAssetsImgUiIcons_ef8c08_256x240Png() (*asset, error) {
 
 // DistLegacyAssetsImgUiIcons_ffd27a_256x240Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiIcons_ffd27a_256x240Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_ffd27a_256x240.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_ffd27a_256x240.png"
 	name := "../dist/legacy-assets/img/ui-icons_ffd27a_256x240.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2279,7 +2279,7 @@ func DistLegacyAssetsImgUiIcons_ffd27a_256x240Png() (*asset, error) {
 
 // DistLegacyAssetsImgUiIcons_ffffff_256x240Png reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgUiIcons_ffffff_256x240Png() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_ffffff_256x240.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/ui-icons_ffffff_256x240.png"
 	name := "../dist/legacy-assets/img/ui-icons_ffffff_256x240.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2297,7 +2297,7 @@ func DistLegacyAssetsImgUiIcons_ffffff_256x240Png() (*asset, error) {
 
 // DistLegacyAssetsImgWmdButtonsPng reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsImgWmdButtonsPng() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/wmd-buttons.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/img/wmd-buttons.png"
 	name := "../dist/legacy-assets/img/wmd-buttons.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2315,7 +2315,7 @@ func DistLegacyAssetsImgWmdButtonsPng() (*asset, error) {
 
 // DistLegacyAssetsIndexHtml reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsIndexHtml() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/index.html"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/index.html"
 	name := "../dist/legacy-assets/index.html"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2333,7 +2333,7 @@ func DistLegacyAssetsIndexHtml() (*asset, error) {
 
 // DistLegacyAssetsJsClassesCookieutilsJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsClassesCookieutilsJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/classes/cookieUtils.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/classes/cookieUtils.js"
 	name := "../dist/legacy-assets/js/classes/cookieUtils.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2351,7 +2351,7 @@ func DistLegacyAssetsJsClassesCookieutilsJs() (*asset, error) {
 
 // DistLegacyAssetsJsClassesErmintrudeJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsClassesErmintrudeJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/classes/ermintrude.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/classes/ermintrude.js"
 	name := "../dist/legacy-assets/js/classes/ermintrude.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2369,7 +2369,7 @@ func DistLegacyAssetsJsClassesErmintrudeJs() (*asset, error) {
 
 // DistLegacyAssetsJsClassesPathutilsJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsClassesPathutilsJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/classes/pathUtils.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/classes/pathUtils.js"
 	name := "../dist/legacy-assets/js/classes/pathUtils.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2387,7 +2387,7 @@ func DistLegacyAssetsJsClassesPathutilsJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions__initJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions__initJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/__init.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/__init.js"
 	name := "../dist/legacy-assets/js/functions/__init.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2405,7 +2405,7 @@ func DistLegacyAssetsJsFunctions__initJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_checkdocumentsJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_checkdocumentsJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_checkDocuments.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_checkDocuments.js"
 	name := "../dist/legacy-assets/js/functions/_checkDocuments.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2423,7 +2423,7 @@ func DistLegacyAssetsJsFunctions_checkdocumentsJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_checkforpagechangedJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_checkforpagechangedJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_checkForPageChanged.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_checkForPageChanged.js"
 	name := "../dist/legacy-assets/js/functions/_checkForPageChanged.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2441,7 +2441,7 @@ func DistLegacyAssetsJsFunctions_checkforpagechangedJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_checkpathslashesJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_checkpathslashesJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_checkPathSlashes.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_checkPathSlashes.js"
 	name := "../dist/legacy-assets/js/functions/_checkPathSlashes.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2459,7 +2459,7 @@ func DistLegacyAssetsJsFunctions_checkpathslashesJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_createworkspaceJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_createworkspaceJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_createWorkspace.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_createWorkspace.js"
 	name := "../dist/legacy-assets/js/functions/_createWorkspace.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2477,7 +2477,7 @@ func DistLegacyAssetsJsFunctions_createworkspaceJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_getcollectionJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_getcollectionJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_getCollection.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_getCollection.js"
 	name := "../dist/legacy-assets/js/functions/_getCollection.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2495,7 +2495,7 @@ func DistLegacyAssetsJsFunctions_getcollectionJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_getpathnameJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_getpathnameJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_getPathName.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_getPathName.js"
 	name := "../dist/legacy-assets/js/functions/_getPathName.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2513,7 +2513,7 @@ func DistLegacyAssetsJsFunctions_getpathnameJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_getpathnametrimlastJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_getpathnametrimlastJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_getPathNameTrimLast.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_getPathNameTrimLast.js"
 	name := "../dist/legacy-assets/js/functions/_getPathNameTrimLast.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2531,7 +2531,7 @@ func DistLegacyAssetsJsFunctions_getpathnametrimlastJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_handleapierrorJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_handleapierrorJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_handleApiError.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_handleApiError.js"
 	name := "../dist/legacy-assets/js/functions/_handleApiError.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2549,7 +2549,7 @@ func DistLegacyAssetsJsFunctions_handleapierrorJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_hidebudherdJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_hidebudherdJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_hideBudHerd.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_hideBudHerd.js"
 	name := "../dist/legacy-assets/js/functions/_hideBudHerd.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2567,7 +2567,7 @@ func DistLegacyAssetsJsFunctions_hidebudherdJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_logoutJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_logoutJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_logout.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_logout.js"
 	name := "../dist/legacy-assets/js/functions/_logout.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2585,7 +2585,7 @@ func DistLegacyAssetsJsFunctions_logoutJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_postloginJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_postloginJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_postLogin.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_postLogin.js"
 	name := "../dist/legacy-assets/js/functions/_postLogin.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2603,7 +2603,7 @@ func DistLegacyAssetsJsFunctions_postloginJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_postpasswordJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_postpasswordJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_postPassword.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_postPassword.js"
 	name := "../dist/legacy-assets/js/functions/_postPassword.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2621,7 +2621,7 @@ func DistLegacyAssetsJsFunctions_postpasswordJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_refreshpreviewJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_refreshpreviewJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_refreshPreview.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_refreshPreview.js"
 	name := "../dist/legacy-assets/js/functions/_refreshPreview.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2639,7 +2639,7 @@ func DistLegacyAssetsJsFunctions_refreshpreviewJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_setupermintrudeJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_setupermintrudeJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_setupErmintrude.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_setupErmintrude.js"
 	name := "../dist/legacy-assets/js/functions/_setupErmintrude.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2657,7 +2657,7 @@ func DistLegacyAssetsJsFunctions_setupermintrudeJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_viewchangepasswordJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_viewchangepasswordJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewChangePassword.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewChangePassword.js"
 	name := "../dist/legacy-assets/js/functions/_viewChangePassword.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2675,7 +2675,7 @@ func DistLegacyAssetsJsFunctions_viewchangepasswordJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_viewcollectiondetailsJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_viewcollectiondetailsJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewCollectionDetails.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewCollectionDetails.js"
 	name := "../dist/legacy-assets/js/functions/_viewCollectionDetails.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2693,7 +2693,7 @@ func DistLegacyAssetsJsFunctions_viewcollectiondetailsJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_viewcollectionsJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_viewcollectionsJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewCollections.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewCollections.js"
 	name := "../dist/legacy-assets/js/functions/_viewCollections.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2711,7 +2711,7 @@ func DistLegacyAssetsJsFunctions_viewcollectionsJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_viewcontrollerJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_viewcontrollerJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewController.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewController.js"
 	name := "../dist/legacy-assets/js/functions/_viewController.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2729,7 +2729,7 @@ func DistLegacyAssetsJsFunctions_viewcontrollerJs() (*asset, error) {
 
 // DistLegacyAssetsJsFunctions_viewloginJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsFunctions_viewloginJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewLogIn.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/functions/_viewLogIn.js"
 	name := "../dist/legacy-assets/js/functions/_viewLogIn.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2747,7 +2747,7 @@ func DistLegacyAssetsJsFunctions_viewloginJs() (*asset, error) {
 
 // DistLegacyAssetsJsJqueryMinJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsJqueryMinJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/jquery.min.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/jquery.min.js"
 	name := "../dist/legacy-assets/js/jquery.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2765,7 +2765,7 @@ func DistLegacyAssetsJsJqueryMinJs() (*asset, error) {
 
 // DistLegacyAssetsJsMainJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsMainJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/main.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/main.js"
 	name := "../dist/legacy-assets/js/main.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2783,7 +2783,7 @@ func DistLegacyAssetsJsMainJs() (*asset, error) {
 
 // DistLegacyAssetsJsTemplatesJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsTemplatesJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/templates.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/templates.js"
 	name := "../dist/legacy-assets/js/templates.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2801,7 +2801,7 @@ func DistLegacyAssetsJsTemplatesJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyMarkdownConverterJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyMarkdownConverterJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/Markdown.Converter.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/Markdown.Converter.js"
 	name := "../dist/legacy-assets/js/third-party/Markdown.Converter.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2819,7 +2819,7 @@ func DistLegacyAssetsJsThirdPartyMarkdownConverterJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyMarkdownEditorJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyMarkdownEditorJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/Markdown.Editor.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/Markdown.Editor.js"
 	name := "../dist/legacy-assets/js/third-party/Markdown.Editor.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2837,7 +2837,7 @@ func DistLegacyAssetsJsThirdPartyMarkdownEditorJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyMarkdownExtraJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyMarkdownExtraJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/Markdown.Extra.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/Markdown.Extra.js"
 	name := "../dist/legacy-assets/js/third-party/Markdown.Extra.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2855,7 +2855,7 @@ func DistLegacyAssetsJsThirdPartyMarkdownExtraJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyMarkdownSanitizerJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyMarkdownSanitizerJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/Markdown.Sanitizer.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/Markdown.Sanitizer.js"
 	name := "../dist/legacy-assets/js/third-party/Markdown.Sanitizer.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2873,7 +2873,7 @@ func DistLegacyAssetsJsThirdPartyMarkdownSanitizerJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyMathjaxJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyMathjaxJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/MathJax.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/MathJax.js"
 	name := "../dist/legacy-assets/js/third-party/MathJax.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2891,7 +2891,7 @@ func DistLegacyAssetsJsThirdPartyMathjaxJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyZeroclipboardMinJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyZeroclipboardMinJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/ZeroClipboard.min.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/ZeroClipboard.min.js"
 	name := "../dist/legacy-assets/js/third-party/ZeroClipboard.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2909,7 +2909,7 @@ func DistLegacyAssetsJsThirdPartyZeroclipboardMinJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyZeroclipboardSwf reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyZeroclipboardSwf() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/ZeroClipboard.swf"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/ZeroClipboard.swf"
 	name := "../dist/legacy-assets/js/third-party/ZeroClipboard.swf"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2927,7 +2927,7 @@ func DistLegacyAssetsJsThirdPartyZeroclipboardSwf() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyAutosizeJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyAutosizeJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/autosize.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/autosize.js"
 	name := "../dist/legacy-assets/js/third-party/autosize.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2945,7 +2945,7 @@ func DistLegacyAssetsJsThirdPartyAutosizeJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyHandlebarsRuntimeMinJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyHandlebarsRuntimeMinJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/handlebars.runtime.min.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/handlebars.runtime.min.js"
 	name := "../dist/legacy-assets/js/third-party/handlebars.runtime.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2963,7 +2963,7 @@ func DistLegacyAssetsJsThirdPartyHandlebarsRuntimeMinJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyHighchartsMoreJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyHighchartsMoreJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/highcharts-more.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/highcharts-more.js"
 	name := "../dist/legacy-assets/js/third-party/highcharts-more.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2981,7 +2981,7 @@ func DistLegacyAssetsJsThirdPartyHighchartsMoreJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyHighchartsJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyHighchartsJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/highcharts.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/highcharts.js"
 	name := "../dist/legacy-assets/js/third-party/highcharts.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -2999,7 +2999,7 @@ func DistLegacyAssetsJsThirdPartyHighchartsJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyJqueryUiTimepickerAddonJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyJqueryUiTimepickerAddonJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/jquery-ui-timepicker-addon.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/jquery-ui-timepicker-addon.js"
 	name := "../dist/legacy-assets/js/third-party/jquery-ui-timepicker-addon.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3017,7 +3017,7 @@ func DistLegacyAssetsJsThirdPartyJqueryUiTimepickerAddonJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyJqueryUiJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyJqueryUiJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/jquery-ui.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/jquery-ui.js"
 	name := "../dist/legacy-assets/js/third-party/jquery-ui.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3035,7 +3035,7 @@ func DistLegacyAssetsJsThirdPartyJqueryUiJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyJqueryHotkeysJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyJqueryHotkeysJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/jquery.hotkeys.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/jquery.hotkeys.js"
 	name := "../dist/legacy-assets/js/third-party/jquery.hotkeys.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3053,7 +3053,7 @@ func DistLegacyAssetsJsThirdPartyJqueryHotkeysJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartySweetalertMinJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartySweetalertMinJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/sweetalert.min.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/sweetalert.min.js"
 	name := "../dist/legacy-assets/js/third-party/sweetalert.min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3071,7 +3071,7 @@ func DistLegacyAssetsJsThirdPartySweetalertMinJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyTagItJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyTagItJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/tag-it.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/tag-it.js"
 	name := "../dist/legacy-assets/js/third-party/tag-it.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3089,7 +3089,7 @@ func DistLegacyAssetsJsThirdPartyTagItJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyUnderscoreMinJs reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyUnderscoreMinJs() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/underscore-min.js"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/underscore-min.js"
 	name := "../dist/legacy-assets/js/third-party/underscore-min.js"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3107,7 +3107,7 @@ func DistLegacyAssetsJsThirdPartyUnderscoreMinJs() (*asset, error) {
 
 // DistLegacyAssetsJsThirdPartyUnderscoreMinMap reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsJsThirdPartyUnderscoreMinMap() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/underscore-min.map"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/js/third-party/underscore-min.map"
 	name := "../dist/legacy-assets/js/third-party/underscore-min.map"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3125,7 +3125,7 @@ func DistLegacyAssetsJsThirdPartyUnderscoreMinMap() (*asset, error) {
 
 // DistLegacyAssetsPackageLockJson reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsPackageLockJson() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/package-lock.json"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/package-lock.json"
 	name := "../dist/legacy-assets/package-lock.json"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3143,7 +3143,7 @@ func DistLegacyAssetsPackageLockJson() (*asset, error) {
 
 // DistLegacyAssetsPackageJson reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsPackageJson() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/package.json"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/package.json"
 	name := "../dist/legacy-assets/package.json"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3161,7 +3161,7 @@ func DistLegacyAssetsPackageJson() (*asset, error) {
 
 // DistLegacyAssetsScssAllScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssAllScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/all.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/all.scss"
 	name := "../dist/legacy-assets/scss/all.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3179,7 +3179,7 @@ func DistLegacyAssetsScssAllScss() (*asset, error) {
 
 // DistLegacyAssetsScssMainScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssMainScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/main.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/main.scss"
 	name := "../dist/legacy-assets/scss/main.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3197,7 +3197,7 @@ func DistLegacyAssetsScssMainScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_baseScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_baseScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_base.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_base.scss"
 	name := "../dist/legacy-assets/scss/partials/_base.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3215,7 +3215,7 @@ func DistLegacyAssetsScssPartials_baseScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_collectionsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_collectionsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_collections.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_collections.scss"
 	name := "../dist/legacy-assets/scss/partials/_collections.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3233,7 +3233,7 @@ func DistLegacyAssetsScssPartials_collectionsScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_colourPaletteScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_colourPaletteScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_colour-palette.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_colour-palette.scss"
 	name := "../dist/legacy-assets/scss/partials/_colour-palette.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3251,7 +3251,7 @@ func DistLegacyAssetsScssPartials_colourPaletteScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_elementsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_elementsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_elements.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_elements.scss"
 	name := "../dist/legacy-assets/scss/partials/_elements.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3269,7 +3269,7 @@ func DistLegacyAssetsScssPartials_elementsScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_fontsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_fontsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_fonts.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_fonts.scss"
 	name := "../dist/legacy-assets/scss/partials/_fonts.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3287,7 +3287,7 @@ func DistLegacyAssetsScssPartials_fontsScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_gridScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_gridScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_grid.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_grid.scss"
 	name := "../dist/legacy-assets/scss/partials/_grid.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3305,7 +3305,7 @@ func DistLegacyAssetsScssPartials_gridScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_jquiScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_jquiScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_jqui.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_jqui.scss"
 	name := "../dist/legacy-assets/scss/partials/_jqui.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3323,7 +3323,7 @@ func DistLegacyAssetsScssPartials_jquiScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_publishScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_publishScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_publish.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_publish.scss"
 	name := "../dist/legacy-assets/scss/partials/_publish.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3341,7 +3341,7 @@ func DistLegacyAssetsScssPartials_publishScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_resetScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_resetScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_reset.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_reset.scss"
 	name := "../dist/legacy-assets/scss/partials/_reset.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3359,7 +3359,7 @@ func DistLegacyAssetsScssPartials_resetScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_shameScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_shameScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_shame.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_shame.scss"
 	name := "../dist/legacy-assets/scss/partials/_shame.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3377,7 +3377,7 @@ func DistLegacyAssetsScssPartials_shameScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_typographyCopyScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_typographyCopyScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_typography copy.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_typography copy.scss"
 	name := "../dist/legacy-assets/scss/partials/_typography copy.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3395,7 +3395,7 @@ func DistLegacyAssetsScssPartials_typographyCopyScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_typographyScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_typographyScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_typography.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_typography.scss"
 	name := "../dist/legacy-assets/scss/partials/_typography.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3413,7 +3413,7 @@ func DistLegacyAssetsScssPartials_typographyScss() (*asset, error) {
 
 // DistLegacyAssetsScssPartials_workspaceScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPartials_workspaceScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_workspace.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/partials/_workspace.scss"
 	name := "../dist/legacy-assets/scss/partials/_workspace.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3431,7 +3431,7 @@ func DistLegacyAssetsScssPartials_workspaceScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryReadmeMd reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryReadmeMd() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/README.md"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/README.md"
 	name := "../dist/legacy-assets/scss/pattern-library/README.md"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3449,7 +3449,7 @@ func DistLegacyAssetsScssPatternLibraryReadmeMd() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibrary_colorsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibrary_colorsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/_colors.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/_colors.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/_colors.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3467,7 +3467,7 @@ func DistLegacyAssetsScssPatternLibrary_colorsScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibrary_settingsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibrary_settingsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/_settings.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/_settings.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/_settings.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3485,7 +3485,7 @@ func DistLegacyAssetsScssPatternLibrary_settingsScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryCoreReadmeMd reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCoreReadmeMd() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/README.md"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/README.md"
 	name := "../dist/legacy-assets/scss/pattern-library/core/README.md"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3503,7 +3503,7 @@ func DistLegacyAssetsScssPatternLibraryCoreReadmeMd() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryCore_baseScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCore_baseScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_base.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_base.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/core/_base.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3521,7 +3521,7 @@ func DistLegacyAssetsScssPatternLibraryCore_baseScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryCore_hidingScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCore_hidingScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_hiding.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_hiding.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/core/_hiding.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3539,7 +3539,7 @@ func DistLegacyAssetsScssPatternLibraryCore_hidingScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryCore_mixinsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCore_mixinsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_mixins.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_mixins.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/core/_mixins.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3557,7 +3557,7 @@ func DistLegacyAssetsScssPatternLibraryCore_mixinsScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryCore_printScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCore_printScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_print.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_print.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/core/_print.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3575,7 +3575,7 @@ func DistLegacyAssetsScssPatternLibraryCore_printScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryCore_skiplinksScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCore_skiplinksScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_skiplinks.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_skiplinks.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/core/_skiplinks.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3593,7 +3593,7 @@ func DistLegacyAssetsScssPatternLibraryCore_skiplinksScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryCore_utilsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCore_utilsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_utils.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/_utils.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/core/_utils.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3611,7 +3611,7 @@ func DistLegacyAssetsScssPatternLibraryCore_utilsScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryCoreVendorReadmeMd reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCoreVendorReadmeMd() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/README.md"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/README.md"
 	name := "../dist/legacy-assets/scss/pattern-library/core/vendor/README.md"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3629,7 +3629,7 @@ func DistLegacyAssetsScssPatternLibraryCoreVendorReadmeMd() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryCoreVendorGrid_proportionalGridsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCoreVendorGrid_proportionalGridsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/grid/_proportional-grids.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/grid/_proportional-grids.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/core/vendor/grid/_proportional-grids.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3647,7 +3647,7 @@ func DistLegacyAssetsScssPatternLibraryCoreVendorGrid_proportionalGridsScss() (*
 
 // DistLegacyAssetsScssPatternLibraryCoreVendorNormalizeReadmeMd reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCoreVendorNormalizeReadmeMd() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/normalize/README.md"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/normalize/README.md"
 	name := "../dist/legacy-assets/scss/pattern-library/core/vendor/normalize/README.md"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3665,7 +3665,7 @@ func DistLegacyAssetsScssPatternLibraryCoreVendorNormalizeReadmeMd() (*asset, er
 
 // DistLegacyAssetsScssPatternLibraryCoreVendorNormalize_normalizeModScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCoreVendorNormalize_normalizeModScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/normalize/_normalize-mod.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/normalize/_normalize-mod.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/core/vendor/normalize/_normalize-mod.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3683,7 +3683,7 @@ func DistLegacyAssetsScssPatternLibraryCoreVendorNormalize_normalizeModScss() (*
 
 // DistLegacyAssetsScssPatternLibraryCoreVendorNormalize_normalizeScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryCoreVendorNormalize_normalizeScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/normalize/_normalize.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/core/vendor/normalize/_normalize.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/core/vendor/normalize/_normalize.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3701,7 +3701,7 @@ func DistLegacyAssetsScssPatternLibraryCoreVendorNormalize_normalizeScss() (*ass
 
 // DistLegacyAssetsScssPatternLibraryLib_tooltipsterScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryLib_tooltipsterScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/lib/_tooltipster.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/lib/_tooltipster.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/lib/_tooltipster.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3719,7 +3719,7 @@ func DistLegacyAssetsScssPatternLibraryLib_tooltipsterScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryMainScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryMainScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/main.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/main.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/main.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3737,7 +3737,7 @@ func DistLegacyAssetsScssPatternLibraryMainScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryOldieScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryOldieScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/oldie.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/oldie.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/oldie.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3755,7 +3755,7 @@ func DistLegacyAssetsScssPatternLibraryOldieScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryProjectReadmeMd reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectReadmeMd() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/README.md"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/README.md"
 	name := "../dist/legacy-assets/scss/pattern-library/project/README.md"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3773,7 +3773,7 @@ func DistLegacyAssetsScssPatternLibraryProjectReadmeMd() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryProject_baseScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProject_baseScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_base.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_base.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/_base.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3791,7 +3791,7 @@ func DistLegacyAssetsScssPatternLibraryProject_baseScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryProject_iconsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProject_iconsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_icons.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_icons.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/_icons.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3809,7 +3809,7 @@ func DistLegacyAssetsScssPatternLibraryProject_iconsScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryProject_layoutScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProject_layoutScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_layout.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_layout.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/_layout.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3827,7 +3827,7 @@ func DistLegacyAssetsScssPatternLibraryProject_layoutScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryProject_tooltipsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProject_tooltipsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_tooltips.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_tooltips.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/_tooltips.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3845,7 +3845,7 @@ func DistLegacyAssetsScssPatternLibraryProject_tooltipsScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryProject_utilitiesScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProject_utilitiesScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_utilities.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_utilities.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/_utilities.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3863,7 +3863,7 @@ func DistLegacyAssetsScssPatternLibraryProject_utilitiesScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryProject_wrapperScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProject_wrapperScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_wrapper.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/_wrapper.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/_wrapper.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3881,7 +3881,7 @@ func DistLegacyAssetsScssPatternLibraryProject_wrapperScss() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryProjectComponents_articleHeaderScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectComponents_articleHeaderScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_article-header.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_article-header.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/components/_article-header.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3899,7 +3899,7 @@ func DistLegacyAssetsScssPatternLibraryProjectComponents_articleHeaderScss() (*a
 
 // DistLegacyAssetsScssPatternLibraryProjectComponents_chartAreaScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectComponents_chartAreaScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_chart-area.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_chart-area.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/components/_chart-area.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3917,7 +3917,7 @@ func DistLegacyAssetsScssPatternLibraryProjectComponents_chartAreaScss() (*asset
 
 // DistLegacyAssetsScssPatternLibraryProjectComponents_chartsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectComponents_chartsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_charts.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_charts.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/components/_charts.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3935,7 +3935,7 @@ func DistLegacyAssetsScssPatternLibraryProjectComponents_chartsScss() (*asset, e
 
 // DistLegacyAssetsScssPatternLibraryProjectComponents_dataTablesScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectComponents_dataTablesScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_data-tables.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_data-tables.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/components/_data-tables.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3953,7 +3953,7 @@ func DistLegacyAssetsScssPatternLibraryProjectComponents_dataTablesScss() (*asse
 
 // DistLegacyAssetsScssPatternLibraryProjectComponents_footnotesScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectComponents_footnotesScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_footnotes.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_footnotes.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/components/_footnotes.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3971,7 +3971,7 @@ func DistLegacyAssetsScssPatternLibraryProjectComponents_footnotesScss() (*asset
 
 // DistLegacyAssetsScssPatternLibraryProjectComponents_globalFooterScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectComponents_globalFooterScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_global-footer.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_global-footer.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/components/_global-footer.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -3989,7 +3989,7 @@ func DistLegacyAssetsScssPatternLibraryProjectComponents_globalFooterScss() (*as
 
 // DistLegacyAssetsScssPatternLibraryProjectComponents_globalHeaderScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectComponents_globalHeaderScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_global-header.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_global-header.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/components/_global-header.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4007,7 +4007,7 @@ func DistLegacyAssetsScssPatternLibraryProjectComponents_globalHeaderScss() (*as
 
 // DistLegacyAssetsScssPatternLibraryProjectComponents_heroBannerScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectComponents_heroBannerScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_hero-banner.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_hero-banner.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/components/_hero-banner.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4025,7 +4025,7 @@ func DistLegacyAssetsScssPatternLibraryProjectComponents_heroBannerScss() (*asse
 
 // DistLegacyAssetsScssPatternLibraryProjectComponents_pageHeaderScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectComponents_pageHeaderScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_page-header.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/components/_page-header.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/components/_page-header.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4043,7 +4043,7 @@ func DistLegacyAssetsScssPatternLibraryProjectComponents_pageHeaderScss() (*asse
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_actionableHeaderScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_actionableHeaderScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_actionable-header.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_actionable-header.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_actionable-header.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4061,7 +4061,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_actionableHeaderScss() (*
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_boxesScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_boxesScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_boxes.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_boxes.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_boxes.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4079,7 +4079,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_boxesScss() (*asset, erro
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_buttonsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_buttonsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_buttons.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_buttons.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_buttons.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4097,7 +4097,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_buttonsScss() (*asset, er
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_contentImageScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_contentImageScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_content-image.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_content-image.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_content-image.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4115,7 +4115,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_contentImageScss() (*asse
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_datesScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_datesScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_dates.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_dates.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_dates.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4133,7 +4133,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_datesScss() (*asset, erro
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_dividerScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_dividerScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_divider.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_divider.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_divider.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4151,7 +4151,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_dividerScss() (*asset, er
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_heroScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_heroScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_hero.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_hero.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_hero.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4169,7 +4169,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_heroScss() (*asset, error
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_linkComplexScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_linkComplexScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_link-complex.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_link-complex.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_link-complex.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4187,7 +4187,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_linkComplexScss() (*asset
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_listTableScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_listTableScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_list-table.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_list-table.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_list-table.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4205,7 +4205,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_listTableScss() (*asset, 
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_lozengesScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_lozengesScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_lozenges.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_lozenges.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_lozenges.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4223,7 +4223,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_lozengesScss() (*asset, e
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_mediaScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_mediaScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_media.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_media.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_media.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4241,7 +4241,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_mediaScss() (*asset, erro
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_navPanelsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_navPanelsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_nav-panels.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_nav-panels.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_nav-panels.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4259,7 +4259,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_navPanelsScss() (*asset, 
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_navsPrimaryScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_navsPrimaryScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_navs-primary.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_navs-primary.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_navs-primary.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4277,7 +4277,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_navsPrimaryScss() (*asset
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_navsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_navsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_navs.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_navs.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_navs.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4295,7 +4295,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_navsScss() (*asset, error
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_panelsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_panelsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_panels.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_panels.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_panels.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4313,7 +4313,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_panelsScss() (*asset, err
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_slatesScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_slatesScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_slates.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_slates.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_slates.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4331,7 +4331,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_slatesScss() (*asset, err
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_splitScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_splitScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_split.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_split.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_split.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4349,7 +4349,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_splitScss() (*asset, erro
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_statCalloutScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_statCalloutScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_stat-callout.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_stat-callout.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_stat-callout.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4367,7 +4367,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_statCalloutScss() (*asset
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_statsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_statsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_stats.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_stats.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_stats.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4385,7 +4385,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_statsScss() (*asset, erro
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_supportingContentScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_supportingContentScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_supporting-content.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_supporting-content.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_supporting-content.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4403,7 +4403,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_supportingContentScss() (
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_tableOfContentsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_tableOfContentsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_table-of-contents.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_table-of-contents.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_table-of-contents.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4421,7 +4421,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_tableOfContentsScss() (*a
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_tablesScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_tablesScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_tables.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_tables.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_tables.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4439,7 +4439,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_tablesScss() (*asset, err
 
 // DistLegacyAssetsScssPatternLibraryProjectPatterns_tabsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectPatterns_tabsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_tabs.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/patterns/_tabs.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/patterns/_tabs.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4457,7 +4457,7 @@ func DistLegacyAssetsScssPatternLibraryProjectPatterns_tabsScss() (*asset, error
 
 // DistLegacyAssetsScssPatternLibraryProjectUiPatterns_formsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectUiPatterns_formsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/ui-patterns/_forms.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/ui-patterns/_forms.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/ui-patterns/_forms.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4475,7 +4475,7 @@ func DistLegacyAssetsScssPatternLibraryProjectUiPatterns_formsScss() (*asset, er
 
 // DistLegacyAssetsScssPatternLibraryProjectVendorReadmeMd reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectVendorReadmeMd() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/vendor/README.md"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/vendor/README.md"
 	name := "../dist/legacy-assets/scss/pattern-library/project/vendor/README.md"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4493,7 +4493,7 @@ func DistLegacyAssetsScssPatternLibraryProjectVendorReadmeMd() (*asset, error) {
 
 // DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_colorsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_colorsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_colors.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_colors.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/visual-language/_colors.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4511,7 +4511,7 @@ func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_colorsScss() (*asse
 
 // DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_fontsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_fontsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_fonts.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_fonts.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/visual-language/_fonts.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4529,7 +4529,7 @@ func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_fontsScss() (*asset
 
 // DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_gridScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_gridScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_grid.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_grid.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/visual-language/_grid.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4547,7 +4547,7 @@ func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_gridScss() (*asset,
 
 // DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_listsScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_listsScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_lists.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_lists.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/visual-language/_lists.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4565,7 +4565,7 @@ func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_listsScss() (*asset
 
 // DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_typeScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_typeScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_type.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/pattern-library/project/visual-language/_type.scss"
 	name := "../dist/legacy-assets/scss/pattern-library/project/visual-language/_type.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4583,7 +4583,7 @@ func DistLegacyAssetsScssPatternLibraryProjectVisualLanguage_typeScss() (*asset,
 
 // DistLegacyAssetsScssStyleScss reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssStyleScss() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/style.scss"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/style.scss"
 	name := "../dist/legacy-assets/scss/style.scss"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4601,7 +4601,7 @@ func DistLegacyAssetsScssStyleScss() (*asset, error) {
 
 // DistLegacyAssetsScssThirdPartyEpiceditorImagesEditPng reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssThirdPartyEpiceditorImagesEditPng() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/third-party/epiceditor/images/edit.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/third-party/epiceditor/images/edit.png"
 	name := "../dist/legacy-assets/scss/third-party/epiceditor/images/edit.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4619,7 +4619,7 @@ func DistLegacyAssetsScssThirdPartyEpiceditorImagesEditPng() (*asset, error) {
 
 // DistLegacyAssetsScssThirdPartyEpiceditorImagesFullscreenPng reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssThirdPartyEpiceditorImagesFullscreenPng() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/third-party/epiceditor/images/fullscreen.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/third-party/epiceditor/images/fullscreen.png"
 	name := "../dist/legacy-assets/scss/third-party/epiceditor/images/fullscreen.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4637,7 +4637,7 @@ func DistLegacyAssetsScssThirdPartyEpiceditorImagesFullscreenPng() (*asset, erro
 
 // DistLegacyAssetsScssThirdPartyEpiceditorImagesPreviewPng reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsScssThirdPartyEpiceditorImagesPreviewPng() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/third-party/epiceditor/images/preview.png"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/scss/third-party/epiceditor/images/preview.png"
 	name := "../dist/legacy-assets/scss/third-party/epiceditor/images/preview.png"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4655,7 +4655,7 @@ func DistLegacyAssetsScssThirdPartyEpiceditorImagesPreviewPng() (*asset, error) 
 
 // DistLegacyAssetsTemplatesBrowsenodeHandlebars reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsTemplatesBrowsenodeHandlebars() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/browseNode.handlebars"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/browseNode.handlebars"
 	name := "../dist/legacy-assets/templates/browseNode.handlebars"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4673,7 +4673,7 @@ func DistLegacyAssetsTemplatesBrowsenodeHandlebars() (*asset, error) {
 
 // DistLegacyAssetsTemplatesChangepasswordHandlebars reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsTemplatesChangepasswordHandlebars() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/changePassword.handlebars"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/changePassword.handlebars"
 	name := "../dist/legacy-assets/templates/changePassword.handlebars"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4691,7 +4691,7 @@ func DistLegacyAssetsTemplatesChangepasswordHandlebars() (*asset, error) {
 
 // DistLegacyAssetsTemplatesCollectiondetailsHandlebars reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsTemplatesCollectiondetailsHandlebars() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/collectionDetails.handlebars"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/collectionDetails.handlebars"
 	name := "../dist/legacy-assets/templates/collectionDetails.handlebars"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4709,7 +4709,7 @@ func DistLegacyAssetsTemplatesCollectiondetailsHandlebars() (*asset, error) {
 
 // DistLegacyAssetsTemplatesCollectionlistHandlebars reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsTemplatesCollectionlistHandlebars() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/collectionList.handlebars"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/collectionList.handlebars"
 	name := "../dist/legacy-assets/templates/collectionList.handlebars"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4727,7 +4727,7 @@ func DistLegacyAssetsTemplatesCollectionlistHandlebars() (*asset, error) {
 
 // DistLegacyAssetsTemplatesErmintrudeHandlebars reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsTemplatesErmintrudeHandlebars() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/ermintrude.handlebars"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/ermintrude.handlebars"
 	name := "../dist/legacy-assets/templates/ermintrude.handlebars"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4745,7 +4745,7 @@ func DistLegacyAssetsTemplatesErmintrudeHandlebars() (*asset, error) {
 
 // DistLegacyAssetsTemplatesLoginHandlebars reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsTemplatesLoginHandlebars() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/login.handlebars"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/login.handlebars"
 	name := "../dist/legacy-assets/templates/login.handlebars"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4763,7 +4763,7 @@ func DistLegacyAssetsTemplatesLoginHandlebars() (*asset, error) {
 
 // DistLegacyAssetsTemplatesMainnavHandlebars reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsTemplatesMainnavHandlebars() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/mainNav.handlebars"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/mainNav.handlebars"
 	name := "../dist/legacy-assets/templates/mainNav.handlebars"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4781,7 +4781,7 @@ func DistLegacyAssetsTemplatesMainnavHandlebars() (*asset, error) {
 
 // DistLegacyAssetsTemplatesMainnavselectHandlebars reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsTemplatesMainnavselectHandlebars() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/mainNavSelect.handlebars"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/mainNavSelect.handlebars"
 	name := "../dist/legacy-assets/templates/mainNavSelect.handlebars"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
@@ -4799,7 +4799,7 @@ func DistLegacyAssetsTemplatesMainnavselectHandlebars() (*asset, error) {
 
 // DistLegacyAssetsTemplatesUserdetailsHandlebars reads file data from disk. It returns an error on failure.
 func DistLegacyAssetsTemplatesUserdetailsHandlebars() (*asset, error) {
-	path := "/Users/mattsimon/Desktop/ons/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/userDetails.handlebars"
+	path := "/Users/mrout/go/src/github.com/ONSdigital/ermintrude/dist/legacy-assets/templates/userDetails.handlebars"
 	name := "../dist/legacy-assets/templates/userDetails.handlebars"
 	bytes, err := bindataRead(path, name)
 	if err != nil {
