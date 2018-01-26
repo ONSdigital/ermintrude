@@ -23,8 +23,8 @@
 		{
 			"checksumSHA1": "iPPXRH/x3E3poXYVu3dOwODnokE=",
 			"path": "github.com/ONSdigital/go-ns/healthcheck",
-			"revision": "ede53373c9eac7c63f0652b90a38d5dd81739665",
-			"revisionTime": "2018-01-22T11:04:58Z"
+			"revision": "1a58c1f1fc0bd5f4218f3ea6f68f6b358356ec94",
+			"revisionTime": "2018-01-24T10:54:05Z"
 		},
 		{
 			"checksumSHA1": "7DeVPN/PW8oj0H7q/00MqhBkZzo=",
@@ -33,10 +33,10 @@
 			"revisionTime": "2018-01-22T11:04:58Z"
 		},
 		{
-			"checksumSHA1": "kfEPqmTD+a9Mo+pqCeiJb6OGrDE=",
+			"checksumSHA1": "GQdzMpAMb42KQQ/GsJFSRU5dj1Y=",
 			"path": "github.com/ONSdigital/go-ns/server",
-			"revision": "c751f1b8254523fa6f18ef042d273750e70c6732",
-			"revisionTime": "2017-08-30T09:50:52Z"
+			"revision": "1a58c1f1fc0bd5f4218f3ea6f68f6b358356ec94",
+			"revisionTime": "2018-01-24T10:54:05Z"
 		},
 		{
 			"checksumSHA1": "wzvsJkEM5AYj7pJTsYpf/TAoVb4=",
