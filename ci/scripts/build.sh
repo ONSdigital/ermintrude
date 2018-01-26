@@ -1,8 +1,9 @@
 #!/bin/bash -eux
 
-pushd ermintrude
-  npm install --prefix src/main/web/ermintrude --unsafe-perm
-  mvn -Dmaven.test.skip clean package dependency:copy-dependencies
-  cp -r Dockerfile.concourse target/* ../build/
-popd
+cwd=$(pwd)
 
+export GOPATH=$cwd/go
+
+pushd $GOPATH/src/github.com/ONSdigital/ermintrude
+  make node-modules build && cp Dockerfile.concourse build/ermintrude $cwd/build
+popd
