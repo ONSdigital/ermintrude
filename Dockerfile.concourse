@@ -1,11 +1,7 @@
-FROM onsdigital/java-node-component
+FROM onsdigital/dp-docker-go
 
-WORKDIR /usr/src
+WORKDIR /app/
 
-ADD web target/web
-ADD *-jar-with-dependencies.jar target/
+ADD ermintrude .
 
-CMD java -Xmx2048m                                                 \
-    -Drestolino.files="target/web"                                 \
-    -Drestolino.packageprefix=com.github.onsdigital.ermintrude.api \
-    -jar target/*-jar-with-dependencies.jar
+CMD ./ermintrude

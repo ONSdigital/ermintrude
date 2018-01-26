@@ -26,13 +26,7 @@ job "ermintrude" {
       config {
         command = "${NOMAD_TASK_DIR}/start-task"
 
-        args = [
-          "java",
-          "-Xmx2048m",
-          "-Drestolino.files=target/web",
-          "-Drestolino.packageprefix=com.github.onsdigital.ermintrude.api",
-          "-jar target/*-jar-with-dependencies.jar",
-        ]
+        args = ["./ermintrude"]
 
         image = "{{ECR_URL}}:concourse-{{REVISION}}"
 
