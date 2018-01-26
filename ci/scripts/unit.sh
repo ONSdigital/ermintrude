@@ -1,5 +1,7 @@
 #!/bin/bash -eux
 
-pushd ermintrude
-  mvn test
+export GOPATH=$(pwd)/go
+
+pushd $GOPATH/src/github.com/ONSdigital/ermintrude
+  make test
 popd

@@ -9,6 +9,7 @@ image_resource:
 
 inputs:
   - name: ermintrude
+    path: go/src/github.com/ONSdigital/ermintrude
 
 outputs:
   - name: build
