@@ -27,10 +27,10 @@
 			"revisionTime": "2017-08-30T09:15:21Z"
 		},
 		{
-			"checksumSHA1": "AjbjbhFVAOP/1NU5HL+uy+X/yJo=",
+			"checksumSHA1": "7DeVPN/PW8oj0H7q/00MqhBkZzo=",
 			"path": "github.com/ONSdigital/go-ns/log",
-			"revision": "7a0755469020390a462ae71b83b672bc59787468",
-			"revisionTime": "2017-06-02T12:31:46Z"
+			"revision": "ede53373c9eac7c63f0652b90a38d5dd81739665",
+			"revisionTime": "2018-01-22T11:04:58Z"
 		},
 		{
 			"checksumSHA1": "kfEPqmTD+a9Mo+pqCeiJb6OGrDE=",
@@ -184,5 +184,5 @@
 			"revisionTime": "2016-08-18T02:01:20Z"
 		}
 	],
-	"rootPath": "github.com/ONSdigital/florence"
+	"rootPath": "github.com/ONSdigital/ermintrude"
 }
