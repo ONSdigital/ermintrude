@@ -14,4 +14,4 @@ outputs:
   - name: build
 
 run:
-  path: go/src/github.com/ONSdigital/ci/scripts/build.sh
+  path: go/src/github.com/ONSdigital/ermintrude/ci/scripts/build.sh
