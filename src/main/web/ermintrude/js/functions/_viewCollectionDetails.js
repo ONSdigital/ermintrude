@@ -42,6 +42,7 @@ function viewCollectionDetails(collectionId) {
 
             if (type !== "visualisation") {
                 $('#vis-files__form').remove();
+                enablePreview();
                 refreshPreview(path);
                 return;
             }
