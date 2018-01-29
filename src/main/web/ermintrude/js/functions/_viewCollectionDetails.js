@@ -34,16 +34,19 @@ function viewCollectionDetails(collectionId) {
             var $selectedOption = $('#docs-list option:selected')
             var path = $selectedOption.val();
             var lang = $selectedOption.attr('data-lang');
+            var type = $selectedOption.attr('data-type');
 
             if (lang) {
                 document.cookie = "lang=" + lang + ";path=/";
             }
 
+            if (type !== "visualisation") {
+                $('#vis-files__form').remove();
+                refreshPreview(path);
+                return;
+            }
+
             getPage(collection.id, path).then(response => {
-                if (response.type !== "visualisation") {
-                    $('#vis-files__form').remove();
-                    return;
-                }
                 var templateData = [];
                 var files = response.filenames;
                 for (var i = 0; i < files.length; i++) {
@@ -54,6 +57,8 @@ function viewCollectionDetails(collectionId) {
                 }
                 var visSelectTemplate = templates.visualisationFileSelect(templateData);
                 $('.nav-left').append(visSelectTemplate);
+                refreshPreview();
+                disablePreview("No visualisation page selected to preview");
                 bindVisFilesChange();
             }).catch(error => {
                 switch(error.status) {
@@ -69,8 +74,6 @@ function viewCollectionDetails(collectionId) {
                     }
                 }
             });
-            
-            refreshPreview(path);
 
         });
     }
@@ -93,6 +96,15 @@ function formatIsoFull(input) {
 
 function bindVisFilesChange() {
     $('#vis-files__form').off().on('change', function() {
-        refreshPreview($(this).find(":selected").val());
+        var url = $(this).find(":selected").val();
+        
+        if (!url) {
+            refreshPreview();
+            disablePreview("No visualisation page selected to preview");
+            return;
+        }
+
+        enablePreview();
+        refreshPreview(url);
     });
 }

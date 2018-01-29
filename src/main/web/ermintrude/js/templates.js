@@ -125,14 +125,16 @@ templates['mainNav'] = template({"1":function(depth0,helpers,partials,data) {
     + "  </ul>\n</section>\n";
 },"useData":true});
 templates['mainNavSelect'] = template({"1":function(depth0,helpers,partials,data) {
-    var stack1, alias1=this.lambda, alias2=this.escapeExpression;
+    var stack1, helper, alias1=helpers.helperMissing, alias2=this.escapeExpression, alias3=this.lambda;
 
-  return "      <option data-lang=\""
-    + ((stack1 = (helpers.ifCond || (depth0 && depth0.ifCond) || helpers.helperMissing).call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.language : stack1),"===","cy",{"name":"ifCond","hash":{},"fn":this.program(2, data, 0),"inverse":this.program(4, data, 0),"data":data})) != null ? stack1 : "")
+  return "      <option data-type=\""
+    + alias2(((helper = (helper = helpers.type || (depth0 != null ? depth0.type : depth0)) != null ? helper : alias1),(typeof helper === "function" ? helper.call(depth0,{"name":"type","hash":{},"data":data}) : helper)))
+    + "\" data-lang=\""
+    + ((stack1 = (helpers.ifCond || (depth0 && depth0.ifCond) || alias1).call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.language : stack1),"===","cy",{"name":"ifCond","hash":{},"fn":this.program(2, data, 0),"inverse":this.program(4, data, 0),"data":data})) != null ? stack1 : "")
     + "\" value=\""
-    + alias2(alias1((depth0 != null ? depth0.uri : depth0), depth0))
+    + alias2(alias3((depth0 != null ? depth0.uri : depth0), depth0))
     + "\">"
-    + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
+    + alias2(alias3((depth0 != null ? depth0.name : depth0), depth0))
     + ((stack1 = helpers['if'].call(depth0,((stack1 = (depth0 != null ? depth0.description : depth0)) != null ? stack1.edition : stack1),{"name":"if","hash":{},"fn":this.program(6, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "</option>\n";
 },"2":function(depth0,helpers,partials,data) {
