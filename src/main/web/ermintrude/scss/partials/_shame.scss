@@ -2,6 +2,14 @@
 * This file is used for SCSS that you write knowing that it need refactoring - the shame file should be emptied regularly
 */
 
+.vis-files__form {
+    display: inline-block;
+}
+
+.pages__form {
+    display: inline-block;
+    width: 50%;
+}
 
 //Modal styling - probably need some refactoring but mainly needs correct location in sass files
 .modal {
