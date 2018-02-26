@@ -1,4 +1,29 @@
-var CookieUtils = {
+/**
+ * @param {string} collectionID - Unique ID of the collection that is being previewed
+ * @param {string} url - URL of the page that the caller wants the JSON data for
+ * @returns {Promise} - Which resolves to the page JSON data or rejects with an error
+ */
+
+function getPage(collectionID, url) {
+    var fetchURL = '/zebedee/data/' + collectionID + '?uri=' + url;
+    var fetchOptions = {
+        method: "GET",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+    return new Promise((resolve, reject) => {
+        fetch(fetchURL, fetchOptions).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            reject(response);
+        }).then(response => {
+            resolve(response);
+        })
+    });
+}var CookieUtils = {
   getCookieValue: function (a, b) {
     b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
     return b ? b.pop() : '';
@@ -196,7 +221,31 @@ function createWorkspace(path, collectionId, onFunction) {
   onFunction(collectionId);
 }
 
-function getCollection(collectionId, success, error) {
+function disablePreview(text) {
+    var $browser = $('.browser');
+
+    if ($browser.hasClass("browser--disabled")) {
+        return;
+    }
+
+    if (!text) {
+        text = "No page available to preview"
+    }
+
+    $browser.addClass("browser--disabled");
+    $browser.append("<div class='browser--disabled__child'>" + text + "</div>");
+}
+
+function enablePreview() {
+    var $browser = $('.browser');
+
+    if (!$browser.hasClass("browser--disabled")) {
+        return;
+    }
+
+    $browser.removeClass("browser--disabled");
+    $(".browser--disabled__child").remove();
+}function getCollection(collectionId, success, error) {
   return $.ajax({
     url: "/zebedee/collection/" + collectionId,
     dataType: 'json',
@@ -397,7 +446,6 @@ function postPassword(success, error, email, password, oldPassword) {
 }
 
 function refreshPreview(url) {
-
   if (url) {
     var safeUrl = checkPathSlashes(url);
     var newUrl = Ermintrude.tredegarBaseUrl + safeUrl;
@@ -405,11 +453,7 @@ function refreshPreview(url) {
     $('.browser-location').val(newUrl);
   }
   else {
-    var urlStored = Ermintrude.globalVars.pagePath;
-    var safeUrl = checkPathSlashes(urlStored);
-    var newUrl = Ermintrude.tredegarBaseUrl + safeUrl;
-    document.getElementById('iframe').contentWindow.location.href = newUrl;
-    $('.browser-location').val(newUrl);
+    document.getElementById('iframe').contentWindow.location.replace("about:blank");
   }
     hideBugHerd(500)
 
@@ -417,7 +461,6 @@ function refreshPreview(url) {
 
 function setupErmintrude() {
   window.templates = Handlebars.templates;
-  //Handlebars.registerPartial("mainNavSelect", templates.mainNavSelect);
   Handlebars.registerHelper('select', function( value, options ){
     var $el = $('<select />').html( options.fn(this) );
     $el.find('[value="' + value + '"]').attr({'selected':'selected'});
@@ -623,26 +666,51 @@ function viewCollectionDetails(collectionId) {
         var collectionHtml = window.templates.mainNavSelect(sorted);
         $('#mainNavSelect').html(collectionHtml);
 
-        //page-list
-        //$('.page-item').click(function () {
-        //  $('.page-list li').removeClass('selected');
-        //  $('.page-options').hide();
-        //  var path = $(this).parent('li').attr('data-path');
-        //  $(this).parent('li').addClass('selected');
-        //  $(this).next('.page-options').show();
-        //  refreshPreview(path);
-        //});
-
         $('select#docs-list').change(function () {
             var $selectedOption = $('#docs-list option:selected')
             var path = $selectedOption.val();
             var lang = $selectedOption.attr('data-lang');
+            var type = $selectedOption.attr('data-type');
 
             if (lang) {
                 document.cookie = "lang=" + lang + ";path=/";
             }
 
-            refreshPreview(path);
+            if (type !== "visualisation") {
+                $('#vis-files__form').remove();
+                refreshPreview(path);
+                return;
+            }
+
+            getPage(collection.id, path).then(response => {
+                var templateData = [];
+                var files = response.filenames;
+                for (var i = 0; i < files.length; i++) {
+                    templateData.push({
+                        uri: response.uri + "/" + files[i],
+                        name: files[i]
+                    });
+                }
+                var visSelectTemplate = templates.visualisationFileSelect(templateData);
+                $('.nav-left').append(visSelectTemplate);
+                refreshPreview();
+                disablePreview("No visualisation page selected to preview");
+                bindVisFilesChange();
+            }).catch(error => {
+                switch(error.status) {
+                    case(401): {
+                        logout();
+                        sweetAlert("Session has expired", "Please login again", "info");
+                        console.warn("User is not logged in, redirecting to login screen");
+                        break
+                    }
+                    default: {
+                        console.error("An unexpected error has occured\n", error.statusText);
+                        break;
+                    }
+                }
+            });
+
         });
     }
 
@@ -662,7 +730,20 @@ function formatIsoFull(input) {
     return formattedDate;
 }
 
-function viewCollections(collectionId) {
+function bindVisFilesChange() {
+    $('#vis-files__form').off().on('change', function() {
+        var url = $(this).find(":selected").val();
+        
+        if (!url) {
+            refreshPreview();
+            disablePreview("No visualisation page selected to preview");
+            return;
+        }
+
+        enablePreview();
+        refreshPreview(url);
+    });
+}function viewCollections(collectionId) {
 
   $.ajax({
     url: "/zebedee/collections",
