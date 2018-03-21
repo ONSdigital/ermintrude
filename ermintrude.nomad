@@ -28,6 +28,8 @@ job "ermintrude" {
 
         args = [
           "java",
+          "-server",
+          "-Xms{{PUBLISHING_RESOURCE_HEAP_MEM}}m",
           "-Xmx{{PUBLISHING_RESOURCE_HEAP_MEM}}m",
           "-Drestolino.files=target/web",
           "-Drestolino.packageprefix=com.github.onsdigital.ermintrude.api",
