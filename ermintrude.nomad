@@ -4,8 +4,10 @@ job "ermintrude" {
   type        = "service"
 
   update {
-    stagger      = "90s"
-    max_parallel = 1
+    min_healthy_time = "30s"
+    healthy_deadline = "2m"
+    max_parallel     = 1
+    stagger          = "150s"
   }
 
   group "publishing" {
