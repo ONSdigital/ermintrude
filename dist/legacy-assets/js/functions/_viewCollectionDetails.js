@@ -20,11 +20,11 @@ function viewCollectionDetails(collectionId) {
             collection.date = formatIsoFull(collection.publishDate);
         }
 
-        ProcessPages(collection.inProgress);
-        ProcessPages(collection.complete);
-        ProcessPages(collection.reviewed);
-        ProcessPages(collection.datasets);
-        ProcessPages(collection.datasetVersions);
+        ProcessPages(collection.inProgress, collection.id);
+        ProcessPages(collection.complete, collection.id);
+        ProcessPages(collection.reviewed, collection.id);
+        ProcessPages(collection.datasets, collection.id);
+        ProcessPages(collection.datasetVersions, collection.id);
         
         //page-list
         //$('.page-item').click(function () {
@@ -38,7 +38,7 @@ function viewCollectionDetails(collectionId) {
 
     }
 
-    function renderList(){
+    function renderList(collectionID){
         var sorted = _.sortBy(resultToSort, 'name');
         var collectionHtml = window.templates.mainNavSelect(sorted);
         $('#mainNavSelect').html(collectionHtml);
@@ -47,18 +47,53 @@ function viewCollectionDetails(collectionId) {
             var $selectedOption = $('#docs-list option:selected')
             var path = $selectedOption.val();
             var lang = $selectedOption.attr('data-lang');
+            var type = $selectedOption.attr('data-type');
 
             if (lang) {
                 document.cookie = "lang=" + lang + ";path=/";
             }
 
-            refreshPreview(path);
+            if (type !== "visualisation") {
+                $('#vis-files__form').remove();
+                enablePreview();
+                refreshPreview(path);
+                return;
+            }
+
+            getPage(collectionID, path).then(response => {
+                var templateData = [];
+                var files = response.filenames;
+                for (var i = 0; i < files.length; i++) {
+                    templateData.push({
+                        uri: response.uri + "/" + files[i],
+                        name: files[i]
+                    });
+                }
+                var visSelectTemplate = templates.visualisationFileSelect(templateData);
+                $('.nav-left').append(visSelectTemplate);
+                refreshPreview();
+                disablePreview("No visualisation page selected to preview");
+                bindVisFilesChange();
+            }).catch(error => {
+                switch(error.status) {
+                    case(401): {
+                        logout();
+                        sweetAlert("Session has expired", "Please login again", "info");
+                        console.warn("User is not logged in, redirecting to login screen");
+                        break
+                    }
+                    default: {
+                        console.error("An unexpected error has occured\n", error.statusText);
+                        break;
+                    }
+                }
+            });
 
         });
 
     }
 
-    function ProcessPages(pages) {
+    function ProcessPages(pages, collectionID) {
         _.each(pages, function (page) {
             // If dataset metadata or dataset version
             if(page.id) {
@@ -82,7 +117,7 @@ function viewCollectionDetails(collectionId) {
                             var versionPathname = latestVersion.replace(/^.*\/\/[^\/]+/, '');
                             page.uri = versionPathname; 
                             resultToSort.push(page);   
-                            renderList();                 
+                            renderList(collectionID);                 
            
                         },
                         error = function (response) {
@@ -96,7 +131,7 @@ function viewCollectionDetails(collectionId) {
                     var versionPathname = page.uri.replace(/^.*\/\/[^\/]+/, '');
                     page.uri = versionPathname; 
                     resultToSort.push(page);   
-                    renderList();                 
+                    renderList(collectionID);                 
                 }
             } 
             // If dataset landing page
@@ -107,7 +142,7 @@ function viewCollectionDetails(collectionId) {
                         page.uri = '/datasets/' + datasetID;
                         page.name = page.description.title ? page.description.title + " (Filterable dataset landing page)" : page.description.edition + " (Filterable dataset landing page)";
                         resultToSort.push(page);   
-                        renderList();                 
+                        renderList(collectionID);                 
                     },
                     error = function (response) {
                         handleApiError(response);
@@ -119,7 +154,7 @@ function viewCollectionDetails(collectionId) {
                 page.uri = page.uri.replace('/data.json', '');
                 page.name = page.description.title ? page.description.title : page.description.edition;
                 resultToSort.push(page); 
-                renderList();                 
+                renderList(collectionID);                 
             }
 
         });
@@ -133,3 +168,17 @@ function formatIsoFull(input) {
     return formattedDate;
 }
 
+function bindVisFilesChange() {
+    $('#vis-files__form').off().on('change', function() {
+        var url = $(this).find(":selected").val();
+        
+        if (!url) {
+            refreshPreview();
+            disablePreview("No visualisation page selected to preview");
+            return;
+        }
+
+        enablePreview();
+        refreshPreview(url);
+    });
+}

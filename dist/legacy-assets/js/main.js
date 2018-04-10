@@ -1,4 +1,29 @@
-var CookieUtils = {
+/**
+ * @param {string} collectionID - Unique ID of the collection that is being previewed
+ * @param {string} url - URL of the page that the caller wants the JSON data for
+ * @returns {Promise} - Which resolves to the page JSON data or rejects with an error
+ */
+
+function getPage(collectionID, url) {
+    var fetchURL = '/zebedee/data/' + collectionID + '?uri=' + url;
+    var fetchOptions = {
+        method: "GET",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+    return new Promise((resolve, reject) => {
+        fetch(fetchURL, fetchOptions).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            reject(response);
+        }).then(response => {
+            resolve(response);
+        })
+    });
+}var CookieUtils = {
   getCookieValue: function (a, b) {
     b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
     return b ? b.pop() : '';
@@ -196,7 +221,31 @@ function createWorkspace(path, collectionId, onFunction) {
   onFunction(collectionId);
 }
 
-function getCollection(collectionId, success, error) {
+function disablePreview(text) {
+    var $browser = $('.browser');
+
+    if ($browser.hasClass("browser--disabled")) {
+        return;
+    }
+
+    if (!text) {
+        text = "No page available to preview"
+    }
+
+    $browser.addClass("browser--disabled");
+    $browser.append("<div class='browser--disabled__child'>" + text + "</div>");
+}
+
+function enablePreview() {
+    var $browser = $('.browser');
+
+    if (!$browser.hasClass("browser--disabled")) {
+        return;
+    }
+
+    $browser.removeClass("browser--disabled");
+    $(".browser--disabled__child").remove();
+}function getCollection(collectionId, success, error) {
   return $.ajax({
     url: "/zebedee/collection/" + collectionId,
     dataType: 'json',
@@ -434,7 +483,6 @@ function postPassword(success, error, email, password, oldPassword) {
 }
 
 function refreshPreview(url) {
-
   if (url) {
     var safeUrl = checkPathSlashes(url);
     var newUrl = Ermintrude.tredegarBaseUrl + safeUrl;
@@ -442,11 +490,7 @@ function refreshPreview(url) {
     $('.browser-location').val(newUrl);
   }
   else {
-    var urlStored = Ermintrude.globalVars.pagePath;
-    var safeUrl = checkPathSlashes(urlStored);
-    var newUrl = Ermintrude.tredegarBaseUrl + safeUrl;
-    document.getElementById('iframe').contentWindow.location.href = newUrl;
-    $('.browser-location').val(newUrl);
+    document.getElementById('iframe').contentWindow.location.replace("about:blank");
   }
     hideBugHerd(500)
 
@@ -454,7 +498,6 @@ function refreshPreview(url) {
 
 function setupErmintrude() {
   window.templates = Handlebars.templates;
-  //Handlebars.registerPartial("mainNavSelect", templates.mainNavSelect);
   Handlebars.registerHelper('select', function( value, options ){
     var $el = $('<select />').html( options.fn(this) );
     $el.find('[value="' + value + '"]').attr({'selected':'selected'});
@@ -650,11 +693,11 @@ function viewCollectionDetails(collectionId) {
             collection.date = formatIsoFull(collection.publishDate);
         }
 
-        ProcessPages(collection.inProgress);
-        ProcessPages(collection.complete);
-        ProcessPages(collection.reviewed);
-        ProcessPages(collection.datasets);
-        ProcessPages(collection.datasetVersions);
+        ProcessPages(collection.inProgress, collection.id);
+        ProcessPages(collection.complete, collection.id);
+        ProcessPages(collection.reviewed, collection.id);
+        ProcessPages(collection.datasets, collection.id);
+        ProcessPages(collection.datasetVersions, collection.id);
         
         //page-list
         //$('.page-item').click(function () {
@@ -668,7 +711,7 @@ function viewCollectionDetails(collectionId) {
 
     }
 
-    function renderList(){
+    function renderList(collectionID){
         var sorted = _.sortBy(resultToSort, 'name');
         var collectionHtml = window.templates.mainNavSelect(sorted);
         $('#mainNavSelect').html(collectionHtml);
@@ -677,18 +720,53 @@ function viewCollectionDetails(collectionId) {
             var $selectedOption = $('#docs-list option:selected')
             var path = $selectedOption.val();
             var lang = $selectedOption.attr('data-lang');
+            var type = $selectedOption.attr('data-type');
 
             if (lang) {
                 document.cookie = "lang=" + lang + ";path=/";
             }
 
-            refreshPreview(path);
+            if (type !== "visualisation") {
+                $('#vis-files__form').remove();
+                enablePreview();
+                refreshPreview(path);
+                return;
+            }
+
+            getPage(collectionID, path).then(response => {
+                var templateData = [];
+                var files = response.filenames;
+                for (var i = 0; i < files.length; i++) {
+                    templateData.push({
+                        uri: response.uri + "/" + files[i],
+                        name: files[i]
+                    });
+                }
+                var visSelectTemplate = templates.visualisationFileSelect(templateData);
+                $('.nav-left').append(visSelectTemplate);
+                refreshPreview();
+                disablePreview("No visualisation page selected to preview");
+                bindVisFilesChange();
+            }).catch(error => {
+                switch(error.status) {
+                    case(401): {
+                        logout();
+                        sweetAlert("Session has expired", "Please login again", "info");
+                        console.warn("User is not logged in, redirecting to login screen");
+                        break
+                    }
+                    default: {
+                        console.error("An unexpected error has occured\n", error.statusText);
+                        break;
+                    }
+                }
+            });
 
         });
 
     }
 
-    function ProcessPages(pages) {
+    function ProcessPages(pages, collectionID) {
         _.each(pages, function (page) {
             // If dataset metadata or dataset version
             if(page.id) {
@@ -712,7 +790,7 @@ function viewCollectionDetails(collectionId) {
                             var versionPathname = latestVersion.replace(/^.*\/\/[^\/]+/, '');
                             page.uri = versionPathname; 
                             resultToSort.push(page);   
-                            renderList();                 
+                            renderList(collectionID);                 
            
                         },
                         error = function (response) {
@@ -726,7 +804,7 @@ function viewCollectionDetails(collectionId) {
                     var versionPathname = page.uri.replace(/^.*\/\/[^\/]+/, '');
                     page.uri = versionPathname; 
                     resultToSort.push(page);   
-                    renderList();                 
+                    renderList(collectionID);                 
                 }
             } 
             // If dataset landing page
@@ -737,7 +815,7 @@ function viewCollectionDetails(collectionId) {
                         page.uri = '/datasets/' + datasetID;
                         page.name = page.description.title ? page.description.title + " (Filterable dataset landing page)" : page.description.edition + " (Filterable dataset landing page)";
                         resultToSort.push(page);   
-                        renderList();                 
+                        renderList(collectionID);                 
                     },
                     error = function (response) {
                         handleApiError(response);
@@ -749,7 +827,7 @@ function viewCollectionDetails(collectionId) {
                 page.uri = page.uri.replace('/data.json', '');
                 page.name = page.description.title ? page.description.title : page.description.edition;
                 resultToSort.push(page); 
-                renderList();                 
+                renderList(collectionID);                 
             }
 
         });
@@ -763,7 +841,20 @@ function formatIsoFull(input) {
     return formattedDate;
 }
 
-function viewCollections(collectionId) {
+function bindVisFilesChange() {
+    $('#vis-files__form').off().on('change', function() {
+        var url = $(this).find(":selected").val();
+        
+        if (!url) {
+            refreshPreview();
+            disablePreview("No visualisation page selected to preview");
+            return;
+        }
+
+        enablePreview();
+        refreshPreview(url);
+    });
+}function viewCollections(collectionId) {
 
   $.ajax({
     url: "/zebedee/collections",
