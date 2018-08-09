@@ -4,8 +4,11 @@ job "ermintrude" {
   type        = "service"
 
   update {
-    stagger      = "90s"
-    max_parallel = 1
+    min_healthy_time = "30s"
+    healthy_deadline = "2m"
+    max_parallel     = 1
+    auto_revert      = true
+    stagger          = "150s"
   }
 
   group "publishing" {
@@ -13,7 +16,15 @@ job "ermintrude" {
 
     constraint {
       attribute = "${node.class}"
-      value     = "publishing"
+      operator  = "regexp"
+      value     = "publishing.*"
+    }
+
+    restart {
+      attempts = 3
+      delay    = "15s"
+      interval = "1m"
+      mode     = "delay"
     }
 
     task "ermintrude" {
@@ -28,6 +39,8 @@ job "ermintrude" {
 
         args = [
           "java",
+          "-server",
+          "-Xms{{PUBLISHING_RESOURCE_HEAP_MEM}}m",
           "-Xmx{{PUBLISHING_RESOURCE_HEAP_MEM}}m",
           "-Drestolino.files=target/web",
           "-Drestolino.packageprefix=com.github.onsdigital.ermintrude.api",
