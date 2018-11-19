@@ -16,7 +16,6 @@ job "ermintrude" {
 
     constraint {
       attribute = "${node.class}"
-      operator  = "regexp"
       value     = "publishing"
     }
 
